@@ -1,8 +1,8 @@
 import DevWidgetsCore
 import SwiftUI
 
-/// The Settings window: alert thresholds, GitHub access, servers,
-/// editor.
+/// The Settings window: start at login, alert thresholds, GitHub
+/// access, servers, editor.
 struct SettingsView: View {
     static let WIDTH: CGFloat = 520
 
@@ -12,6 +12,10 @@ struct SettingsView: View {
 
     var body: some View {
         TabView {
+            GeneralSettingsView()
+                .tabItem {
+                    Label("General", systemImage: "gearshape")
+                }
             AlertSettingsView(model: metrics_Model)
                 .tabItem { Label("Alerts", systemImage: "bell") }
             GitHubSettingsView(context_Model: context_Model)

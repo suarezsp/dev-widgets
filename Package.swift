@@ -22,6 +22,7 @@ let PORTABLE_PRESENTATION_FILES = [
     "Shared/ServerPresentation.swift",
     "Shared/WidgetActionStyle.swift",
     "App/AlertSettingsStore.swift",
+    "App/LoginItemOffer.swift",
 ]
 
 // The rest of macOS/ is for Xcode only (SwiftUI, WidgetKit). The

@@ -191,7 +191,7 @@ xcodebuild -project DevWidgets.xcodeproj -scheme DevWidgetsApp \
   -allowProvisioningUpdates DEVELOPMENT_TEAM=<your team ID> build
 ```
 
-Open the app once (it lives in the menu bar), then add the widgets from the widget gallery.
+Open the app once (it lives in the menu bar and, from then on, starts at login; Settings › General turns that off), then add the widgets from the widget gallery.
 
 ### Linux
 

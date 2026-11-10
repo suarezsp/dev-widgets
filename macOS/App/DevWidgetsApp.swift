@@ -4,7 +4,7 @@ import SwiftUI
 /// the developer context every few seconds and the servers every
 /// 15, shows them in its panel, publishes them for the widgets,
 /// alerts on thresholds and failed CI, and performs the actions
-/// widgets ask for.
+/// widgets ask for. It starts at login after the first launch.
 @main
 struct DevWidgetsApp: App {
     @State private var live_Metrics: LiveMetricsModel
@@ -23,6 +23,7 @@ struct DevWidgetsApp: App {
         _developer_Context = State(initialValue: context_Model)
         _action_Handler = State(initialValue: handler)
         _servers = State(initialValue: servers_Model)
+        LoginItem.registerOnFirstLaunch()
         Task { await UserNotifier.SHARED.requestAuthorization() }
         Task { await metrics_Model.runSamplingLoop() }
         Task { await context_Model.runRefreshLoop() }
