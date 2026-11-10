@@ -1,0 +1,10 @@
+@@devwidgets stat
+@@devwidgets meminfo
+@@devwidgets loadavg
+@@devwidgets uptime
+@@devwidgets net/dev
+@@devwidgets df
+Filesystem    1024-blocks      Used Available Capacity  Mounted on
+/dev/disk3s1s1  971350180  10683136 640154852     2%    /
+@@devwidgets uname
+Darwin studio.local 25.1.0

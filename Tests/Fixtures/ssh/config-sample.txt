@@ -1,0 +1,21 @@
+# Hand-written ~/.ssh/config for the alias suggestions.
+Include ~/.orbstack/ssh/config
+
+Host *
+  ServerAliveInterval 30
+
+Host web-1 web-2
+  HostName 10.0.0.%h
+  User deploy
+
+host=db
+  HostName db.internal
+
+Host bastion !prod-*
+  HostName bastion.example.com
+
+Host *.internal staging?
+  ProxyJump bastion
+
+Host web-1
+  Port 2222

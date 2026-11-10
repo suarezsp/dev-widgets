@@ -1,0 +1,86 @@
+@@devwidgets stat
+cpu  63442 5 18661 1899899 2063 0 7250 3678 0 0
+cpu0 5576 0 2206 239973 318 0 4593 461 0 0
+cpu1 13119 1 2546 232102 331 0 1347 467 0 0
+cpu2 7714 0 2489 237636 212 0 568 487 0 0
+cpu3 6717 0 2100 238810 168 0 347 466 0 0
+cpu4 12482 0 2280 233083 229 0 146 446 0 0
+cpu5 6303 0 2437 239104 220 0 80 423 0 0
+cpu6 5778 0 2010 239940 191 0 108 424 0 0
+cpu7 5751 1 2590 239247 390 0 58 499 0 0
+intr 10000424 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 298 0 4 10243 6147 82 210 0 53 0 9285 0 199736 164170 0 8 19 1 0 48600 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ctxt 11475325
+btime 1794322517
+processes 31915
+procs_running 1
+procs_blocked 0
+softirq 2536403 0 239152 68 497692 57878 0 40726 748645 0 952242
+@@devwidgets meminfo
+MemTotal:       16386416 kB
+MemFree:         3077312 kB
+MemAvailable:   10334460 kB
+Buffers:           53460 kB
+Cached:          7376880 kB
+SwapCached:            0 kB
+Active:          2631004 kB
+Inactive:        6127800 kB
+Active(anon):        632 kB
+Inactive(anon):  1354612 kB
+Active(file):    2630372 kB
+Inactive(file):  4773188 kB
+Unevictable:          16 kB
+Mlocked:              16 kB
+SwapTotal:             0 kB
+SwapFree:              0 kB
+Zswap:                 0 kB
+Zswapped:              0 kB
+Dirty:               412 kB
+Writeback:             0 kB
+AnonPages:       1328440 kB
+Mapped:           374452 kB
+Shmem:             26872 kB
+KReclaimable:     191516 kB
+Slab:             259208 kB
+SReclaimable:     191516 kB
+SUnreclaim:        67692 kB
+KernelStack:       10068 kB
+PageTables:        41408 kB
+SecPageTables:         0 kB
+NFS_Unstable:          0 kB
+Bounce:                0 kB
+WritebackTmp:          0 kB
+CommitLimit:     8193208 kB
+Committed_AS:    4398972 kB
+VmallocTotal:   34359738367 kB
+VmallocUsed:       13344 kB
+VmallocChunk:          0 kB
+Percpu:             2880 kB
+AnonHugePages:         0 kB
+ShmemHugePages:        0 kB
+ShmemPmdMapped:        0 kB
+FileHugePages:         0 kB
+FilePmdMapped:         0 kB
+HugePages_Total:       0
+HugePages_Free:        0
+HugePages_Rsvd:        0
+HugePages_Surp:        0
+Hugepagesize:       2048 kB
+Hugetlb:               0 kB
+DirectMap4k:       18432 kB
+DirectMap2M:     3127296 kB
+DirectMap1G:    15728640 kB
+@@devwidgets loadavg
+0.13 0.18 0.26 1/626 30305
+@@devwidgets uptime
+2487.24 18999.00
+@@devwidgets net/dev
+Inter-|   Receive                                                |  Transmit
+ face |bytes    packets errs drop fifo frame compressed multicast|bytes    packets errs drop fifo colls carrier compressed
+    lo: 19905045  300555    0    0    0     0          0         0 19905045  300555    0    0    0     0       0          0
+enp0s3: 2368780191  313797    0    0    0     0          0         0 4975453724  242372    0    0    0     0       0          0
+docker0:       0       0    0    0    0     0          0         0        0       0    0    2    0     0       0          0
+@@devwidgets df
+Filesystem     1024-blocks     Used Available Capacity Mounted on
+/dev/vdb         133587720 11480088 122091248       9% /
+@@devwidgets uname
+Linux grok-bot-vm-324812761 6.12.113+
