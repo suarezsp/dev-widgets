@@ -13,6 +13,9 @@ settings:
     # automatic; nothing else names the team.
     DEVELOPMENT_TEAM: TZX43BGUAU
     CODE_SIGN_STYLE: Automatic
+    # Notarization needs the hardened runtime on every executable,
+    # the widget extension included.
+    ENABLE_HARDENED_RUNTIME: YES
     # Team-prefixed App Group ("TEAMID.name"): on macOS it needs no
     # registration or provisioning profile and never prompts the
     # user (macOS 15+). Both targets read it from Info.plist.
@@ -32,7 +35,6 @@ targets:
       base:
         PRODUCT_BUNDLE_IDENTIFIER: com.morsetechnologies.devwidgets
         PRODUCT_NAME: DevWidgets
-        ENABLE_HARDENED_RUNTIME: YES
     info:
       path: App/Info.plist
       properties:
