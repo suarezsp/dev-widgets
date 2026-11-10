@@ -81,15 +81,6 @@ Every macOS image below is the **real SwiftUI view** of the widget, drawn with `
 <br/><sub>Six sample servers; <code>db-1</code> shows why it failed</sub>
 </div>
 
-### Before and after the native-glass rework
-
-<div align="center">
-<img src="docs/report/images/before-after-medium.png" alt="Medium widgets before (left) and after (right)" width="600" />
-<br/><sub>Medium: before (left, custom fake glass and colors everywhere) and after (right, system background, color only for warnings, denser layout)</sub><br/><br/>
-<img src="docs/report/images/before-after-large.png" alt="Large widgets before (top) and after (bottom)" width="720" />
-<br/><sub>Large: before (top) and after (bottom)</sub>
-</div>
-
 ### Linux (GTK 4 + libadwaita)
 
 <div align="center">
@@ -154,7 +145,7 @@ Tests/                       Swift Testing suites and recorded fixtures
 packaging/                   .deb metadata, AppStream, man page, Flatpak (experimental)
 tools/                       lint, style checker, .deb builder, render and compose scripts
 mockups/                     HTML/CSS mockups of the app windows
-docs/report/                 project report (Spanish, LaTeX) and its images
+docs/                        README banner, gallery images and design notes
 ```
 
 ```
@@ -168,7 +159,7 @@ MetricsMonitor ─► MetricsRecorder             rates, 300-sample history
             every 60 s + WidgetCenter reload
 ```
 
-- **App Group, team-prefixed.** The app and the extension share snapshots through the App Group `$(TeamIdentifierPrefix)com.morsetechnologies.devwidgets`. On macOS this form needs no registration, provisioning profile or user prompt; both targets read it from the Info.plist key `DevWidgetsAppGroup`, so the code names no team. If saving fails, the menu bar panel says so.
+- **App Group, team-prefixed.** The app and the extension share snapshots through a team-prefixed App Group, `$(TeamIdentifierPrefix)` plus the `APP_GROUP_IDENTIFIER` set in `macOS/project.yml`. On macOS this form needs no registration, provisioning profile or user prompt; both targets read it from the Info.plist key `DevWidgetsAppGroup`, so the code names no team. If saving fails, the menu bar panel says so.
 - **WidgetKit refresh limits.** WidgetKit budgets reloads, so a widget cannot refresh every second. The menu bar app is the live view; the widgets show the latest snapshot, published at most once a minute.
 - **Native Liquid Glass.** Widgets use `containerBackground(.fill.tertiary, for: .widget)` and no background of their own. In the clear and tinted presentations macOS removes it and draws its glass; views read `widgetRenderingMode` and keep color for warnings only.
 - **Not sandboxed app, sandboxed widgets.** The menu bar app lists and quits processes, which the App Sandbox forbids; the widget extension stays sandboxed and only reads the shared files and sends action requests.
@@ -272,6 +263,7 @@ Enforced by `tools/lint.sh` (swift-format, SwiftLint and `tools/check_style.py`)
 - **Linux** was tested on a virtual XFCE desktop (Xvfb, no GPU); GNOME, KDE and Wayland, a tray menu and NVIDIA GPUs are still to check. The Flatpak is unbuilt.
 - **GitHub and Docker** were tested against recorded or hand-written responses; a signed-in run is pending.
 - **CI** has not run yet; it first runs when the repository is pushed.
+- What is still missing for v1.0 is tracked in the [issues](https://github.com/suarezsp/dev-widgets/issues).
 
 ---
 
