@@ -1,6 +1,39 @@
 # Changelog
 
-## Phase 6 — 2026-11-10
+All notable changes are listed here, in the format of
+[Keep a Changelog](https://keepachangelog.com/en/1.1.0/). Versions
+follow [Semantic Versioning](https://semver.org/); the version lives
+in `macOS/project.yml` (`MARKETING_VERSION`).
+
+## [Unreleased]
+
+### Added
+
+- macOS: the menu bar app starts at login after the first launch;
+  Settings › General turns it off.
+
+### Changed
+
+- One version for both platforms: macOS moves from 0.1.0 to 0.6.0,
+  and `tools/package_deb.sh` reads it from `macOS/project.yml`.
+- The widget extension is built with the hardened runtime, as
+  notarization requires.
+- `.github/` (CI workflow and issue list) is now tracked.
+
+### Fixed
+
+- Repository URLs point at `github.com/suarezsp/dev-widgets`.
+- The app and widget bundles report the project version; XcodeGen
+  wrote "1.0" in both Info.plist files.
+
+## [0.6.0] - 2026-11-10
+
+The macOS widgets and menu bar app, and the Linux GTK 4 app and
+`.deb`, built in six development phases. The `.deb` shipped as
+0.6.0; the macOS app was numbered 0.1.0 until this version was
+made the shared one.
+
+### Phase 6 — 2026-11-10
 
 - Linux app (`devwidgets-linux`, installed as `devwidgets`): GTK 4
   and libadwaita through Swift's C interop (`CGtk` system library,
@@ -34,7 +67,7 @@
 - Fixes: port owners of daemons that retitle themselves (`sshd:
   …`, `postgres: …`) now show the program name.
 
-## Phase 5 — 2026-11-10
+### Phase 5 — 2026-11-10
 
 - Core: remote Linux servers over the system `ssh` (`RemoteHost`
   with validated aliases, one-shot `RemoteProbe` script reusing the
@@ -60,7 +93,7 @@
   runner, generic alert tracker and reload throttle, server aliases
   validated on decode, clearer restart confirmation.
 
-## Phase 4 — 2026-11-10
+### Phase 4 — 2026-11-10
 
 - Core: GitHub (`GitRemoteParser`, pull request of the branch, latest
   workflow runs, review decision, `RESTTransport` and
@@ -84,7 +117,7 @@
   unknown, `GitReader` split, generic process and container lists,
   `ViewThatFits` container row.
 
-## Phase 3 — 2026-11-10
+### Phase 3 — 2026-11-10
 
 - Core: `CommandRunner` / `ProcessCommandRunner` (timeout, output
   through temporary files), Docker through its CLI (`ps`, `stats`),
@@ -102,7 +135,7 @@
   `MetricPresentation.is_Available`, direct memory presentation,
   sampling started from the app `init`, port owners from `cmdline`.
 
-## Phase 2 — 2026-11-10
+### Phase 2 — 2026-11-10
 
 - Core: GPU, temperature and battery (`HardwareStatus`), top five
   processes (`ProcessRanking`, matched by pid and name), local IPv4
@@ -125,7 +158,7 @@
 - Fixed `SysfsParser` dropping inner spaces ("Not charging").
 - New mockups (large, extra large, updated menu bar panel), report v2.
 
-## Phase 1 — 2026-11-10
+### Phase 1 — 2026-11-10
 
 - Repository, phase plan, README, prepared (not yet run) CI.
 - Quality gates: swift-format, SwiftLint, `tools/check_style.py`

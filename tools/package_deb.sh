@@ -5,7 +5,10 @@
 set -euo pipefail
 cd "$(dirname "$0")/.."
 
-VERSION="${VERSION:-0.6.0}"
+# The version lives in macOS/project.yml (MARKETING_VERSION).
+APP_VERSION="$(sed -n \
+    's/^ *MARKETING_VERSION: "\(.*\)"$/\1/p' macOS/project.yml)"
+VERSION="${VERSION:-$APP_VERSION}"
 ARCH="$(dpkg --print-architecture)"
 APP_ID="com.morsetechnologies.DevWidgets"
 STAGE=".build-deb/devwidgets_${VERSION}_${ARCH}"

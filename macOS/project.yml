@@ -21,7 +21,9 @@ settings:
     # user (macOS 15+). Both targets read it from Info.plist.
     APP_GROUP_IDENTIFIER: >-
       $(TeamIdentifierPrefix)com.morsetechnologies.devwidgets
-    MARKETING_VERSION: "0.1.0"
+    # The one place the version lives: tools/package_deb.sh reads
+    # it, and tests check the Linux packaging files match it.
+    MARKETING_VERSION: "0.6.0"
     CURRENT_PROJECT_VERSION: "1"
 packages:
   DevWidgets:
@@ -40,6 +42,8 @@ targets:
       properties:
         LSUIElement: true
         CFBundleDisplayName: DevWidgets
+        CFBundleShortVersionString: $(MARKETING_VERSION)
+        CFBundleVersion: $(CURRENT_PROJECT_VERSION)
         DevWidgetsAppGroup: $(APP_GROUP_IDENTIFIER)
     entitlements:
       path: App/DevWidgets.entitlements
@@ -69,6 +73,8 @@ targets:
       path: Widgets/Info.plist
       properties:
         CFBundleDisplayName: DevWidgets
+        CFBundleShortVersionString: $(MARKETING_VERSION)
+        CFBundleVersion: $(CURRENT_PROJECT_VERSION)
         DevWidgetsAppGroup: $(APP_GROUP_IDENTIFIER)
         NSExtension:
           NSExtensionPointIdentifier: com.apple.widgetkit-extension
