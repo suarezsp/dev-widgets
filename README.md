@@ -12,6 +12,7 @@ devwidgets puts **what your machine and your project are doing** on the desktop:
 
 [Quick Start](#quick-start) | [Gallery](#gallery) | [Features](#what-you-can-do) | [How It Works](#how-it-works) | [Testing](#testing)
 
+[![CI](https://github.com/suarezsp/dev-widgets/actions/workflows/ci.yml/badge.svg)](https://github.com/suarezsp/dev-widgets/actions/workflows/ci.yml)
 [![macOS](https://img.shields.io/badge/macOS-26+-000000?style=for-the-badge&logo=apple&logoColor=white)](#requirements)
 [![Swift](https://img.shields.io/badge/Swift-6.2+-F05138?style=for-the-badge&logo=swift&logoColor=white)](https://swift.org)
 [![SwiftUI](https://img.shields.io/badge/SwiftUI-WidgetKit-0A84FF?style=for-the-badge&logo=swift&logoColor=white)](https://developer.apple.com/widgets/)

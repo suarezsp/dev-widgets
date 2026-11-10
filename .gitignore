@@ -51,5 +51,13 @@ __pycache__/
 .idea/
 *.swp
 
-# Any other hidden folder, secrets inside....
-.github/
+# Secrets: signing certificates, keys, profiles and tokens never
+# go in the repository (.github/ holds only CI and docs).
+.env
+.env.*
+*.p12
+*.p8
+*.pem
+*.cer
+*.mobileprovision
+*.provisionprofile

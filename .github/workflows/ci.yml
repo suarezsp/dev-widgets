@@ -1,0 +1,26 @@
+# Runs on every push and pull request. The macOS job builds the
+# app and widget targets without signing.
+name: CI
+on: [push, pull_request]
+jobs:
+  core-linux:
+    runs-on: ubuntu-24.04
+    container: swift:6.2
+    steps:
+      - uses: actions/checkout@v4
+      - run: swift build
+      - run: swift test
+      - run: python3 tools/check_style.py
+  # macos-26 is Apple silicon with Xcode 26.
+  macos-app:
+    runs-on: macos-26
+    steps:
+      - uses: actions/checkout@v4
+      - run: brew install xcodegen swiftlint
+      - run: swiftlint lint --strict
+      - run: swift test
+      - run: cd macOS && xcodegen generate
+      - run: >-
+          xcodebuild -project macOS/DevWidgets.xcodeproj
+          -scheme DevWidgetsApp -destination 'platform=macOS'
+          CODE_SIGNING_ALLOWED=NO build
