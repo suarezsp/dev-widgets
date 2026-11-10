@@ -1,0 +1,191 @@
+{
+  "captured_At": "2026-11-10T15:15:28Z",
+  "docker": {
+    "not_Installed": {}
+  },
+  "git": {
+    "available": {
+      "status": {
+        "branch": {
+          "ahead_Count": 0,
+          "behind_Count": 0,
+          "commit_ID": "705e5fcf4227529e5c174717b2d623d8a0985655",
+          "name": "dependabot/github_actions/swiftlang-actions-717513d5aa"
+        },
+        "changes": {
+          "conflicted": 0,
+          "modified": 1,
+          "staged": 0,
+          "untracked": 1
+        },
+        "project_Name": "swift-format",
+        "remote_URL": "https://github.com/swiftlang/swift-format.git"
+      }
+    }
+  },
+  "github": {
+    "available": {
+      "status": {
+        "branch_Name": "dependabot/github_actions/swiftlang-actions-717513d5aa",
+        "pull_Request": {
+          "is_Draft": false,
+          "number": 1322,
+          "page_URL": "https://github.com/swiftlang/swift-format/pull/1322",
+          "review": "none",
+          "title": "Bump the swiftlang-actions group across 1 directory with 3 updates"
+        },
+        "repository": {
+          "name": "swift-format",
+          "owner": "swiftlang"
+        },
+        "runs": [
+          {
+            "head_SHA": "58d37f8a0b78feb959626c440d966159514653cb",
+            "outcome": "failure",
+            "page_URL": "https://github.com/swiftlang/swift-format/actions/runs/42547119780",
+            "run_ID": 42547119780,
+            "workflow_Name": "Pull request"
+          }
+        ]
+      }
+    }
+  },
+  "ports": [
+    {
+      "address": "*",
+      "owner": {
+        "name": "node",
+        "pid": 475
+      },
+      "port": 1337
+    },
+    {
+      "address": "*",
+      "owner": {
+        "name": "node",
+        "pid": 475
+      },
+      "port": 1338
+    },
+    {
+      "address": "*",
+      "owner": {
+        "name": "node",
+        "pid": 347
+      },
+      "port": 1339
+    },
+    {
+      "address": "*",
+      "port": 1340
+    },
+    {
+      "address": "*",
+      "port": 2375
+    },
+    {
+      "address": "*",
+      "owner": {
+        "name": "node",
+        "pid": 17335
+      },
+      "port": 5173
+    },
+    {
+      "address": "127.0.0.1",
+      "owner": {
+        "name": "x11vnc",
+        "pid": 1105
+      },
+      "port": 5900
+    },
+    {
+      "address": "127.0.0.1",
+      "owner": {
+        "name": "x11vnc",
+        "pid": 3617
+      },
+      "port": 5902
+    },
+    {
+      "address": "127.0.0.1",
+      "owner": {
+        "name": "x11vnc",
+        "pid": 2225
+      },
+      "port": 5903
+    },
+    {
+      "address": "*",
+      "owner": {
+        "name": "python3",
+        "pid": 1147
+      },
+      "port": 6080
+    },
+    {
+      "address": "*",
+      "owner": {
+        "name": "python3",
+        "pid": 329
+      },
+      "port": 6081
+    },
+    {
+      "address": "*",
+      "owner": {
+        "name": "python3",
+        "pid": 17333
+      },
+      "port": 8000
+    },
+    {
+      "address": "*",
+      "port": 8790
+    },
+    {
+      "address": "127.0.0.1",
+      "port": 8791
+    },
+    {
+      "address": "*",
+      "owner": {
+        "name": "node",
+        "pid": 3587
+      },
+      "port": 13602
+    },
+    {
+      "address": "*",
+      "owner": {
+        "name": "node",
+        "pid": 2152
+      },
+      "port": 13603
+    },
+    {
+      "address": "*",
+      "owner": {
+        "name": "node",
+        "pid": 3587
+      },
+      "port": 14002
+    },
+    {
+      "address": "*",
+      "owner": {
+        "name": "node",
+        "pid": 2152
+      },
+      "port": 14003
+    },
+    {
+      "address": "*",
+      "port": 26500
+    },
+    {
+      "address": "*",
+      "port": 50052
+    }
+  ]
+}
