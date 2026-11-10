@@ -1,0 +1,44 @@
+{
+  "total_count": 3,
+  "workflow_runs": [
+    {
+      "id": 42547119780,
+      "name": "Pull request",
+      "display_title": "Bump the swiftlang-actions group across 1 directory with 3 updates",
+      "status": "completed",
+      "conclusion": "failure",
+      "head_branch": "dependabot/github_actions/swiftlang-actions-717513d5aa",
+      "head_sha": "58d37f8a0b78feb959626c440d966159514653cb",
+      "event": "pull_request",
+      "run_number": 839,
+      "html_url": "https://github.com/swiftlang/swift-format/actions/runs/42547119780",
+      "updated_at": "2026-11-09T01:57:26Z"
+    },
+    {
+      "id": 41374016648,
+      "name": "Pull request",
+      "display_title": "Bump the swiftlang-actions group across 1 directory with 3 updates",
+      "status": "completed",
+      "conclusion": "failure",
+      "head_branch": "dependabot/github_actions/swiftlang-actions-717513d5aa",
+      "head_sha": "bb5e690aa67322543b1c61d4c690f0be820a0d77",
+      "event": "pull_request",
+      "run_number": 828,
+      "html_url": "https://github.com/swiftlang/swift-format/actions/runs/41374016648",
+      "updated_at": "2026-11-02T01:59:28Z"
+    },
+    {
+      "id": 41374010126,
+      "name": "Update PrintVersion on release branch creation",
+      "display_title": "Update PrintVersion on release branch creation",
+      "status": "completed",
+      "conclusion": "skipped",
+      "head_branch": "dependabot/github_actions/swiftlang-actions-717513d5aa",
+      "head_sha": "bb5e690aa67322543b1c61d4c690f0be820a0d77",
+      "event": "create",
+      "run_number": 197,
+      "html_url": "https://github.com/swiftlang/swift-format/actions/runs/41374010126",
+      "updated_at": "2026-11-02T01:44:07Z"
+    }
+  ]
+}

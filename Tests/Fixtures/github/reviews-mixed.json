@@ -1,0 +1,12 @@
+[
+  { "id": 1, "user": { "login": "ana" }, "state": "APPROVED",
+    "submitted_at": "2026-11-09T10:00:00Z" },
+  { "id": 2, "user": { "login": "luis" }, "state": "CHANGES_REQUESTED",
+    "submitted_at": "2026-11-09T11:00:00Z" },
+  { "id": 3, "user": { "login": "ana" }, "state": "COMMENTED",
+    "submitted_at": "2026-11-09T12:00:00Z" },
+  { "id": 4, "user": { "login": "marta" }, "state": "APPROVED",
+    "submitted_at": "2026-11-09T12:30:00Z" },
+  { "id": 5, "user": { "login": "marta" }, "state": "DISMISSED",
+    "submitted_at": "2026-11-09T13:00:00Z" }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "number": 1322,
+    "title": "Bump the swiftlang-actions group across 1 directory with 3 updates",
+    "state": "open",
+    "draft": false,
+    "html_url": "https://github.com/swiftlang/swift-format/pull/1322",
+    "head": {
+      "label": "swiftlang:dependabot/github_actions/swiftlang-actions-717513d5aa",
+      "ref": "dependabot/github_actions/swiftlang-actions-717513d5aa",
+      "sha": "58d37f8a0b78feb959626c440d966159514653cb"
+    },
+    "user": {
+      "login": "dependabot[bot]"
+    },
+    "updated_at": "2026-11-09T01:44:06Z"
+  }
+]

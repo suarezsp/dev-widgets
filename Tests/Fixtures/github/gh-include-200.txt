@@ -1,0 +1,26 @@
+HTTP/2.0 200 OK
+Access-Control-Allow-Origin: *
+Cache-Control: private, max-age=60, s-maxage=60
+Content-Type: application/json; charset=utf-8
+Etag: W/"9332144ad947cad178f8f24a19bbc8e77915a1cb260ea8d23fbcdbc83e1b3dc3"
+X-Github-Api-Version-Selected: 2022-11-28
+X-Ratelimit-Remaining: 4987
+
+[
+  {
+    "number": 1322,
+    "title": "Bump the swiftlang-actions group across 1 directory with 3 updates",
+    "state": "open",
+    "draft": false,
+    "html_url": "https://github.com/swiftlang/swift-format/pull/1322",
+    "head": {
+      "label": "swiftlang:dependabot/github_actions/swiftlang-actions-717513d5aa",
+      "ref": "dependabot/github_actions/swiftlang-actions-717513d5aa",
+      "sha": "58d37f8a0b78feb959626c440d966159514653cb"
+    },
+    "user": {
+      "login": "dependabot[bot]"
+    },
+    "updated_at": "2026-11-09T01:44:06Z"
+  }
+]

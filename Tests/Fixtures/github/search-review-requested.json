@@ -1,0 +1,86 @@
+{
+  "total_count": 98,
+  "incomplete_results": false,
+  "items": [
+    {
+      "url": "https://api.github.com/repos/swiftlang/indexstore-db/issues/308",
+      "repository_url": "https://api.github.com/repos/swiftlang/indexstore-db",
+      "html_url": "https://github.com/swiftlang/indexstore-db/pull/308",
+      "number": 308,
+      "title": "Re-import units when the import signature changes",
+      "user": {
+        "login": "rintaro"
+      },
+      "state": "open",
+      "draft": false,
+      "updated_at": "2026-11-10T05:25:11Z",
+      "pull_request": {
+        "html_url": "https://github.com/swiftlang/indexstore-db/pull/308"
+      }
+    },
+    {
+      "url": "https://api.github.com/repos/swiftlang/indexstore-db/issues/307",
+      "repository_url": "https://api.github.com/repos/swiftlang/indexstore-db",
+      "html_url": "https://github.com/swiftlang/indexstore-db/pull/307",
+      "number": 307,
+      "title": "[CMake] Require CMake 3.29 to enable CMP0157",
+      "user": {
+        "login": "charles-zablit"
+      },
+      "state": "open",
+      "draft": false,
+      "updated_at": "2026-11-10T05:24:19Z",
+      "pull_request": {
+        "html_url": "https://github.com/swiftlang/indexstore-db/pull/307"
+      }
+    },
+    {
+      "url": "https://api.github.com/repos/swiftlang/sourcekit-lsp/issues/2836",
+      "repository_url": "https://api.github.com/repos/swiftlang/sourcekit-lsp",
+      "html_url": "https://github.com/swiftlang/sourcekit-lsp/pull/2836",
+      "number": 2836,
+      "title": "[CMake] Require CMake 3.29 to enable CMP0157",
+      "user": {
+        "login": "charles-zablit"
+      },
+      "state": "open",
+      "draft": false,
+      "updated_at": "2026-11-10T05:24:06Z",
+      "pull_request": {
+        "html_url": "https://github.com/swiftlang/sourcekit-lsp/pull/2836"
+      }
+    },
+    {
+      "url": "https://api.github.com/repos/swiftlang/sourcekit-lsp/issues/2849",
+      "repository_url": "https://api.github.com/repos/swiftlang/sourcekit-lsp",
+      "html_url": "https://github.com/swiftlang/sourcekit-lsp/pull/2849",
+      "number": 2849,
+      "title": "Migrate CollapseNestedIfStmt refactoring to swift-syntax",
+      "user": {
+        "login": "Chr0mium24"
+      },
+      "state": "open",
+      "draft": false,
+      "updated_at": "2026-11-09T14:45:16Z",
+      "pull_request": {
+        "html_url": "https://github.com/swiftlang/sourcekit-lsp/pull/2849"
+      }
+    },
+    {
+      "url": "https://api.github.com/repos/swiftlang/swift-syntax/issues/2824",
+      "repository_url": "https://api.github.com/repos/swiftlang/swift-syntax",
+      "html_url": "https://github.com/swiftlang/swift-syntax/pull/2824",
+      "number": 2824,
+      "title": "[Syntax] Introduce SyntaxLayout",
+      "user": {
+        "login": "rintaro"
+      },
+      "state": "open",
+      "draft": true,
+      "updated_at": "2026-11-09T03:09:17Z",
+      "pull_request": {
+        "html_url": "https://github.com/swiftlang/swift-syntax/pull/2824"
+      }
+    }
+  ]
+}
