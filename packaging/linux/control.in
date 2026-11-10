@@ -1,0 +1,18 @@
+Package: devwidgets
+Version: @VERSION@
+Architecture: @ARCH@
+Maintainer: Marvin <nefer.labrada@gmail.com>
+Installed-Size: @SIZE@
+Depends: @DEPENDS@, librsvg2-common
+Recommends: openssh-client, git
+Suggests: gh, docker.io
+Section: utils
+Priority: optional
+Homepage: https://github.com/suarezsp/devwidgets
+Description: system and project monitor for developers
+ A GTK 4 dashboard with the sizes of the DevWidgets macOS widgets:
+ CPU, memory, disk and network with history, the busiest processes,
+ the Git and GitHub state of a project, Docker containers, listening
+ ports and SSH servers. Alerts become desktop notifications and a
+ StatusNotifierItem tray icon shows a summary where the panel
+ supports it.

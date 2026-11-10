@@ -1,0 +1,12 @@
+[Desktop Entry]
+Type=Application
+Name=DevWidgets
+GenericName=System Monitor for Developers
+Comment=CPU, memory, Git, Docker, ports and SSH servers at a glance
+Exec=devwidgets
+Icon=com.morsetechnologies.DevWidgets
+Terminal=false
+Categories=System;Monitor;GTK;
+Keywords=cpu;memory;docker;git;ssh;ports;
+StartupNotify=true
+X-GNOME-UsesNotifications=true

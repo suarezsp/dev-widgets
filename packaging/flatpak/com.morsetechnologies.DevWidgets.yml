@@ -1,0 +1,53 @@
+# EXPERIMENTAL, NOT BUILT YET: flatpak-builder was not available
+# where this was written. Build with
+#   flatpak-builder --user --install build-dir \
+#     packaging/flatpak/com.morsetechnologies.DevWidgets.yml
+# Known gap: the sandbox has its own process namespace, so the
+# process list, port owners and `docker`/`git`/`ssh` see only the
+# sandbox unless commands go through `flatpak-spawn --host` (not
+# implemented; see the report's limitations).
+id: com.morsetechnologies.DevWidgets
+runtime: org.gnome.Platform
+runtime-version: '49'
+sdk: org.gnome.Sdk
+sdk-extensions:
+  - org.freedesktop.Sdk.Extension.swift6
+command: devwidgets
+finish-args:
+  - --share=ipc
+  - --share=network
+  - --socket=wayland
+  - --socket=fallback-x11
+  - --device=dri
+  # Tray icon and host commands.
+  - --talk-name=org.kde.StatusNotifierWatcher
+  - --talk-name=org.freedesktop.Flatpak
+  # Project folders and the SSH configuration, read only.
+  - --filesystem=home:ro
+  - --filesystem=~/.ssh:ro
+build-options:
+  append-path: /usr/lib/sdk/swift6/bin
+  prepend-ld-library-path: /usr/lib/sdk/swift6/lib
+modules:
+  - name: devwidgets
+    buildsystem: simple
+    build-options:
+      build-args:
+        - --share=network
+    build-commands:
+      - swift build -c release --product devwidgets-linux
+          --static-swift-stdlib
+      - install -Dm755 "$(swift build -c release --show-bin-path)/devwidgets-linux"
+          /app/bin/devwidgets
+      - install -Dm644
+          packaging/linux/com.morsetechnologies.DevWidgets.desktop
+          -t /app/share/applications
+      - install -Dm644
+          packaging/linux/com.morsetechnologies.DevWidgets.metainfo.xml
+          -t /app/share/metainfo
+      - install -Dm644
+          packaging/linux/icons/hicolor/scalable/apps/com.morsetechnologies.DevWidgets.svg
+          -t /app/share/icons/hicolor/scalable/apps
+    sources:
+      - type: dir
+        path: ../..

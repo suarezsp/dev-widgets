@@ -1,0 +1,5 @@
+devwidgets (0.6.0) unstable; urgency=medium
+
+  * First Linux package: GTK 4 dashboard, tray icon, notifications.
+
+ -- Marvin <nefer.labrada@gmail.com>  Tue, 10 Nov 2026 17:30:00 +0100

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+  <id>com.morsetechnologies.DevWidgets</id>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>MIT</project_license>
+  <name>DevWidgets</name>
+  <summary>System and project monitor for developers</summary>
+  <url type="homepage">https://github.com/suarezsp/devwidgets</url>
+  <description>
+    <p>
+      A glass-style dashboard with the macOS widget sizes: CPU,
+      memory, disk and network, the busiest processes, the Git and
+      GitHub state of a project, Docker containers, listening ports
+      and SSH servers, with desktop alerts and a tray icon.
+    </p>
+  </description>
+  <launchable type="desktop-id">com.morsetechnologies.DevWidgets.desktop</launchable>
+  <developer id="com.morsetechnologies">
+    <name>Morse Technologies</name>
+  </developer>
+  <content_rating type="oars-1.1"/>
+  <releases>
+    <release version="0.6.0" date="2026-11-10"/>
+  </releases>
+</component>

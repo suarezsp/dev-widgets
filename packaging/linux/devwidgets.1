@@ -1,0 +1,29 @@
+.TH DEVWIDGETS 1 "November 2026" "DevWidgets 0.6.0" "User Commands"
+.SH NAME
+devwidgets \- system and project monitor for developers
+.SH SYNOPSIS
+.B devwidgets
+[\fB\-\-dark\fR | \fB\-\-light\fR] [\fB\-\-hidden\fR]
+[\fB\-\-preferences\fR[=\fIalerts\fR|\fIservers\fR|\fIproject\fR]]
+.SH DESCRIPTION
+Shows CPU, memory, disk, network, processes, Git, GitHub, Docker,
+listening ports and SSH servers in a GTK 4 window, with desktop
+alerts and a tray icon where the panel supports StatusNotifierItem.
+.SH OPTIONS
+.TP
+.B \-\-dark, \-\-light
+Force a colour scheme instead of following the desktop.
+.TP
+.B \-\-hidden
+Start with the window hidden (only useful with a tray icon).
+.TP
+.B \-\-preferences
+Open the preferences at start, optionally on a page.
+.SH ENVIRONMENT
+.TP
+.B GITHUB_TOKEN
+Token for the GitHub API; without it the gh command is used.
+.SH FILES
+.TP
+.I ~/.config/devwidgets/settings.json
+Alert limits, servers and the project folder.
