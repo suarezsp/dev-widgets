@@ -177,8 +177,8 @@ MetricsMonitor ─► MetricsRecorder             rates, 300-sample history
 ### macOS
 
 ```sh
-git clone https://github.com/suarezsp/devwidgets.git
-cd devwidgets/macOS
+git clone https://github.com/suarezsp/dev-widgets.git
+cd dev-widgets/macOS
 # set DEVELOPMENT_TEAM in project.yml to your team ID
 xcodegen generate
 open DevWidgets.xcodeproj          # run the DevWidgetsApp scheme

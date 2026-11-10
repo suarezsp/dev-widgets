@@ -8,7 +8,7 @@ Recommends: openssh-client, git
 Suggests: gh, docker.io
 Section: utils
 Priority: optional
-Homepage: https://github.com/suarezsp/devwidgets
+Homepage: https://github.com/suarezsp/dev-widgets
 Description: system and project monitor for developers
  A GTK 4 dashboard with the sizes of the DevWidgets macOS widgets:
  CPU, memory, disk and network with history, the busiest processes,
