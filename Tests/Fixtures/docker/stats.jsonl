@@ -1,0 +1,2 @@
+{"BlockIO":"12.3MB / 45.1MB","CPUPerc":"0.85%","Container":"3f1c2a9b7d10","ID":"3f1c2a9b7d10","MemPerc":"0.98%","MemUsage":"76.4MiB / 7.653GiB","Name":"api-db-1","NetIO":"1.2kB / 0B","PIDs":"7"}
+{"BlockIO":"0B / 0B","CPUPerc":"152.30%","Container":"8a7e55c0b2f4","ID":"8a7e55c0b2f4","MemPerc":"0.12%","MemUsage":"9.5MiB / 7.653GiB","Name":"api-cache-1","NetIO":"3.4kB / 1.1kB","PIDs":"5"}
