@@ -1,0 +1,48 @@
+# SwiftLint covers generic Swift hygiene; tools/check_style.py covers
+# the house naming convention (this_Name variables, MAYUS_NAME
+# constants), which SwiftLint's identifier rules cannot express.
+included:
+  - Package.swift
+  - Sources
+  - Tests
+  - macOS
+excluded:
+  - .build
+disabled_rules:
+  - identifier_name     # replaced by tools/check_style.py naming
+  - trailing_comma      # swift-format adds them to multi-line lists
+  - opening_brace       # swift-format puts `{` alone after wrapped
+                        # multi-line conditions
+  - closure_parameter_position  # swift-format moves capture lists
+                        # and parameters below a wrapped `{`
+  # Import order is enforced by swift-format (OrderedImports).
+opt_in_rules:
+  - closure_spacing
+  - empty_count
+  - explicit_init
+  - first_where
+  - force_unwrapping
+  - implicitly_unwrapped_optional
+  - redundant_nil_coalescing
+line_length:
+  warning: 70
+  error: 70
+  ignores_urls: false
+function_body_length:
+  warning: 23
+  error: 23
+function_parameter_count:
+  warning: 4
+  error: 4
+cyclomatic_complexity:
+  warning: 10
+  error: 15
+type_body_length:
+  warning: 200
+  error: 300
+file_length:
+  warning: 300
+  error: 400
+large_tuple:
+  warning: 2
+  error: 3

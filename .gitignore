@@ -1,0 +1,55 @@
+# SwiftPM
+.build/
+.swiftpm/
+Package.resolved.orig
+*.o
+*.swiftmodule
+
+# Xcode and XcodeGen output (regenerate with `xcodegen generate`)
+*.xcodeproj/
+*.xcworkspace/
+xcuserdata/
+DerivedData/
+*.xcresult
+macOS/App/Info.plist
+macOS/Widgets/Info.plist
+macOS/App/DevWidgets.entitlements
+macOS/Widgets/DevWidgetsWidgets.entitlements
+
+# Distribution builds
+dist/
+.build-deb/
+*.deb
+*.dmg
+*.app/
+*.appex/
+*.zip
+*.tar.gz
+
+# LaTeX build output (the report is built from report.tex)
+docs/report/*.pdf
+docs/report/*.aux
+docs/report/*.log
+docs/report/*.out
+docs/report/*.toc
+docs/report/*.synctex.gz
+docs/report/*.fls
+docs/report/*.fdb_latexmk
+
+# Scratch output of the render tools
+widget-renders*/
+renders/
+
+# Python
+__pycache__/
+*.pyc
+
+# macOS and editors
+.DS_Store
+.AppleDouble
+.vscode/
+.idea/
+*.swp
+
+# Any other hidden folder, secrets inside....
+.github/
