@@ -241,7 +241,7 @@ tools/ssh_test_server.sh            # optional local sshd for the live SSH suite
 | `DevWidgetsLinuxShellTests` | settings file, alert routing, tray texts, launch options |
 | `DevWidgetsDarwinTests` | macOS only: the Darwin reader against the real machine |
 
-`Tests/Fixtures/README.md` says which fixtures are recorded from real tools and which are hand-written. A live SSH suite runs when `DEVWIDGETS_SSH_TEST_CONFIG` points at the local test server. `.github/workflows/ci.yml` builds and tests on Linux and builds the macOS targets on a `macos-26` runner.
+`Tests/Fixtures/README.md` says which fixtures are recorded from real tools and which are hand-written. A live SSH suite runs when `DEVWIDGETS_SSH_TEST_CONFIG` points at the local test server. `.github/workflows/ci.yml` builds and tests on Linux, builds the GTK app and uploads its `.deb` as an artifact, and builds the macOS targets on a `macos-26` runner.
 
 ---
 
