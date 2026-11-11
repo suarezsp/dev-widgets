@@ -25,6 +25,8 @@ struct SmallMetricView: View {
         // Without it the column is as wide as the value and ends
         // up centered.
         .frame(maxWidth: .infinity, alignment: .leading)
+        .accessibilityElement(children: .ignore)
+        .accessibilityLabel(presentation.spoken_Text)
     }
 
     private var badge: some View {

@@ -75,6 +75,7 @@ struct ProcessRow: View {
                 )
         }
         .font(.caption2.monospacedDigit())
+        .accessibilityElement(children: .combine)
     }
 
     private var memory_Text: String {

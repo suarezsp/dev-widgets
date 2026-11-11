@@ -37,6 +37,21 @@ struct HistoryChart: View {
             }
             chart
         }
+        .accessibilityElement(children: .ignore)
+        .accessibilityLabel(presentation.spoken_Text)
+        .accessibilityValue(summary_Text)
+    }
+
+    /// One sentence per line: its lowest and highest value.
+    private var summary_Text: String {
+        series.compactMap {
+            HistorySummary.describe(
+                name: $0.name,
+                values: $0.values,
+                is_Share: presentation.fraction != nil
+            )
+        }
+        .joined(separator: ". ")
     }
 
     private var chart: some View {

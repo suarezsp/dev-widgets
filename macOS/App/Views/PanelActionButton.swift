@@ -22,6 +22,7 @@ struct PanelActionButton: View {
         }
         .buttonStyle(.borderless)
         .help(action.title)
+        .accessibilityLabel(action.title)
         .confirmationDialog(
             "\(action.title)?",
             isPresented: $is_Confirming

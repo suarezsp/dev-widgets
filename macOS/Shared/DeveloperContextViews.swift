@@ -24,6 +24,7 @@ struct ContextRow: View {
                     .lineLimit(2)
             }
         }
+        .accessibilityElement(children: .combine)
     }
 }
 
@@ -89,6 +90,7 @@ struct ContainerRow: View {
         }
         .font(.caption2.monospacedDigit())
         .padding(.leading, 26)
+        .accessibilityElement(children: .combine)
     }
 
     private var name_Text: some View {

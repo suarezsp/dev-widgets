@@ -20,6 +20,7 @@ let PORTABLE_PRESENTATION_FILES = [
     "Shared/PreviewServers.swift",
     "Shared/ReviewQueuePresentation.swift",
     "Shared/ServerPresentation.swift",
+    "Shared/SpokenPresentation.swift",
     "Shared/WidgetActionStyle.swift",
     "App/AlertSettingsStore.swift",
     "App/LoginItemOffer.swift",

@@ -18,6 +18,8 @@ struct ServerRow: View {
                 }
             }
         }
+        .accessibilityElement(children: .ignore)
+        .accessibilityLabel(line.spoken_Text)
     }
 
     private func headline(_ line: ServerLine) -> some View {

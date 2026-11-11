@@ -21,6 +21,8 @@ struct MetricRow: View {
                     .lineLimit(1)
             }
         }
+        .accessibilityElement(children: .ignore)
+        .accessibilityLabel(presentation.spoken_Text)
     }
 
     private var title_Line: some View {
@@ -61,11 +63,26 @@ struct LoadBar: View {
 }
 
 /// Icon plus small uppercase title, like the system widgets'
-/// labels; colored only when the level needs attention.
+/// labels; colored and marked with a warning sign only when the
+/// level needs attention, so color is never the only cue.
 struct MetricHeader: View {
+    static let WARNING_SYMBOL = "exclamationmark.triangle.fill"
+
     let presentation: MetricPresentation
 
     var body: some View {
+        HStack(spacing: 3) {
+            title_Label
+            if presentation.level != .normal {
+                Image(systemName: Self.WARNING_SYMBOL)
+                    .font(.caption2)
+                    .foregroundStyle(presentation.level.tint)
+                    .widgetAccentable()
+            }
+        }
+    }
+
+    private var title_Label: some View {
         Label(
             presentation.title.uppercased(),
             systemImage: presentation.symbol_Name
