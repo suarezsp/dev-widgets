@@ -45,4 +45,16 @@ struct ProjectSpecTests {
         #expect(shared_Text.contains("ENABLE_HARDENED_RUNTIME: YES"))
         #expect(runtime_Lines.count == 2)
     }
+
+    @Test func theAppUsesTheAppIconSet() throws {
+        let spec_Text = try String(
+            contentsOf: Self.SPEC_URL,
+            encoding: .utf8
+        )
+        #expect(
+            spec_Text.contains(
+                "ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon"
+            )
+        )
+    }
 }

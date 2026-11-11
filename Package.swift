@@ -28,7 +28,8 @@ let PORTABLE_PRESENTATION_FILES = [
 // The rest of macOS/ is for Xcode only (SwiftUI, WidgetKit). The
 // folders are listed, so new files there need no manifest change.
 let XCODE_ONLY_PATHS = [
-    "App/Views", "Widgets", "Render", "project.yml",
+    "App/Views", "App/Assets.xcassets", "Widgets", "Render",
+    "project.yml",
 ]
 let PRESENTATION_EXCLUDED =
     XCODE_ONLY_PATHS
