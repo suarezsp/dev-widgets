@@ -37,7 +37,7 @@ devwidgets puts **what your machine and your project are doing** on the desktop:
 - **macOS widgets** (WidgetKit): a configurable metric widget (small, medium), a dashboard (large, extra large) with history charts, a developer-context widget (medium, large) and a servers widget (medium, large). They use the system widget background, so in the clear and tinted presentations of macOS 26 they get the same Liquid Glass as Apple's widgets.
 - **Menu bar app** (SwiftUI): samples every second, shows a live two-column panel, sends threshold and failed-CI notifications, polls SSH servers and performs the widgets' actions.
 - **Interactive widgets** (App Intents): stop or restart a container, quit a process (tap twice to confirm), open the project in your editor.
-- **Linux app** (GTK 4 + libadwaita through Swift's C interop): the same cards at the macOS widget sizes, a tray icon (StatusNotifierItem), desktop notifications and a `.deb` package.
+- **Linux app** (GTK 4 + libadwaita through Swift's C interop): the same cards at the macOS widget sizes, a tray icon (StatusNotifierItem) whose right-click menu shows or hides the dashboard, opens Preferences or quits, desktop notifications and a `.deb` package.
 - **Portable core** (`DevWidgetsCore`): no UI and no Apple-only APIs, so everything that can be tested is tested on Linux and on macOS.
 
 ---
@@ -237,21 +237,10 @@ tools/ssh_test_server.sh            # optional local sshd for the live SSH suite
 |-------|----------------|
 | `DevWidgetsCoreTests` | metric math and rates, history, snapshot store, `/proc` and `/sys` parsers, Docker, `lsof`, Git and GitHub parsing against recorded fixtures, ETag cache, alerts and debounce, action inbox and two-tap confirmation, SSH config (`Include`) and remote parsing |
 | `DevWidgetsPresentationTests` | the portable presentation code of `macOS/` compiled on Linux: texts, levels, preview data, and that both Xcode targets share the team-prefixed App Group |
-| `DevWidgetsLinuxShellTests` | settings file, alert routing, tray texts, launch options |
+| `DevWidgetsLinuxShellTests` | settings file, alert routing, tray texts and menu, launch options |
 | `DevWidgetsDarwinTests` | macOS only: the Darwin reader against the real machine |
 
 `Tests/Fixtures/README.md` says which fixtures are recorded from real tools and which are hand-written. A live SSH suite runs when `DEVWIDGETS_SSH_TEST_CONFIG` points at the local test server. `.github/workflows/ci.yml` builds and tests on Linux, builds the GTK app and uploads its `.deb` as an artifact, and builds the macOS targets on a `macos-26` runner.
-
----
-
-## Code style
-
-Enforced by `tools/lint.sh` (swift-format, SwiftLint and `tools/check_style.py`):
-
-- `MAYUS_NAME` constants, `this_Name` variables, properties, parameters and enum cases, `thisName` functions, `PascalCase` types. Names say exactly what they hold; no abbreviations.
-- Lines ≤ 70 columns, functions ≤ 25 lines, ≤ 3 parameters, cyclomatic complexity ≤ 10.
-- Names imposed by Apple frameworks are allow-listed in the checker.
-- SOLID and YAGNI where they help; no abstraction without a second real implementation.
 
 ---
 
@@ -261,7 +250,7 @@ Enforced by `tools/lint.sh` (swift-format, SwiftLint and `tools/check_style.py`)
 - **Desktop captures.** The macOS images are renders of the real views on a neutral platter, not desktop screenshots.
 - **Checked on one Mac.** GPU under load, the exact set of processes visible without privileges and thermal states under heat are not verified yet.
 - **Temperature on macOS** is the thermal state the system reports (Nominal, Warm or Throttling), not degrees: macOS has no public API for sensor temperatures, and reading the SMC would be private and fragile. Linux shows degrees from `/sys/class/thermal`. This will change if Apple adds a public API.
-- **Linux** was tested on a virtual XFCE desktop (Xvfb, no GPU); GNOME, KDE and Wayland, a tray menu and NVIDIA GPUs are still to check. The Flatpak is unbuilt.
+- **Linux** was tested on a virtual XFCE desktop (Xvfb, no GPU); GNOME, KDE and Wayland, the tray menu in a real panel (its D-Bus replies were checked with `gdbus`) and NVIDIA GPUs are still to check. The Flatpak is unbuilt.
 - **GitHub and Docker** were tested against recorded or hand-written responses; a signed-in run is pending.
 - **CI** has not run yet; it first runs when the repository is pushed.
 - What is still missing for v1.0 is tracked in the [issues](https://github.com/suarezsp/dev-widgets/issues).

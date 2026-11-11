@@ -98,8 +98,20 @@ final class LinuxApp {
             )
         ) { [unowned self] in window?.toggle() }
         tray.on_Registered = { [unowned self] in keepRunningInTray() }
+        tray.menu = TrayMenu { [unowned self] in chooseFromTray($0) }
         tray.start()
         self.tray = tray
+    }
+
+    private func chooseFromTray(_ item: TrayMenuItem) {
+        switch item {
+        case .toggle_Window: window?.toggle()
+        case .preferences:
+            window?.present()
+            openPreferences("Alerts")
+        case .quit: g_application_quit(castPointer(application))
+        case .separator: break
+        }
     }
 
     private func keepRunningInTray() {

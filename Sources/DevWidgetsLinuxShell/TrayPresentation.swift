@@ -56,7 +56,7 @@ public enum StatusNotifierProtocol {
     }
 
     /// The part of the interface DevWidgets implements: a click
-    /// opens the dashboard; there is no D-Bus menu.
+    /// opens the dashboard; "Menu" points at the dbusmenu object.
     public static let INTROSPECTION_XML = """
         <node><interface name="org.kde.StatusNotifierItem">
         <property name="Category" type="s" access="read"/>
@@ -67,6 +67,7 @@ public enum StatusNotifierProtocol {
         <property name="IconThemePath" type="s" access="read"/>
         <property name="ItemIsMenu" type="b" access="read"/>
         <property name="ToolTip" type="(sa(iiay)ss)" access="read"/>
+        <property name="Menu" type="o" access="read"/>
         <method name="Activate">
         <arg name="x" type="i" direction="in"/>
         <arg name="y" type="i" direction="in"/></method>
@@ -91,6 +92,9 @@ public enum TrayPropertyValue: Equatable, Sendable {
     case flag(Bool)
     /// The (sa(iiay)ss) tooltip: no icon, a title and a body.
     case tooltip(title: String, body: String)
+    case number(UInt32)
+    case texts([String])
+    case object_Path(String)
 }
 
 /// The item's properties. `icon_Theme_Path` lets panels find the
@@ -118,6 +122,7 @@ public struct TrayProperties: Sendable {
         case "ItemIsMenu": .flag(false)
         case "ToolTip":
             .tooltip(title: TrayState.TITLE, body: state.tooltip_Text)
+        case "Menu": .object_Path(DBusMenuProtocol.MENU_PATH)
         default: nil
         }
     }

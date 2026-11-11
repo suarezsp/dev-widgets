@@ -145,7 +145,7 @@ struct TrayStateTests {
         )
         .dropFirst()
         .compactMap { $0.split(separator: "\"").first }
-        #expect(names.count == 8)
+        #expect(names.count == 9)
         for name in names {
             #expect(
                 properties.value(
@@ -171,7 +171,11 @@ struct TrayStateTests {
             properties.value(named: "Status", state: state)
                 == .text("NeedsAttention")
         )
-        #expect(properties.value(named: "Menu", state: state) == nil)
+        #expect(
+            properties.value(named: "Menu", state: state)
+                == .object_Path("/MenuBar")
+        )
+        #expect(properties.value(named: "Nope", state: state) == nil)
     }
 }
 

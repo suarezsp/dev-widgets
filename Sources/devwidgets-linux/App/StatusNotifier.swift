@@ -55,6 +55,8 @@ final class StatusNotifier {
 
     private let on_Activate: () -> Void
     var on_Registered: () -> Void = {}
+    /// Exported with the item; hosts open it on a right click.
+    var menu: TrayMenu?
     private let properties: TrayProperties
     private var state = TrayState.STARTING
     private var connection: OpaquePointer?
@@ -90,6 +92,7 @@ final class StatusNotifier {
     func start() {
         connection = g_bus_get_sync(G_BUS_TYPE_SESSION, nil, nil)
         guard let connection, exportObject(connection) else { return }
+        menu?.export(on: connection)
         g_bus_own_name_on_connection(
             connection,
             bus_Name,
@@ -198,6 +201,13 @@ enum TrayVariants {
         case .text(let text): g_variant_new_string(text)
         case .flag(let flag): g_variant_new_boolean(flag ? 1 : 0)
         case .tooltip(let title, let body): makeTooltip(title, body)
+        case .number(let number): g_variant_new_uint32(number)
+        case .texts(let texts):
+            TrayMenuVariants.makeArray(
+                "s",
+                texts.map { g_variant_new_string($0) }
+            )
+        case .object_Path(let path): g_variant_new_object_path(path)
         }
     }
 

@@ -11,6 +11,8 @@ in `macOS/project.yml` (`MARKETING_VERSION`).
 
 - macOS: the menu bar app starts at login after the first launch;
   Settings › General turns it off.
+- Linux: the tray icon has a right-click menu (dbusmenu) to show or
+  hide the dashboard, open Preferences and quit.
 
 ### Changed
 
