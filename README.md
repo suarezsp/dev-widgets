@@ -260,6 +260,7 @@ Enforced by `tools/lint.sh` (swift-format, SwiftLint and `tools/check_style.py`)
 - **No signed release yet.** Developer ID signing, notarization and a DMG are documented above but not done.
 - **Desktop captures.** The macOS images are renders of the real views on a neutral platter, not desktop screenshots.
 - **Checked on one Mac.** GPU under load, the exact set of processes visible without privileges and thermal states under heat are not verified yet.
+- **Temperature on macOS** is the thermal state the system reports (Nominal, Warm or Throttling), not degrees: macOS has no public API for sensor temperatures, and reading the SMC would be private and fragile. Linux shows degrees from `/sys/class/thermal`. This will change if Apple adds a public API.
 - **Linux** was tested on a virtual XFCE desktop (Xvfb, no GPU); GNOME, KDE and Wayland, a tray menu and NVIDIA GPUs are still to check. The Flatpak is unbuilt.
 - **GitHub and Docker** were tested against recorded or hand-written responses; a signed-in run is pending.
 - **CI** has not run yet; it first runs when the repository is pushed.
