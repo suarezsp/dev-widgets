@@ -268,6 +268,15 @@ Enforced by `tools/lint.sh` (swift-format, SwiftLint and `tools/check_style.py`)
 
 ---
 
+## Privacy
+
+devwidgets has no server, account or analytics. It talks only to
+GitHub (once you set it up) and to the SSH servers you add.
+[PRIVACY.md](PRIVACY.md) lists what it reads, runs, sends and
+stores, and every permission prompt.
+
+---
+
 ## License
 
 MIT, see [LICENSE](LICENSE).
