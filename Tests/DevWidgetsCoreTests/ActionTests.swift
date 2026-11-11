@@ -154,6 +154,35 @@ struct ActionPerformerTests {
         #expect(process.isRunning)
     }
 
+    @Test func appsAreAskedToQuitBeforeAnySignal() throws {
+        let process = try Sleeper.start()
+        defer { process.terminate() }
+        let terminator = ProcessTerminator(
+            name_Lookup: { Sleeper.readName(of: $0) },
+            app_Quitter: { _ in true }
+        )
+        let identity = ProcessIdentity(
+            pid: process.processIdentifier,
+            name: Sleeper.NAME
+        )
+        #expect(terminator.terminate(identity) == .done)
+        #expect(process.isRunning)
+    }
+
+    @Test func otherUsersProcessesSayWhyTheyCannotQuit() {
+        let outcome = ProcessTerminator.describeSignalError(
+            EPERM,
+            name: "sshd"
+        )
+        #expect(
+            outcome
+                == .failed(
+                    reason: "sshd is not your process: only your own"
+                        + " processes can be quit"
+                )
+        )
+    }
+
     @Test func protectedProcessesAreRefused() {
         let own_Identity = ProcessIdentity(
             pid: ProcessInfo.processInfo.processIdentifier,

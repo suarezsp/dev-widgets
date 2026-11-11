@@ -5,15 +5,25 @@ import Darwin
 #endif
 import Foundation
 
-/// Asks a process to quit with SIGTERM, never SIGKILL, so it can
-/// save its work. Refuses when the pid now belongs to another
-/// program, is init, or is DevWidgets itself.
+/// Asks a process to quit, never with SIGKILL, so it can save its
+/// work: apps first get the platform's polite quit, everything else
+/// SIGTERM. Refuses when the pid now belongs to another program, is
+/// init, or is DevWidgets itself.
 public struct ProcessTerminator: Sendable {
     /// Current name of a pid: `/proc` on Linux, libproc on macOS.
     public let name_Lookup: @Sendable (Int32) -> String?
+    /// Quits the pid as an app (the Dock's Quit on macOS); false
+    /// when it is not an app or did not take the request.
+    public let app_Quitter: @Sendable (Int32) -> Bool
 
-    public init(name_Lookup: @escaping @Sendable (Int32) -> String?) {
+    public init(
+        name_Lookup: @escaping @Sendable (Int32) -> String?,
+        app_Quitter: @escaping @Sendable (Int32) -> Bool = { _ in
+            false
+        }
+    ) {
         self.name_Lookup = name_Lookup
+        self.app_Quitter = app_Quitter
     }
 
     public func terminate(_ process: ProcessIdentity) -> ActionOutcome
@@ -26,6 +36,7 @@ public struct ProcessTerminator: Sendable {
         else {
             return .refused(reason: "\(process.name) already quit")
         }
+        if app_Quitter(process.pid) { return .done }
         guard kill(process.pid, SIGTERM) != 0 else { return .done }
         return Self.describeSignalError(errno, name: process.name)
     }
@@ -36,7 +47,10 @@ public struct ProcessTerminator: Sendable {
     ) -> ActionOutcome {
         switch error_Number {
         case EPERM:
-            .refused(reason: "\(name) belongs to another user")
+            .failed(
+                reason: "\(name) is not your process: only your own"
+                    + " processes can be quit"
+            )
         case ESRCH: .refused(reason: "\(name) already quit")
         default:
             .failed(reason: String(cString: strerror(error_Number)))

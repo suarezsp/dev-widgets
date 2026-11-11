@@ -56,7 +56,8 @@ final class ActionHandler {
             return ProjectOpener.open(project_URL)
         case .terminate_Process(let process):
             return ProcessTerminator(
-                name_Lookup: DarwinProcessNames.readName
+                name_Lookup: DarwinProcessNames.readName,
+                app_Quitter: AppQuitter.quit
             ).terminate(process)
         case .stop_Container(let container):
             return await ContainerController(

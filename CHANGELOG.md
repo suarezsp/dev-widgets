@@ -19,6 +19,9 @@ in `macOS/project.yml` (`MARKETING_VERSION`).
 - The widget extension is built with the hardened runtime, as
   notarization requires.
 - `.github/` (CI workflow and issue list) is now tracked.
+- macOS: quitting an app sends the Dock's Quit before any signal,
+  and a process owned by another user says so instead of looking
+  like a refusal.
 
 ### Removed
 

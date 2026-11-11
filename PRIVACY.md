@@ -51,8 +51,9 @@ Uninstalling the app and deleting its App Group container (or
 
 Only what you ask for, from a widget, the panel or a notification:
 
-- **Quit a process**: asks it to quit (SIGTERM, never SIGKILL). Only
-  your own processes can be quit.
+- **Quit a process**: asks it to quit, never with SIGKILL. On macOS
+  an app gets the same Quit as from the Dock, so it can ask to save;
+  other processes get SIGTERM. Only your own processes can be quit.
 - **Stop or restart a container**: `docker stop` or
   `docker restart`.
 - **Open the project**: opens the folder in your editor.
