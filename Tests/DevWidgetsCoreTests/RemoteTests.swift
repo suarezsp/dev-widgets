@@ -47,6 +47,8 @@ struct RemoteProbeTests {
     @Test(arguments: [
         ("error-host-key.txt", RemoteProblem.host_Key_Rejected),
         ("error-permission-denied.txt", .authentication_Failed),
+        ("error-password-only.txt", .interactive_Login_Required),
+        ("error-key-then-password.txt", .interactive_Login_Required),
         (
             "error-connection-refused.txt",
             .unreachable(reason: "Connection refused")

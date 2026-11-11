@@ -225,6 +225,13 @@ struct ServerPresentationTests {
         #expect(line.level == .critical)
     }
 
+    @Test func passwordServerIsNotBlamedOnTheKey() {
+        let detail_Text = ServerPresentation.describeProblem(
+            .interactive_Login_Required
+        )
+        #expect(detail_Text.contains("password or 2FA"))
+    }
+
     @Test(arguments: [
         (600.0, "10 min"), (7_200.0, "2 h"), (259_200.0, "3 d"),
     ])

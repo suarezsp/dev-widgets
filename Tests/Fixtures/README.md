@@ -24,4 +24,5 @@ by hand, because the build box has no such device or program.
 | `ssh/probe-linux-1.txt`, `ssh/probe-linux-2.txt` | **Recorded**: output of `RemoteProbe.SCRIPT` over real `ssh` to a local `sshd` on the build box (`tools/ssh_test_server.sh`), 5 s apart. |
 | `ssh/probe-darwin.txt` | **Hand-written**: what the script prints on a host without `/proc`. |
 | `ssh/error-host-key.txt`, `ssh/error-permission-denied.txt`, `ssh/error-connection-refused.txt` | **Recorded**: real `ssh` stderr against the local `sshd` (wrong known_hosts, unknown key, closed port). |
+| `ssh/error-password-only.txt`, `ssh/error-key-then-password.txt` | **Recorded**: real `ssh` stderr in `BatchMode` against the local `sshd` set to passwords only, and to a key followed by a password (`AuthenticationMethods publickey,password`, as with 2FA). |
 | `ssh/config-sample.txt` | **Hand-written** `~/.ssh/config` with host patterns and an `Include`. |

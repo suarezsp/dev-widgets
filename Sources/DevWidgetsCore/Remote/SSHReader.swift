@@ -108,10 +108,27 @@ enum SSHErrorParser {
         {
             return .host_Key_Rejected
         }
-        if error_Text.contains("Permission denied") {
-            return .authentication_Failed
+        if error_Text.contains(DENIED_TEXT) {
+            return findMethods(error_Text).contains("publickey")
+                ? .authentication_Failed : .interactive_Login_Required
         }
         return .unreachable(reason: findReason(error_Text))
+    }
+
+    static let DENIED_TEXT = "Permission denied ("
+
+    /// "Permission denied (publickey,password)." lists what the
+    /// server still accepts. Without "publickey" it wants a
+    /// password or a second factor, even after a key was accepted.
+    static func findMethods(_ error_Text: String) -> [Substring] {
+        guard let start = error_Text.range(of: DENIED_TEXT),
+            let end = error_Text[start.upperBound...].firstIndex(
+                of: ")"
+            )
+        else { return ["publickey"] }
+        return error_Text[start.upperBound..<end].split(
+            separator: ","
+        )
     }
 
     /// "ssh: connect to host 10.0.0.9 port 22: Connection refused"

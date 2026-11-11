@@ -117,6 +117,8 @@ public enum ServerPresentation {
             "Unknown host key: connect once in Terminal"
         case .authentication_Failed:
             "Key refused: is it in ssh-agent?"
+        case .interactive_Login_Required:
+            "Asks for a password or 2FA: use a key-only login"
         case .unreachable(let reason): reason
         case .not_Linux(let system): "\(system) is not supported yet"
         }

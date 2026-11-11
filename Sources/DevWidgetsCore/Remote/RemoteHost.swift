@@ -123,6 +123,9 @@ public enum RemoteProblem: Error, Codable, Equatable, Sendable {
     /// No key the server accepts, or the key needs a passphrase
     /// that is not in the agent.
     case authentication_Failed
+    /// The server wants a password or a second factor (2FA), which
+    /// BatchMode never types: only key-only logins can be polled.
+    case interactive_Login_Required
     case unreachable(reason: String)
     /// `/proc` missing: "Darwin", "FreeBSD"...
     case not_Linux(system: String)
