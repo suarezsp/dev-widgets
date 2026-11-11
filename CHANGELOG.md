@@ -13,6 +13,8 @@ in `macOS/project.yml` (`MARKETING_VERSION`).
   Settings › General turns it off.
 - Linux: the tray icon has a right-click menu (dbusmenu) to show or
   hide the dashboard, open Preferences and quit.
+- Linux: `tools/package_rpm.sh` builds an `.rpm`, and CI builds
+  both packages for `x86_64` and `arm64`.
 
 ### Changed
 

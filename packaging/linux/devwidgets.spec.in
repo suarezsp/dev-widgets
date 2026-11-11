@@ -1,0 +1,38 @@
+# Filled in by tools/package_rpm.sh, which stages the files first;
+# rpmbuild only copies them and adds the library requirements.
+%global debug_package %{nil}
+%global __strip /bin/true
+%global app_id com.morsetechnologies.DevWidgets
+# Debian builds curl with versioned symbols, Fedora does not:
+# keep the plain libcurl.so.4 requirement only.
+%global __requires_exclude ^libcurl\\.so\\.4\\(CURL_OPENSSL_4\\)
+
+Name: devwidgets
+Version: @VERSION@
+Release: 1
+Summary: System and project monitor for developers
+License: MIT
+URL: https://github.com/suarezsp/dev-widgets
+# The SVG icon loader; the libraries come from the binary.
+Requires: librsvg2
+Recommends: openssh-clients, git
+Suggests: gh, docker
+
+%description
+A GTK 4 dashboard with the sizes of the DevWidgets macOS widgets:
+CPU, memory, disk and network with history, the busiest processes,
+the Git and GitHub state of a project, Docker containers, listening
+ports and SSH servers. Alerts become desktop notifications and a
+StatusNotifierItem tray icon shows a summary where the panel
+supports it.
+
+%install
+cp -a @STAGE@/usr %{buildroot}/
+
+%files
+%license /usr/share/doc/devwidgets/copyright
+/usr/bin/devwidgets
+/usr/share/applications/%{app_id}.desktop
+/usr/share/metainfo/%{app_id}.metainfo.xml
+/usr/share/icons/hicolor/scalable/apps/%{app_id}.svg
+/usr/share/man/man1/devwidgets.1.gz

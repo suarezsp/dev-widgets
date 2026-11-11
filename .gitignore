@@ -19,6 +19,7 @@ macOS/Widgets/DevWidgetsWidgets.entitlements
 # Distribution builds
 dist/
 .build-deb/
+.build-rpm/
 *.deb
 *.dmg
 *.app/

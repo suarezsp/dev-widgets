@@ -11,21 +11,28 @@ jobs:
       - run: swift build
       - run: swift test
       - run: python3 tools/check_style.py
-  # The GTK app and its .deb need the GTK 4 and libadwaita headers,
-  # so they get their own job (Ubuntu 24.04: libadwaita 1.5).
+  # The GTK app and its packages need the GTK 4 and libadwaita
+  # headers, so they get their own job (Ubuntu 24.04: libadwaita
+  # 1.5), once per architecture; each runner builds its own.
   linux-app:
-    runs-on: ubuntu-24.04
+    strategy:
+      matrix:
+        runner: [ubuntu-24.04, ubuntu-24.04-arm]
+    runs-on: ${{ matrix.runner }}
     container: swift:6.2-noble
     steps:
       - uses: actions/checkout@v4
       - run: >-
           apt-get update && apt-get install -y --no-install-recommends
-          libgtk-4-dev libadwaita-1-dev dpkg-dev
+          libgtk-4-dev libadwaita-1-dev dpkg-dev rpm
       - run: tools/package_deb.sh
+      - run: tools/package_rpm.sh
       - uses: actions/upload-artifact@v4
         with:
-          name: devwidgets-deb
-          path: dist/*.deb
+          name: devwidgets-linux-${{ matrix.runner }}
+          path: |
+            dist/*.deb
+            dist/*.rpm
           if-no-files-found: error
   # macos-26 is Apple silicon with Xcode 26.
   macos-app:

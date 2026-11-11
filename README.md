@@ -37,7 +37,7 @@ devwidgets puts **what your machine and your project are doing** on the desktop:
 - **macOS widgets** (WidgetKit): a configurable metric widget (small, medium), a dashboard (large, extra large) with history charts, a developer-context widget (medium, large) and a servers widget (medium, large). They use the system widget background, so in the clear and tinted presentations of macOS 26 they get the same Liquid Glass as Apple's widgets.
 - **Menu bar app** (SwiftUI): samples every second, shows a live two-column panel, sends threshold and failed-CI notifications, polls SSH servers and performs the widgets' actions.
 - **Interactive widgets** (App Intents): stop or restart a container, quit a process (tap twice to confirm), open the project in your editor.
-- **Linux app** (GTK 4 + libadwaita through Swift's C interop): the same cards at the macOS widget sizes, a tray icon (StatusNotifierItem) whose right-click menu shows or hides the dashboard, opens Preferences or quits, desktop notifications and a `.deb` package.
+- **Linux app** (GTK 4 + libadwaita through Swift's C interop): the same cards at the macOS widget sizes, a tray icon (StatusNotifierItem) whose right-click menu shows or hides the dashboard, opens Preferences or quits, desktop notifications, and `.deb` and `.rpm` packages for `x86_64` and `arm64`.
 - **Portable core** (`DevWidgetsCore`): no UI and no Apple-only APIs, so everything that can be tested is tested on Linux and on macOS.
 
 ---
@@ -143,8 +143,8 @@ macOS/
   Shared/                    code in both targets: App Group, presentation, rows
   Render/                    ImageRenderer program for the widget images
 Tests/                       Swift Testing suites and recorded fixtures
-packaging/                   .deb metadata, AppStream, man page, Flatpak (experimental)
-tools/                       lint, style checker, .deb builder, render and compose scripts
+packaging/                   .deb and .rpm metadata, AppStream, man page, Flatpak (experimental)
+tools/                       lint, style checker, .deb and .rpm builders, render and compose scripts
 docs/                        README banner and gallery images
 ```
 
@@ -200,6 +200,7 @@ swift build && swift test           # core, on Linux or macOS
 swift run devwidgets-probe 5        # real snapshot of this machine as JSON
 swift run devwidgets-linux          # the GTK app
 tools/package_deb.sh                # dist/devwidgets_<version>_<arch>.deb
+tools/package_rpm.sh                # dist/devwidgets-<version>-1.<arch>.rpm
 ```
 
 ---
@@ -214,7 +215,7 @@ macOS, outside the App Store, as a signed and notarized DMG:
 
 Developer ID certificates and notarization need the **paid Apple Developer Program**; a free account only signs for your own Mac. Users just open the DMG, drag the app to Applications, open it once and add the widgets. They never touch folders or settings.
 
-Linux: `tools/package_deb.sh` builds the `.deb`. `packaging/flatpak` holds an experimental manifest that has not been built yet.
+Linux: `tools/package_deb.sh` builds the `.deb` and `tools/package_rpm.sh` the `.rpm` (it needs `rpmbuild`), each for the architecture it runs on; both stage the same files with `tools/stage_linux.sh`. The `.rpm` is built on Ubuntu and has not been installed on Fedora yet. `packaging/flatpak` holds an experimental manifest that has not been built yet.
 
 ---
 
@@ -240,7 +241,7 @@ tools/ssh_test_server.sh            # optional local sshd for the live SSH suite
 | `DevWidgetsLinuxShellTests` | settings file, alert routing, tray texts and menu, launch options |
 | `DevWidgetsDarwinTests` | macOS only: the Darwin reader against the real machine |
 
-`Tests/Fixtures/README.md` says which fixtures are recorded from real tools and which are hand-written. A live SSH suite runs when `DEVWIDGETS_SSH_TEST_CONFIG` points at the local test server. `.github/workflows/ci.yml` builds and tests on Linux, builds the GTK app and uploads its `.deb` as an artifact, and builds the macOS targets on a `macos-26` runner.
+`Tests/Fixtures/README.md` says which fixtures are recorded from real tools and which are hand-written. A live SSH suite runs when `DEVWIDGETS_SSH_TEST_CONFIG` points at the local test server. `.github/workflows/ci.yml` builds and tests on Linux, builds the GTK app on `x86_64` and `arm64` runners and uploads its `.deb` and `.rpm` as artifacts, and builds the macOS targets on a `macos-26` runner.
 
 ---
 
