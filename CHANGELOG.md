@@ -20,6 +20,12 @@ in `macOS/project.yml` (`MARKETING_VERSION`).
   notarization requires.
 - `.github/` (CI workflow and issue list) is now tracked.
 
+### Removed
+
+- The development report (`docs/report/`) and the HTML/CSS mockups
+  with their render script left the default branch; they live on
+  the `report` branch. README images moved to `docs/images/`.
+
 ### Fixed
 
 - Repository URLs point at `github.com/suarezsp/dev-widgets`.

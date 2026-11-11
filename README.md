@@ -48,7 +48,7 @@ Every macOS image below is the **real SwiftUI view** of the widget, drawn with `
 
 <div align="center">
 
-<img src="docs/report/images/comparison-reference.png" alt="Medium memory widget over small CPU and network widgets, clear glass presentation" width="420" />
+<img src="docs/images/comparison-reference.png" alt="Medium memory widget over small CPU and network widgets, clear glass presentation" width="420" />
 
 </div>
 
@@ -59,35 +59,35 @@ Every macOS image below is the **real SwiftUI view** of the widget, drawn with `
 ### Small and medium: clear glass, dark and light
 
 <div align="center">
-<img src="docs/report/images/real-gallery.png" alt="Small CPU and network widgets and the medium memory widget in the clear, dark and light presentations" width="720" />
+<img src="docs/images/real-gallery.png" alt="Small CPU and network widgets and the medium memory widget in the clear, dark and light presentations" width="720" />
 </div>
 
 ### Dashboard: large and extra large
 
 <div align="center">
-<img src="docs/report/images/real-dashboards-clear.png" alt="Large and extra large dashboard, clear glass" width="720" />
+<img src="docs/images/real-dashboards-clear.png" alt="Large and extra large dashboard, clear glass" width="720" />
 <br/><sub>Clear glass, the presentation macOS 26 uses on a glass desktop</sub><br/><br/>
-<img src="docs/report/images/real-dashboards-dark.png" alt="Large and extra large dashboard, dark" width="720" />
+<img src="docs/images/real-dashboards-dark.png" alt="Large and extra large dashboard, dark" width="720" />
 <br/><sub>Dark, full color: orange only because memory pressure is elevated</sub><br/><br/>
-<img src="docs/report/images/real-dashboards-light.png" alt="Large and extra large dashboard, light" width="720" />
+<img src="docs/images/real-dashboards-light.png" alt="Large and extra large dashboard, light" width="720" />
 <br/><sub>Light, full color</sub>
 </div>
 
 ### Developer context and servers: medium and large
 
 <div align="center">
-<img src="docs/report/images/real-context.png" alt="Developer context widget, medium and large, clear glass and dark" width="720" />
+<img src="docs/images/real-context.png" alt="Developer context widget, medium and large, clear glass and dark" width="720" />
 <br/><sub>Git, pull request and CI, review queue, Docker with stop and restart buttons, listening ports</sub><br/><br/>
-<img src="docs/report/images/real-servers.png" alt="Servers widget, medium and large, clear glass and dark" width="720" />
+<img src="docs/images/real-servers.png" alt="Servers widget, medium and large, clear glass and dark" width="720" />
 <br/><sub>Six sample servers; <code>db-1</code> shows why it failed</sub>
 </div>
 
 ### Linux (GTK 4 + libadwaita)
 
 <div align="center">
-<img src="docs/report/images/linux-dashboard-dark.png" alt="Linux GTK 4 dashboard, dark" width="720" />
+<img src="docs/images/linux-dashboard-dark.png" alt="Linux GTK 4 dashboard, dark" width="720" />
 <br/><br/>
-<img src="docs/report/images/linux-dashboard-light.png" alt="Linux GTK 4 dashboard, light" width="720" />
+<img src="docs/images/linux-dashboard-light.png" alt="Linux GTK 4 dashboard, light" width="720" />
 <br/><sub>Real screenshots on a virtual XFCE desktop</sub>
 </div>
 
@@ -145,8 +145,7 @@ macOS/
 Tests/                       Swift Testing suites and recorded fixtures
 packaging/                   .deb metadata, AppStream, man page, Flatpak (experimental)
 tools/                       lint, style checker, .deb builder, render and compose scripts
-mockups/                     HTML/CSS mockups of the app windows
-docs/                        README banner, gallery images and design notes
+docs/                        README banner and gallery images
 ```
 
 ```

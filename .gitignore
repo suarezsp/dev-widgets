@@ -26,16 +26,6 @@ dist/
 *.zip
 *.tar.gz
 
-# LaTeX build output (the report is built from report.tex)
-docs/report/*.pdf
-docs/report/*.aux
-docs/report/*.log
-docs/report/*.out
-docs/report/*.toc
-docs/report/*.synctex.gz
-docs/report/*.fls
-docs/report/*.fdb_latexmk
-
 # Scratch output of the render tools
 widget-renders*/
 renders/

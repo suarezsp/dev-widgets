@@ -17,8 +17,7 @@ MAX_COMPLEXITY = 10
 MAX_COMPLEX_COMPLEXITY = 15
 SCANNED_DIRECTORIES = ["Sources", "Tests", "macOS"]
 EXTRA_FILES = ["Package.swift"]
-WIDTH_ONLY_GLOBS = ["tools/*.py", "tools/*.sh", "mockups/*.js",
-                    "mockups/*.css", "mockups/*.html"]
+WIDTH_ONLY_GLOBS = ["tools/*.py", "tools/*.sh"]
 # Names imposed by Apple frameworks or SwiftPM, not chosen by us.
 FRAMEWORK_NAMES = {
     "typeDisplayRepresentation", "caseDisplayRepresentations",
