@@ -1,6 +1,7 @@
 import CGtk
 import DevWidgetsCore
 import DevWidgetsLinuxShell
+import DevWidgetsPresentation
 import Foundation
 
 /// Owns the window, the tray icon and the polling loops, and
@@ -127,7 +128,9 @@ final class LinuxApp {
         do {
             try store.save(new_Settings)
         } catch {
-            window?.showToast("Could not save the settings")
+            window?.showToast(
+                String(localized: "Could not save the settings")
+            )
         }
         if old_Settings.hosts != new_Settings.hosts { pollServers() }
         if old_Settings.project_Path != new_Settings.project_Path {

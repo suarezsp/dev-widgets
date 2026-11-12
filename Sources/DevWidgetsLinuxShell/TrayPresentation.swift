@@ -31,7 +31,7 @@ public struct TrayState: Equatable, Sendable {
 
     /// Before the first sample.
     public static let STARTING = TrayState(
-        tooltip_Text: "Measuring…",
+        tooltip_Text: String(localized: "Measuring…"),
         needs_Attention: false
     )
 

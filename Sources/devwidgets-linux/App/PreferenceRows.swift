@@ -1,5 +1,6 @@
 import CGtk
 import DevWidgetsCore
+import DevWidgetsPresentation
 import Foundation
 
 /// libadwaita preference rows wired to Swift closures.
@@ -50,7 +51,9 @@ enum PreferenceRows {
 
     /// "Above (%)", "Below (%)", "Above (°C)".
     static func describeLimit(_ metric: AlertMetric) -> String {
-        let direction = metric.alerts_Below_Limit ? "Below" : "Above"
+        let direction =
+            metric.alerts_Below_Limit
+            ? String(localized: "Below") : String(localized: "Above")
         let unit = metric == .temperature ? "°C" : "%"
         return "\(direction) (\(unit))"
     }

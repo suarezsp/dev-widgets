@@ -20,7 +20,7 @@ final class ServersCard {
         Widgets.fix(widget, size: .large)
         let header = Widgets.makeBox(vertical: false, spacing: 6)
         let title_Label = Widgets.makeLabel(
-            "Servers",
+            String(localized: "Servers"),
             classes: ["card-title"]
         )
         Widgets.expand(title_Label, horizontally: true)
@@ -42,7 +42,9 @@ final class ServersCard {
         guard !overview.reports.isEmpty else {
             Widgets.append(
                 Widgets.makeLabel(
-                    "Add an SSH alias in Preferences",
+                    String(
+                        localized: "Add an SSH alias in Preferences"
+                    ),
                     classes: ["secondary"]
                 ),
                 to: rows_Box

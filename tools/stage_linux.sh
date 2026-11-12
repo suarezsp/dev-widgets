@@ -26,6 +26,8 @@ install -D -m 644 "$LINUX/$APP_ID.metainfo.xml" \
 install -D -m 644 \
     "$LINUX/icons/hicolor/scalable/apps/$APP_ID.svg" \
     "$STAGE/usr/share/icons/hicolor/scalable/apps/$APP_ID.svg"
+install -D -m 644 macOS/Shared/Localizable.xcstrings \
+    "$STAGE/usr/share/devwidgets/Localizable.xcstrings"
 install -m 644 "$LINUX/copyright" "$DOC/copyright"
 gzip -9n -c "$LINUX/devwidgets.1" \
     > "$STAGE/usr/share/man/man1/devwidgets.1.gz"

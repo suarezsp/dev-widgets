@@ -54,12 +54,12 @@ enum Dialogs {
     ) -> UnsafeMutablePointer<AdwAlertDialog> {
         let alert: UnsafeMutablePointer<AdwAlertDialog> = castPointer(
             adw_alert_dialog_new(
-                "\(action.title)?",
+                String(localized: "\(action.title)?"),
                 action.consequence_Text
             )
         )
         for (response, label) in [
-            (CANCEL_RESPONSE, "Cancel"),
+            (CANCEL_RESPONSE, String(localized: "Cancel")),
             (CONFIRM_RESPONSE, action.title),
         ] {
             adw_alert_dialog_add_response(alert, response, label)
@@ -80,7 +80,10 @@ enum Dialogs {
         chosen: @escaping (URL?) -> Void
     ) {
         let dialog = gtk_file_dialog_new()
-        gtk_file_dialog_set_title(dialog, "Choose project folder")
+        gtk_file_dialog_set_title(
+            dialog,
+            String(localized: "Choose project folder")
+        )
         gtk_file_dialog_select_folder(
             dialog,
             castPointer(parent),

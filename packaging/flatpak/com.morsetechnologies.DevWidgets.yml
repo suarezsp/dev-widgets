@@ -37,6 +37,8 @@ modules:
           --static-swift-stdlib
       - install -Dm755 "$(swift build -c release --show-bin-path)/devwidgets-linux"
           /app/bin/devwidgets
+      - install -Dm644 macOS/Shared/Localizable.xcstrings
+          -t /app/share/devwidgets
       - install -Dm644
           packaging/linux/com.morsetechnologies.DevWidgets.desktop
           -t /app/share/applications

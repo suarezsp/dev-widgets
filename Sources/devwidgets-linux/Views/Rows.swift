@@ -64,7 +64,7 @@ final class ProcessRow {
         Widgets.expand(name_Label, horizontally: true)
         let quit_Button = Buttons.makeIconButton(
             "window-close-symbolic",
-            tooltip_Text: "Quit…"
+            tooltip_Text: String(localized: "Quit…")
         ) { [unowned self] in
             guard let process else { return }
             handlers.request(.terminate_Process(process: process))

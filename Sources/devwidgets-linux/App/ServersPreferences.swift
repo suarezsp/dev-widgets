@@ -1,18 +1,27 @@
 import CGtk
 import DevWidgetsCore
 import DevWidgetsLinuxShell
+import DevWidgetsPresentation
 import Foundation
 
 /// The Servers page: monitored hosts, a form to add one with its
 /// disk, and the aliases found in ~/.ssh/config (Includes too).
 extension PreferencesDialog {
+    static let ADD_DESCRIPTION = String(
+        localized: """
+            An alias from ~/.ssh/config; ssh keeps the keys. \
+            The disk is a mount point on the server.
+            """
+    )
+
     func configureServersPage() {
         let add_Group = PreferenceRows.makeGroup(
-            "Add a server",
-            description: "An alias from ~/.ssh/config; ssh keeps the"
-                + " keys. The disk is a mount point on the server."
+            String(localized: "Add a server"),
+            description: Self.ADD_DESCRIPTION
         )
-        let add_Button = Buttons.makeTextButton("Add") { [self] in
+        let add_Button = Buttons.makeTextButton(
+            String(localized: "Add")
+        ) { [self] in
             addHost(
                 alias: PreferenceRows.readText(alias_Row),
                 disk_Path: PreferenceRows.readText(disk_Row)
@@ -35,7 +44,9 @@ extension PreferencesDialog {
             ? RemoteHost.DEFAULT_DISK_PATH : disk_Path
         guard let host = RemoteHost(alias: alias, disk_Path: path)
         else {
-            showToast("Not a valid alias or disk path")
+            showToast(
+                String(localized: "Not a valid alias or disk path")
+            )
             return
         }
         guard !settings.hosts.contains(where: { $0.alias == alias })
@@ -76,12 +87,14 @@ extension PreferencesDialog {
     }
 
     private func makeHostsGroup() -> WidgetPointer {
-        let group = PreferenceRows.makeGroup("Monitored")
+        let group = PreferenceRows.makeGroup(
+            String(localized: "Monitored")
+        )
         var rows = settings.hosts.map(makeHostRow)
         if rows.isEmpty {
             rows = [
                 PreferenceRows.makeActionRow(
-                    "No servers yet",
+                    String(localized: "No servers yet"),
                     subtitle: ""
                 )
             ]
@@ -93,19 +106,23 @@ extension PreferencesDialog {
     private func makeHostRow(_ host: RemoteHost) -> WidgetPointer {
         let remove_Button = Buttons.makeIconButton(
             "user-trash-symbolic",
-            tooltip_Text: "Stop monitoring \(host.alias)"
+            tooltip_Text: String(
+                localized: "Stop monitoring \(host.alias)"
+            )
         ) { [self] in removeHost(host) }
         return PreferenceRows.makeActionRow(
             host.alias,
-            subtitle: "Disk \(host.disk_Path)",
+            subtitle: String(localized: "Disk \(host.disk_Path)"),
             suffix: remove_Button
         )
     }
 
     private func makeSuggestionsGroup() -> WidgetPointer {
         let group = PreferenceRows.makeGroup(
-            "From ~/.ssh/config",
-            description: "Include lines are followed."
+            String(localized: "From ~/.ssh/config"),
+            description: String(
+                localized: "Include lines are followed."
+            )
         )
         let monitored = Set(settings.hosts.map(\.alias))
         SSHConfigReader().listAliases()
@@ -118,7 +135,7 @@ extension PreferencesDialog {
     private func makeSuggestionRow(_ alias: String) -> WidgetPointer {
         let add_Button = Buttons.makeIconButton(
             "list-add-symbolic",
-            tooltip_Text: "Monitor \(alias)"
+            tooltip_Text: String(localized: "Monitor \(alias)")
         ) { [self] in
             addHost(
                 alias: alias,

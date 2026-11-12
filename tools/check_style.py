@@ -23,6 +23,9 @@ FRAMEWORK_NAMES = {
     "typeDisplayRepresentation", "caseDisplayRepresentations",
     "package", "isDiscoverable", "willPresent", "didReceive",
     "wrappedValue", "defaultValue",
+    # ExpressibleByStringInterpolation initializers.
+    "literalCapacity", "interpolationCount", "stringLiteral",
+    "stringInterpolation",
 }
 # Top-level code of these files may bind constants or variables.
 SCRIPT_FILES = ("main.swift", "Package.swift")

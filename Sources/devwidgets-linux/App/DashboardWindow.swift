@@ -72,7 +72,9 @@ final class DashboardWindow {
             castPointer(header_Bar),
             Buttons.makeIconButton(
                 "folder-open-symbolic",
-                tooltip_Text: "Choose project folder…",
+                tooltip_Text: String(
+                    localized: "Choose project folder…"
+                ),
                 action: handlers.choose_Project
             )
         )
@@ -80,26 +82,29 @@ final class DashboardWindow {
             castPointer(header_Bar),
             Buttons.makeIconButton(
                 "preferences-system-symbolic",
-                tooltip_Text: "Preferences",
+                tooltip_Text: String(localized: "Preferences"),
                 action: handlers.open_Preferences
             )
         )
         return header_Bar
     }
 
+    static let SMALL_MEDIUM_CAPTION = String(
+        localized: "Small 170 × 170  ·  Medium 364 × 170"
+    )
+    static let LARGE_CAPTION = String(localized: "Large 364 × 382")
+
     private func makeScrolledContent() -> WidgetPointer {
         let content = Widgets.makeBox(vertical: true, spacing: 8)
         Widgets.setMargins(content, size: 24)
         Widgets.append(
             makeRow(small_Cards.map(\.widget) + [medium_Card.widget]),
-            Self.makeSizeCaption(
-                "Small 170 × 170  ·  Medium 364 × 170"
-            ),
+            Self.makeSizeCaption(Self.SMALL_MEDIUM_CAPTION),
             makeRow([
                 dashboard_Card.widget, context_Card.widget,
                 servers_Card.widget,
             ]),
-            Self.makeSizeCaption("Large 364 × 382"),
+            Self.makeSizeCaption(Self.LARGE_CAPTION),
             to: content
         )
         let scrolled_Window = created(gtk_scrolled_window_new())

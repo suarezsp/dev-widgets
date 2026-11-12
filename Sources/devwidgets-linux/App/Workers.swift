@@ -1,5 +1,6 @@
 import DevWidgetsCore
 import DevWidgetsLinuxShell
+import DevWidgetsPresentation
 import Foundation
 
 /// Reads the machine off the GTK thread: walking /proc for every
@@ -58,7 +59,11 @@ enum ActionRunner {
 
     static func openProject(_ project_URL: URL?) -> ActionOutcome {
         guard let project_URL else {
-            return .refused(reason: "Choose a project folder first")
+            return .refused(
+                reason: String(
+                    localized: "Choose a project folder first"
+                )
+            )
         }
         URLOpener.open(project_URL)
         return .done

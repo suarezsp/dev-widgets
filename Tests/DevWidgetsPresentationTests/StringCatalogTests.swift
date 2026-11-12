@@ -1,8 +1,9 @@
 import Foundation
 import Testing
 
-/// Every plain `String(localized: "…")` text in `macOS/` is in the
-/// String Catalog; `tools/sync_strings.sh` adds new ones.
+/// Every plain `String(localized: "…")` text in `macOS/` and the
+/// Linux app is in the String Catalog; `tools/sync_strings.sh` adds
+/// new macOS ones, Linux ones are added by hand.
 struct StringCatalogTests {
     static let MACOS_URL = URL(fileURLWithPath: #filePath)
         .deletingLastPathComponent()
@@ -23,7 +24,11 @@ struct StringCatalogTests {
     /// Single-line texts without interpolation, which keep their
     /// source spelling as the catalog key.
     static func listPlainTexts() throws -> Set<String> {
-        let source_Folders = ["App", "Shared", "Widgets"]
+        let source_Folders = [
+            "App", "Shared", "Widgets",
+            "../Sources/devwidgets-linux",
+            "../Sources/DevWidgetsLinuxShell",
+        ]
         var texts = Set<String>()
         for folder in source_Folders {
             for file_Text in try readSwiftFiles(in: folder) {

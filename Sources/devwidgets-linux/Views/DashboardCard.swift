@@ -45,7 +45,7 @@ final class DashboardCard {
             cpu_Label,
             cpu_Chart.widget,
             makeChartPair(),
-            ContextRows.makeCaption("Processes"),
+            ContextRows.makeCaption(String(localized: "Processes")),
             to: widget
         )
         process_Rows.forEach { Widgets.append($0.widget, to: widget) }
@@ -54,7 +54,7 @@ final class DashboardCard {
     private func makeHeader() -> WidgetPointer {
         let header = Widgets.makeBox(vertical: false, spacing: 6)
         let title_Label = Widgets.makeLabel(
-            "This computer",
+            String(localized: "This computer"),
             classes: ["card-title"]
         )
         Widgets.expand(title_Label, horizontally: true)
@@ -106,7 +106,10 @@ final class DashboardCard {
         Widgets.setText(cpu_Label, "CPU  \(cpu.value_Text)")
         Widgets.setLevel(cpu_Label, cpu.level)
         let memory = MetricKind.memory.present(readings)
-        Widgets.setText(memory_Label, "Memory  \(memory.value_Text)")
+        Widgets.setText(
+            memory_Label,
+            String(localized: "Memory  \(memory.value_Text)")
+        )
         let network = MetricKind.network.present(readings)
         Widgets.setText(network_Label, network.value_Text)
         Widgets.setText(

@@ -22,7 +22,7 @@ final class ContextCard {
         Widgets.fix(widget, size: .large)
         let header = Widgets.makeBox(vertical: false, spacing: 6)
         let title_Label = Widgets.makeLabel(
-            "Developer context",
+            String(localized: "Developer context"),
             classes: ["card-title"]
         )
         Widgets.expand(title_Label, horizontally: true)
@@ -34,7 +34,10 @@ final class ContextCard {
         )
         Widgets.append(header, rows_Box, to: widget)
         Widgets.append(
-            Widgets.makeLabel("Reading…", classes: ["secondary"]),
+            Widgets.makeLabel(
+                String(localized: "Reading…"),
+                classes: ["secondary"]
+            ),
             to: rows_Box
         )
     }
@@ -72,7 +75,7 @@ final class ContextCard {
     private func appendProject(_ context: DeveloperContext) {
         let open_Button = Buttons.makeIconButton(
             "folder-open-symbolic",
-            tooltip_Text: "Open the project folder"
+            tooltip_Text: String(localized: "Open the project folder")
         ) { [handlers] in handlers.request(.open_Project) }
         appendRow(
             ContextPresentation.describeGit(context.git),
@@ -83,7 +86,7 @@ final class ContextCard {
             .map { page_URL in
                 Buttons.makeIconButton(
                     "web-browser-symbolic",
-                    tooltip_Text: "Open on GitHub"
+                    tooltip_Text: String(localized: "Open on GitHub")
                 ) { [handlers] in handlers.open(page_URL) }
             }
         appendRow(
@@ -163,11 +166,16 @@ final class ContextCard {
     private func appendPorts(_ ports: [ListeningPort]) {
         let groups = ContextPresentation.groupPorts(ports)
         Widgets.append(
-            ContextRows.makeCaption("Listening ports"),
+            ContextRows.makeCaption(
+                String(localized: "Listening ports")
+            ),
             to: rows_Box
         )
         guard !groups.isEmpty else {
-            appendCaption("None", classes: ["secondary"])
+            appendCaption(
+                String(localized: "None"),
+                classes: ["secondary"]
+            )
             return
         }
         for group in groups.prefix(Self.PORT_GROUP_LIMIT) {

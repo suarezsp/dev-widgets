@@ -1,3 +1,5 @@
+import DevWidgetsPresentation
+
 /// The entries of the tray icon's right-click menu. The raw value
 /// is the dbusmenu item id; 0 is the root, which holds them all.
 public enum TrayMenuItem: Int32, CaseIterable, Sendable {
@@ -10,10 +12,16 @@ public enum TrayMenuItem: Int32, CaseIterable, Sendable {
     public var properties: [String: TrayPropertyValue] {
         switch self {
         case .toggle_Window:
-            ["label": .text("Show or Hide Dashboard")]
-        case .preferences: ["label": .text("Preferences…")]
+            [
+                "label": .text(
+                    String(localized: "Show or Hide Dashboard")
+                )
+            ]
+        case .preferences:
+            ["label": .text(String(localized: "Preferences…"))]
         case .separator: ["type": .text("separator")]
-        case .quit: ["label": .text("Quit DevWidgets")]
+        case .quit:
+            ["label": .text(String(localized: "Quit DevWidgets"))]
         }
     }
 

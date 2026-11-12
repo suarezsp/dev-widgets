@@ -112,6 +112,7 @@ Every macOS image below is the **real SwiftUI view** of the widget, drawn with `
 | **SSH servers** | your system `ssh` with your keys and `~/.ssh/config` (including `Include`); no passwords stored |
 | **Alerts** | thresholds per metric with debounce, failed CI, server down; macOS notifications or Linux desktop notifications |
 | **Menu bar** | live panel every second: metrics, processes, context, servers and any problem (for example, widgets that cannot be updated) |
+| **Languages** | English and Spanish, from one String Catalog: macOS follows the system language, Linux reads `LANGUAGE`, `LC_ALL`, `LC_MESSAGES` and `LANG` |
 
 ---
 
@@ -253,7 +254,7 @@ Enforced by `tools/lint.sh` (swift-format, SwiftLint and `tools/check_style.py`)
 - Lines ≤ 70 columns, functions ≤ 25 lines, ≤ 3 parameters, cyclomatic complexity ≤ 10.
 - Names imposed by Apple frameworks are allow-listed in the checker.
 - SOLID and YAGNI where they help; no abstraction without a second real implementation.
-- User-facing text is a SwiftUI literal or `String(localized:)`. On macOS, `tools/sync_strings.sh <DerivedData>` adds new texts to `macOS/Shared/Localizable.xcstrings` after a build; a test fails while one is missing.
+- User-facing text is a SwiftUI literal or `String(localized:)`. On macOS, `tools/sync_strings.sh <DerivedData>` adds new texts to `macOS/Shared/Localizable.xcstrings` after a build; Linux texts are added by hand with `"extractionState" : "manual"`. A test fails while a text is missing or has no Spanish.
 
 ---
 

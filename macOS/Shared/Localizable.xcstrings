@@ -11,6 +11,17 @@
         }
       }
     },
+    "%@ from the environment" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@ del entorno"
+          }
+        }
+      }
+    },
     "%@ is not supported yet" : {
       "localizations" : {
         "es" : {
@@ -169,12 +180,56 @@
         }
       }
     },
+    "A reading must stay past its limit for %lld s; one alert per metric every %lld min at most." : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Una lectura debe superar su límite durante %1$lld s; como mucho una alerta por métrica cada %2$lld min."
+          }
+        }
+      }
+    },
+    "Above" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Por encima"
+          }
+        }
+      }
+    },
     "Add" : {
       "localizations" : {
         "es" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Añadir"
+          }
+        }
+      }
+    },
+    "Add a server" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Añadir un servidor"
+          }
+        }
+      }
+    },
+    "Add an SSH alias in Preferences" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Añade un alias SSH en Preferencias"
           }
         }
       }
@@ -215,6 +270,17 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Permite DevWidgets en Ajustes del Sistema › General › Ítems de inicio."
+          }
+        }
+      }
+    },
+    "An alias from ~/.ssh/config; ssh keeps the keys. The disk is a mount point on the server." : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Un alias de ~/.ssh/config; ssh guarda las claves. El disco es un punto de montaje del servidor."
           }
         }
       }
@@ -295,6 +361,17 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Batería"
+          }
+        }
+      }
+    },
+    "Below" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Por debajo"
           }
         }
       }
@@ -382,6 +459,17 @@
         }
       }
     },
+    "Cancel" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cancelar"
+          }
+        }
+      }
+    },
     "Changes requested" : {
       "localizations" : {
         "es" : {
@@ -442,12 +530,56 @@
         }
       }
     },
+    "Choose a project folder first" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Elige primero una carpeta de proyecto"
+          }
+        }
+      }
+    },
     "Choose one in the menu bar" : {
       "localizations" : {
         "es" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Elige uno en la barra de menús"
+          }
+        }
+      }
+    },
+    "Choose project folder" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Elegir carpeta del proyecto"
+          }
+        }
+      }
+    },
+    "Choose project folder…" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Elegir carpeta del proyecto…"
+          }
+        }
+      }
+    },
+    "Choose…" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Elegir…"
           }
         }
       }
@@ -502,6 +634,17 @@
         }
       }
     },
+    "Could not save the settings" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "No se pudieron guardar los ajustes"
+          }
+        }
+      }
+    },
     "DEVWIDGETS" : {
       "shouldTranslate" : false
     },
@@ -538,12 +681,45 @@
         }
       }
     },
+    "Developer context" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Contexto de desarrollo"
+          }
+        }
+      }
+    },
     "Disk" : {
       "localizations" : {
         "es" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Disco"
+          }
+        }
+      }
+    },
+    "Disk %@" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Disco %@"
+          }
+        }
+      }
+    },
+    "Disk to measure" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Disco que medir"
           }
         }
       }
@@ -674,6 +850,17 @@
         }
       }
     },
+    "Include lines are followed." : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Se siguen las líneas Include."
+          }
+        }
+      }
+    },
     "Key refused: is it in ssh-agent?" : {
       "localizations" : {
         "es" : {
@@ -694,12 +881,56 @@
         }
       }
     },
+    "Large 364 × 382" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Grande 364 × 382"
+          }
+        }
+      }
+    },
     "Leave empty for github.com. For GitHub Enterprise Server, type its host and press Return; the token, or gh auth login --hostname, must be for that host." : {
       "localizations" : {
         "es" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Déjalo vacío para github.com. Para GitHub Enterprise Server, escribe su host y pulsa Retorno; el token, o gh auth login --hostname, debe ser de ese host."
+          }
+        }
+      }
+    },
+    "Limits" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Límites"
+          }
+        }
+      }
+    },
+    "Listening ports" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Puertos a la escucha"
+          }
+        }
+      }
+    },
+    "Measuring…" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Midiendo…"
           }
         }
       }
@@ -714,12 +945,34 @@
         }
       }
     },
+    "Memory  %@" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Memoria  %@"
+          }
+        }
+      }
+    },
     "Metric" : {
       "localizations" : {
         "es" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Métrica"
+          }
+        }
+      }
+    },
+    "Monitor %@" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Monitorizar %@"
           }
         }
       }
@@ -804,6 +1057,17 @@
         }
       }
     },
+    "No servers yet" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Aún no hay servidores"
+          }
+        }
+      }
+    },
     "No token" : {
       "localizations" : {
         "es" : {
@@ -834,6 +1098,17 @@
         }
       }
     },
+    "None chosen" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ninguna elegida"
+          }
+        }
+      }
+    },
     "Not a Git repository" : {
       "localizations" : {
         "es" : {
@@ -844,12 +1119,34 @@
         }
       }
     },
+    "Not a valid alias or disk path" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Alias o ruta de disco no válidos"
+          }
+        }
+      }
+    },
     "Not available" : {
       "localizations" : {
         "es" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "No disponible"
+          }
+        }
+      }
+    },
+    "Not configured: set %@ or install gh" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sin configurar: define %@ o instala gh"
           }
         }
       }
@@ -944,6 +1241,17 @@
         }
       }
     },
+    "Open on GitHub" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Abrir en GitHub"
+          }
+        }
+      }
+    },
     "Open project" : {
       "localizations" : {
         "es" : {
@@ -960,6 +1268,17 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Abrir proyectos con"
+          }
+        }
+      }
+    },
+    "Open the project folder" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Abrir la carpeta del proyecto"
           }
         }
       }
@@ -1010,6 +1329,28 @@
         }
       }
     },
+    "Preferences" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Preferencias"
+          }
+        }
+      }
+    },
+    "Preferences…" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Preferencias…"
+          }
+        }
+      }
+    },
     "Process %@ is asked to quit and can save its work first." : {
       "localizations" : {
         "es" : {
@@ -1030,12 +1371,45 @@
         }
       }
     },
+    "Processes" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Procesos"
+          }
+        }
+      }
+    },
     "Project" : {
       "localizations" : {
         "es" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Proyecto"
+          }
+        }
+      }
+    },
+    "Project & GitHub" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Proyecto y GitHub"
+          }
+        }
+      }
+    },
+    "Project folder" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Carpeta del proyecto"
           }
         }
       }
@@ -1056,6 +1430,17 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Cerrar proceso"
+          }
+        }
+      }
+    },
+    "Quit…" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cerrar…"
           }
         }
       }
@@ -1086,6 +1471,17 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Leyendo Git, Docker y puertos…"
+          }
+        }
+      }
+    },
+    "Reading…" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Leyendo…"
           }
         }
       }
@@ -1150,6 +1546,17 @@
         }
       }
     },
+    "SSH alias" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Alias SSH"
+          }
+        }
+      }
+    },
     "Sample" : {
       "shouldTranslate" : false
     },
@@ -1176,6 +1583,17 @@
         }
       }
     },
+    "Set GITHUB_TOKEN or sign in with gh; the Linux app keeps no token of its own." : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Define GITHUB_TOKEN o inicia sesión con gh; la app de Linux no guarda ningún token propio."
+          }
+        }
+      }
+    },
     "Settings: alerts, GitHub, servers, editor" : {
       "localizations" : {
         "es" : {
@@ -1196,12 +1614,56 @@
         }
       }
     },
+    "Show or Hide Dashboard" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mostrar u ocultar el panel"
+          }
+        }
+      }
+    },
+    "Small 170 × 170  ·  Medium 364 × 170" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pequeño 170 × 170  ·  Mediano 364 × 170"
+          }
+        }
+      }
+    },
+    "Source" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Origen"
+          }
+        }
+      }
+    },
     "Start DevWidgets at login" : {
       "localizations" : {
         "es" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Abrir DevWidgets al iniciar sesión"
+          }
+        }
+      }
+    },
+    "Stop monitoring %@" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dejar de monitorizar %@"
           }
         }
       }
@@ -1272,6 +1734,17 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Estado térmico"
+          }
+        }
+      }
+    },
+    "This computer" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Este ordenador"
           }
         }
       }
@@ -1415,6 +1888,17 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "bajada"
+          }
+        }
+      }
+    },
+    "gh command (%@)" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "comando gh (%@)"
           }
         }
       }

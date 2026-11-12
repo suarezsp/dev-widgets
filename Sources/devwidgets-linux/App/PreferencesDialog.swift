@@ -1,6 +1,7 @@
 import CGtk
 import DevWidgetsCore
 import DevWidgetsLinuxShell
+import DevWidgetsPresentation
 import Foundation
 
 /// What the preferences need from the app.
@@ -22,16 +23,21 @@ final class PreferencesDialog {
     let servers_Page = created(adw_preferences_page_new())
     var hosts_Group: WidgetPointer?
     var suggestions_Group: WidgetPointer?
-    let alias_Row = PreferenceRows.makeEntryRow("SSH alias")
+    let alias_Row = PreferenceRows.makeEntryRow(
+        String(localized: "SSH alias")
+    )
     let disk_Row = PreferenceRows.makeEntryRow(
-        "Disk to measure",
+        String(localized: "Disk to measure"),
         text: RemoteHost.DEFAULT_DISK_PATH
     )
 
     init(settings: LinuxSettings, handlers: PreferencesHandlers) {
         self.settings = settings
         self.handlers = handlers
-        adw_dialog_set_title(castPointer(dialog), "Preferences")
+        adw_dialog_set_title(
+            castPointer(dialog),
+            String(localized: "Preferences")
+        )
         addPage(
             makeAlertsPage(),
             title: "Alerts",
@@ -67,7 +73,10 @@ final class PreferencesDialog {
         title: String,
         icon_Name: String
     ) {
-        adw_preferences_page_set_title(castPointer(page), title)
+        adw_preferences_page_set_title(
+            castPointer(page),
+            String(localizing: title)
+        )
         adw_preferences_page_set_icon_name(
             castPointer(page),
             icon_Name
@@ -98,7 +107,7 @@ extension PreferencesDialog {
     private func makeAlertsPage() -> WidgetPointer {
         let alert_Settings = settings.alert_Settings
         let limits_Group = PreferenceRows.makeGroup(
-            "Limits",
+            String(localized: "Limits"),
             description: Self.describeTiming(alert_Settings)
         )
         for rule in alert_Settings.rules {
@@ -120,9 +129,13 @@ extension PreferencesDialog {
         let cooldown_Minutes = Int(
             alert_Settings.cooldown_Seconds / 60
         )
-        return "A reading must stay past its limit for"
-            + " \(sustain_Seconds) s; one alert per metric every"
-            + " \(cooldown_Minutes) min at most."
+        return String(
+            localized: """
+                A reading must stay past its limit for \
+                \(sustain_Seconds) s; one alert per metric every \
+                \(cooldown_Minutes) min at most.
+                """
+        )
     }
 
     private func replaceRule(_ new_Rule: AlertRule) {
@@ -135,16 +148,20 @@ extension PreferencesDialog {
     }
 
     private func makeEventsGroup() -> WidgetPointer {
-        let group = PreferenceRows.makeGroup("Events")
+        let group = PreferenceRows.makeGroup(
+            String(localized: "Events")
+        )
         let alert_Settings = settings.alert_Settings
         let ci_Row = PreferenceRows.makeSwitchRow(
-            "When the project's branch CI fails",
+            String(localized: "When the project's branch CI fails"),
             is_On: alert_Settings.notifies_CI_Failure
         ) { [self] is_On in
             update { $0.alert_Settings.notifies_CI_Failure = is_On }
         }
         let server_Row = PreferenceRows.makeSwitchRow(
-            "When a server stops responding for 1 min",
+            String(
+                localized: "When a server stops responding for 1 min"
+            ),
             is_On: alert_Settings.notifies_Server_Down
         ) { [self] is_On in
             update { $0.alert_Settings.notifies_Server_Down = is_On }
@@ -158,15 +175,21 @@ extension PreferencesDialog {
 // MARK: - Project & GitHub
 
 extension PreferencesDialog {
+    static let GITHUB_DESCRIPTION = String(
+        localized: """
+            Set GITHUB_TOKEN or sign in with gh; the Linux app keeps \
+            no token of its own.
+            """
+    )
+
     private func makeProjectPage() -> WidgetPointer {
         let github_Group = PreferenceRows.makeGroup(
             "GitHub",
-            description: "Set GITHUB_TOKEN or sign in with gh; the"
-                + " Linux app keeps no token of its own."
+            description: Self.GITHUB_DESCRIPTION
         )
         PreferenceRows.add(
             PreferenceRows.makeActionRow(
-                "Source",
+                String(localized: "Source"),
                 subtitle: handlers.github_Source_Text
             ),
             to: github_Group
@@ -177,12 +200,26 @@ extension PreferencesDialog {
     }
 
     private func makeProjectGroup() -> WidgetPointer {
-        let group = PreferenceRows.makeGroup("Project")
-        let project_Row = PreferenceRows.makeActionRow(
-            "Project folder",
-            subtitle: settings.project_Path ?? "None chosen"
+        let group = PreferenceRows.makeGroup(
+            String(localized: "Project")
         )
-        let choose_Button = Buttons.makeTextButton("Choose…") {
+        let project_Row = PreferenceRows.makeActionRow(
+            String(localized: "Project folder"),
+            subtitle: settings.project_Path
+                ?? String(localized: "None chosen")
+        )
+        adw_action_row_add_suffix(
+            castPointer(project_Row),
+            makeChooseButton(for: project_Row)
+        )
+        PreferenceRows.add(project_Row, to: group)
+        return group
+    }
+
+    private func makeChooseButton(
+        for project_Row: WidgetPointer
+    ) -> WidgetPointer {
+        Buttons.makeTextButton(String(localized: "Choose…")) {
             [self] in
             handlers.choose_Project { [self] folder in
                 guard let folder else { return }
@@ -193,11 +230,5 @@ extension PreferencesDialog {
                 update { $0.project_Path = folder.path }
             }
         }
-        adw_action_row_add_suffix(
-            castPointer(project_Row),
-            choose_Button
-        )
-        PreferenceRows.add(project_Row, to: group)
-        return group
     }
 }

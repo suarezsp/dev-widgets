@@ -1,4 +1,5 @@
 import DevWidgetsCore
+import DevWidgetsPresentation
 import Foundation
 
 /// Command-line options. GApplication would reject options it
@@ -92,10 +93,17 @@ public enum GitHubSource {
         gh_URL: URL?
     ) -> String {
         if token != nil {
-            return "\(TOKEN_VARIABLE) from the environment"
+            return String(
+                localized: "\(TOKEN_VARIABLE) from the environment"
+            )
         }
-        if let gh_URL { return "gh command (\(gh_URL.path))" }
-        return "Not configured: set \(TOKEN_VARIABLE) or install gh"
+        if let gh_URL {
+            return String(localized: "gh command (\(gh_URL.path))")
+        }
+        return String(
+            localized:
+                "Not configured: set \(TOKEN_VARIABLE) or install gh"
+        )
     }
 }
 

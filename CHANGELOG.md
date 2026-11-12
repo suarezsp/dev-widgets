@@ -30,6 +30,8 @@ in `macOS/project.yml` (`MARKETING_VERSION`).
   lists what works inside the sandbox.
 - Flatpak: Git, Docker and `gh` run on the host through
   `flatpak-spawn --host`, so the project status works there.
+- Linux: Spanish, read from the same String Catalog as macOS
+  (installed in `share/devwidgets`) when the locale asks for it.
 
 ### Changed
 
