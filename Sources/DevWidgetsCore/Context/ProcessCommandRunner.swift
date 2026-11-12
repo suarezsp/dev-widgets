@@ -45,7 +45,8 @@ public struct ProcessCommandRunner: CommandRunner {
         return output_File.readText()
     }
 
-    static func makeProcess(_ command: Command) -> Process {
+    static func makeProcess(_ given_Command: Command) -> Process {
+        let command = FlatpakHost.route(given_Command)
         let process = Process()
         process.executableURL = command.executable_URL
         process.arguments = command.arguments

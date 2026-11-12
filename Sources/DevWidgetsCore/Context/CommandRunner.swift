@@ -45,7 +45,10 @@ public enum ExecutableSearch {
         _ name: String,
         in directories: [String] = DIRECTORIES
     ) -> URL? {
-        directories
+        let host_Directories = FlatpakHost.listHostDirectories(
+            for: directories
+        )
+        return (directories + host_Directories)
             .map {
                 URL(fileURLWithPath: $0).appendingPathComponent(name)
             }

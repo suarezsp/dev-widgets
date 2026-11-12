@@ -18,6 +18,9 @@ finish-args:
   # Tray icon and host commands.
   - --talk-name=org.kde.StatusNotifierWatcher
   - --talk-name=org.freedesktop.Flatpak
+  # Host programs (git, docker, gh) found under /run/host and run
+  # with flatpak-spawn --host.
+  - --filesystem=host-os:ro
   # Keys held by ssh-agent, for the servers widget.
   - --socket=ssh-auth
   # Project folders and the SSH configuration, read only.

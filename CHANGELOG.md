@@ -28,6 +28,8 @@ in `macOS/project.yml` (`MARKETING_VERSION`).
 - Linux: the Flatpak manifest builds and runs (no network during
   the build) and passes `ssh-agent`; `packaging/flatpak/README.md`
   lists what works inside the sandbox.
+- Flatpak: Git, Docker and `gh` run on the host through
+  `flatpak-spawn --host`, so the project status works there.
 
 ### Changed
 
