@@ -9,6 +9,7 @@ by hand, because the build box has no such device or program.
 | `proc/net/tcp`, `proc/net/tcp6` | Header recorded; rows written by hand in the kernel format (real rows are the box's own services). |
 | `proc/77`, `proc/4242` (`stat`, `comm`, `fd/*` links) | Hand-written in the kernel format. |
 | `sys/class/...` | Hand-written: the box has no GPU, sensor or battery. |
+| `sys-nvidia/class/drm/card0/device/vendor`, `nvidia/utilization-two-gpus.txt` | **Hand-written**: an NVIDIA PCI vendor id and `nvidia-smi --query-gpu=utilization.gpu --format=csv,noheader,nounits` output for two GPUs; the box has no NVIDIA card. |
 | `git/*.txt` | Recorded: real `git status --porcelain=v2 --branch` output from scratch repositories (rename, conflict, ahead/behind, detached HEAD). |
 | `docker/*.jsonl` | **Hand-written** in the `docker ps/stats --format '{{json .}}'` format: the box has no Docker. |
 | `lsof/listen.txt` | **Hand-written** in the `lsof -F pcn` format: the box has no `lsof`; it is the macOS source. |

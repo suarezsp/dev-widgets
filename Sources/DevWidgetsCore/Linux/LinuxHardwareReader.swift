@@ -4,6 +4,8 @@ import Foundation
 /// nil when the machine has no such device.
 struct LinuxHardwareReader {
     let sys_Directory: URL
+    /// Runs `nvidia-smi`; without one NVIDIA cards are skipped.
+    var command_Runner: CommandRunner?
 
     func readHardware() -> HardwareStatus {
         HardwareStatus(
@@ -13,8 +15,12 @@ struct LinuxHardwareReader {
         )
     }
 
-    /// amdgpu exposes a busy percentage; other drivers do not.
     func readGPUFraction() -> Double? {
+        readBusyFraction() ?? readNvidiaFraction()
+    }
+
+    /// amdgpu exposes a busy percentage; NVIDIA does not.
+    func readBusyFraction() -> Double? {
         devices(in: "class/drm", prefix: "card")
             .compactMap {
                 KernelFiles.readText(
@@ -24,6 +30,24 @@ struct LinuxHardwareReader {
             }
             .compactMap(SysfsParser.parsePercent)
             .max()
+    }
+
+    func readNvidiaFraction() -> Double? {
+        guard let command_Runner, hasNvidiaCard() else {
+            return nil
+        }
+        return NvidiaSmi.readFraction(using: command_Runner)
+    }
+
+    func hasNvidiaCard() -> Bool {
+        devices(in: "class/drm", prefix: "card").contains {
+            let vendor_Text = KernelFiles.readText(
+                named: "device/vendor",
+                in: $0
+            )
+            return vendor_Text.map(SysfsParser.trimmed)
+                == NvidiaSmi.PCI_VENDOR_ID
+        }
     }
 
     /// The hottest zone is what decides throttling.

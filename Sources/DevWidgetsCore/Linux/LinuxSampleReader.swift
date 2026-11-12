@@ -30,7 +30,8 @@ public struct LinuxSampleReader: RawSampleReader {
             network: try readNetwork()
         )
         sample.hardware = LinuxHardwareReader(
-            sys_Directory: sys_Directory
+            sys_Directory: sys_Directory,
+            command_Runner: ProcessCommandRunner()
         ).readHardware()
         sample.processes = LinuxProcessReader(
             proc_Directory: proc_Directory
