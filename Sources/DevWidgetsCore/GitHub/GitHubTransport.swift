@@ -22,10 +22,17 @@ public enum GitHubPage: Equatable, Sendable {
 /// JSON body, sending `If-None-Match` when an ETag is given. Two
 /// implementations: `gh api` and URLSession.
 public protocol GitHubTransport: Sendable {
+    /// Which GitHub the paths are asked of.
+    var host: GitHubHost { get }
+
     func fetch(
         _ path: String,
         etag: String?
     ) async throws -> GitHubPage
+}
+
+extension GitHubTransport {
+    public var host: GitHubHost { .PUBLIC }
 }
 
 /// Maps HTTP answers to `GitHubError`. Header names lowercased.
@@ -86,14 +93,19 @@ public enum GitHubResponse {
 public enum GitHubTransportChoice {
     public static func choose(
         token: String?,
-        gh_URL: URL? = ExecutableSearch.locate("gh"),
-        runner: CommandRunner = ProcessCommandRunner()
+        host: GitHubHost = .PUBLIC,
+        gh_URL: URL? = ExecutableSearch.locate("gh")
     ) -> GitHubTransport? {
         if let token, !token.isEmpty {
-            return RESTTransport(token: token)
+            return RESTTransport(token: token, host: host)
         }
         return gh_URL.map {
-            GhCommandTransport(runner: runner, gh_URL: $0)
+            var transport = GhCommandTransport(
+                runner: ProcessCommandRunner(),
+                gh_URL: $0
+            )
+            transport.host = host
+            return transport
         }
     }
 }

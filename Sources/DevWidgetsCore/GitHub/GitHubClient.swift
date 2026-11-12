@@ -23,6 +23,8 @@ public actor GitHubClient {
         self.transport = transport
     }
 
+    public nonisolated var host: GitHubHost { transport.host }
+
     public func fetch(_ path: String) async throws -> Data {
         let cached_Page = cached_Pages[path]
         let page = try await transport.fetch(

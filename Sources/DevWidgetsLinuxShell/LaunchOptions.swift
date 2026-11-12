@@ -67,9 +67,18 @@ public struct LaunchOptions: Equatable, Sendable {
 
 /// Where GitHub data comes from on Linux. No keyring: a token in
 /// the environment, else the `gh` command, as the transport choice
-/// in the core decides.
+/// in the core decides. `GH_HOST`, as for `gh`, names a GitHub
+/// Enterprise Server host.
 public enum GitHubSource {
     public static let TOKEN_VARIABLE = "GITHUB_TOKEN"
+    public static let HOST_VARIABLE = "GH_HOST"
+
+    public static func readHost(
+        environment: [String: String] = ProcessInfo.processInfo
+            .environment
+    ) -> GitHubHost {
+        GitHubHost(text: environment[HOST_VARIABLE] ?? "")
+    }
 
     public static func readToken(
         environment: [String: String] = ProcessInfo.processInfo

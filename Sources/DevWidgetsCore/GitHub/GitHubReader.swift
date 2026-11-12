@@ -23,7 +23,8 @@ public struct GitHubReader: Sendable {
         else { return .not_Configured }
         guard
             let repository = GitRemoteParser.parseRepository(
-                remote_URL: remote_URL
+                remote_URL: remote_URL,
+                host: client?.host ?? .PUBLIC
             )
         else { return .not_GitHub }
         guard let client else { return .no_Credentials }

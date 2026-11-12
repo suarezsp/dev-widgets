@@ -6,6 +6,7 @@ import Foundation
 public struct GhCommandTransport: GitHubTransport {
     public let runner: CommandRunner
     public let gh_URL: URL
+    public var host = GitHubHost.PUBLIC
 
     public init(runner: CommandRunner, gh_URL: URL) {
         self.runner = runner
@@ -16,10 +17,7 @@ public struct GhCommandTransport: GitHubTransport {
         _ path: String,
         etag: String?
     ) async throws -> GitHubPage {
-        let command = Command(
-            executable_URL: gh_URL,
-            arguments: Self.makeArguments(path: path, etag: etag)
-        )
+        let command = makeCommand(path: path, etag: etag)
         do {
             let output = try await runner.runInBackground(command)
             return GhIncludeParser.parsePage(output)
@@ -35,12 +33,31 @@ public struct GhCommandTransport: GitHubTransport {
         }
     }
 
-    static func makeArguments(path: String, etag: String?) -> [String]
-    {
+    func makeCommand(path: String, etag: String?) -> Command {
+        Command(
+            executable_URL: gh_URL,
+            arguments: Self.makeArguments(
+                path: path,
+                etag: etag,
+                host: host
+            )
+        )
+    }
+
+    /// `--hostname` only for Enterprise: for github.com, `gh`
+    /// keeps honouring `GH_HOST` as it always did.
+    static func makeArguments(
+        path: String,
+        etag: String?,
+        host: GitHubHost = .PUBLIC
+    ) -> [String] {
         let header_Arguments = etag.map {
             ["-H", "If-None-Match: \($0)"]
         }
-        return ["api", "-i"] + (header_Arguments ?? []) + [path]
+        let host_Arguments =
+            host.is_Public ? [] : ["--hostname", host.name]
+        return ["api", "-i"] + host_Arguments
+            + (header_Arguments ?? []) + [path]
     }
 
     /// `gh` reports HTTP failures as "gh: Not Found (HTTP 404)".

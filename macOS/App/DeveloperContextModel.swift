@@ -43,8 +43,12 @@ final class DeveloperContextModel {
     }
 
     static func makeClient() -> GitHubClient? {
-        GitHubTransportChoice.choose(
-            token: GitHubTokenStore.readToken()
+        let host_Text = UserDefaults.standard.string(
+            forKey: GitHubHost.SETTING_KEY
+        )
+        return GitHubTransportChoice.choose(
+            token: GitHubTokenStore.readToken(),
+            host: GitHubHost(text: host_Text ?? "")
         ).map { GitHubClient(transport: $0) }
     }
 

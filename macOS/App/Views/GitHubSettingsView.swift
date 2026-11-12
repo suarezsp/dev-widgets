@@ -8,6 +8,7 @@ struct GitHubSettingsView: View {
     @State private var token_Text = ""
     @State private var has_Token = GitHubTokenStore.readToken() != nil
     @State private var error_Text: String?
+    @AppStorage(GitHubHost.SETTING_KEY) private var host_Text = ""
 
     var body: some View {
         Form {
@@ -23,6 +24,7 @@ struct GitHubSettingsView: View {
                 .foregroundStyle(.secondary)
             }
             token_Section
+            host_Section
             Section("Now") {
                 GitHubRow(
                     github: context_Model.latest_Context?.github
@@ -52,6 +54,22 @@ struct GitHubSettingsView: View {
             if let error_Text {
                 Text(error_Text).foregroundStyle(.red)
             }
+        }
+    }
+
+    private var host_Section: some View {
+        Section("Host") {
+            TextField("github.com", text: $host_Text)
+                .onSubmit { context_Model.resetGitHub() }
+            Text(
+                """
+                Leave empty for github.com. For GitHub Enterprise \
+                Server, type its host and press Return; the token, \
+                or gh auth login --hostname, must be for that host.
+                """
+            )
+            .font(.caption)
+            .foregroundStyle(.secondary)
         }
     }
 

@@ -8,21 +8,22 @@ import FoundationNetworking
 /// on macOS) the limit is 5,000 requests an hour; without one,
 /// public repositories still answer, 60 times an hour.
 public struct RESTTransport: GitHubTransport {
-    public static let BASE_URL = "https://api.github.com/"
     public static let API_VERSION = "2022-11-28"
     static let TIMEOUT_SECONDS = 10.0
 
     let token: String?
+    public let host: GitHubHost
 
-    public init(token: String?) {
+    public init(token: String?, host: GitHubHost = .PUBLIC) {
         self.token = token
+        self.host = host
     }
 
     public func fetch(
         _ path: String,
         etag: String?
     ) async throws -> GitHubPage {
-        guard let request_URL = URL(string: Self.BASE_URL + path)
+        guard let request_URL = URL(string: host.api_Base + path)
         else { throw GitHubError.unreachable(reason: "Bad path") }
         var request = makeRequest(request_URL)
         request.setValue(etag, forHTTPHeaderField: "If-None-Match")

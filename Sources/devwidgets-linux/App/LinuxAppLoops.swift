@@ -14,6 +14,7 @@ struct ContextSources {
         let gh_URL = ExecutableSearch.locate("gh")
         let client = GitHubTransportChoice.choose(
             token: token,
+            host: GitHubSource.readHost(),
             gh_URL: gh_URL
         ).map { GitHubClient(transport: $0) }
         refresher = DeveloperContextRefresher(

@@ -108,7 +108,7 @@ Every macOS image below is the **real SwiftUI view** of the widget, drawn with `
 | **Docker** | `docker stats` / `docker ps` through a timed command runner |
 | **Listening ports** | `lsof` (macOS) and `/proc/net` (Linux), grouped by owning program |
 | **Git** | `git status --porcelain=v2 --branch` of the chosen project folder |
-| **GitHub CI and pull requests** | REST API (token in the Keychain) or the `gh` CLI, with an ETag cache; failed runs open on click |
+| **GitHub CI and pull requests** | REST API (token in the Keychain) or the `gh` CLI, with an ETag cache; failed runs open on click. github.com or a GitHub Enterprise Server host (Settings › GitHub on macOS, `GH_HOST` on Linux) |
 | **SSH servers** | your system `ssh` with your keys and `~/.ssh/config` (including `Include`); no passwords stored |
 | **Alerts** | thresholds per metric with debounce, failed CI, server down; macOS notifications or Linux desktop notifications |
 | **Menu bar** | live panel every second: metrics, processes, context, servers and any problem (for example, widgets that cannot be updated) |

@@ -654,6 +654,16 @@
         }
       }
     },
+    "Host" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Host"
+          }
+        }
+      }
+    },
     "Image" : {
       "localizations" : {
         "es" : {
@@ -680,6 +690,16 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "PUERTOS A LA ESCUCHA"
+          }
+        }
+      }
+    },
+    "Leave empty for github.com. For GitHub Enterprise Server, type its host and press Return; the token, or gh auth login --hostname, must be for that host." : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Déjalo vacío para github.com. Para GitHub Enterprise Server, escribe su host y pulsa Retorno; el token, o gh auth login --hostname, debe ser de ese host."
           }
         }
       }
@@ -1398,6 +1418,9 @@
           }
         }
       }
+    },
+    "github.com" : {
+      "shouldTranslate" : false
     },
     "github_pat_…" : {
       "shouldTranslate" : false

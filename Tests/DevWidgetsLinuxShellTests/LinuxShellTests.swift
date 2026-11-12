@@ -229,6 +229,14 @@ struct GitHubSourceTests {
                 .hasPrefix("Not configured")
         )
     }
+
+    @Test func ghHostNamesTheEnterpriseHost() {
+        let enterprise_Host = GitHubSource.readHost(
+            environment: ["GH_HOST": "ghe.example.com"]
+        )
+        #expect(enterprise_Host.name == "ghe.example.com")
+        #expect(GitHubSource.readHost(environment: [:]).is_Public)
+    }
 }
 
 struct IconLocatorTests {

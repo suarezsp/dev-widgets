@@ -87,7 +87,7 @@ public struct ReviewQueueReader: Sendable {
 }
 
 enum ReviewQueueParser {
-    static let REPOSITORY_PREFIX = "https://api.github.com/repos/"
+    static let REPOSITORIES_PATH = "/repos/"
 
     static func parseQueue(_ json_Data: Data) throws -> ReviewQueue {
         let payload = try JSONDecoder().decode(
@@ -117,12 +117,14 @@ enum ReviewQueueParser {
         return request
     }
 
-    /// "https://api.github.com/repos/owner/name" to owner/name.
+    /// "https://api.github.com/repos/owner/name" (or an Enterprise
+    /// ".../api/v3/repos/owner/name") to owner/name.
     static func parseRepository(
         _ api_URL: String
     ) -> GitHubRepository? {
-        guard api_URL.hasPrefix(REPOSITORY_PREFIX) else { return nil }
-        let parts = api_URL.dropFirst(REPOSITORY_PREFIX.count)
+        guard let path_Range = api_URL.range(of: REPOSITORIES_PATH)
+        else { return nil }
+        let parts = api_URL[path_Range.upperBound...]
             .split(separator: "/")
         guard parts.count == 2 else { return nil }
         return GitHubRepository(

@@ -23,6 +23,8 @@ in `macOS/project.yml` (`MARKETING_VERSION`).
   intents, used when Spanish is the preferred language.
 - Linux: GPU load on NVIDIA cards, read through `nvidia-smi` when
   the driver has no busy file in `/sys`.
+- GitHub Enterprise Server: a host in Settings › GitHub (macOS) or
+  `GH_HOST` (Linux) points the REST API and `gh` at it.
 
 ### Changed
 
