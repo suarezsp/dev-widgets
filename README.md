@@ -245,6 +245,18 @@ tools/ssh_test_server.sh            # optional local sshd for the live SSH suite
 
 ---
 
+## Code style
+
+Enforced by `tools/lint.sh` (swift-format, SwiftLint and `tools/check_style.py`):
+
+- `MAYUS_NAME` constants, `this_Name` variables, properties, parameters and enum cases, `thisName` functions, `PascalCase` types. Names say exactly what they hold; no abbreviations.
+- Lines ≤ 70 columns, functions ≤ 25 lines, ≤ 3 parameters, cyclomatic complexity ≤ 10.
+- Names imposed by Apple frameworks are allow-listed in the checker.
+- SOLID and YAGNI where they help; no abstraction without a second real implementation.
+- User-facing text is a SwiftUI literal or `String(localized:)`. On macOS, `tools/sync_strings.sh <DerivedData>` adds new texts to `macOS/Shared/Localizable.xcstrings` after a build; a test fails while one is missing.
+
+---
+
 ## Roadmap and known limitations
 
 - **No signed release yet.** Developer ID signing, notarization and a DMG are documented above but not done.
