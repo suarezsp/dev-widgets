@@ -13,7 +13,6 @@ let PORTABLE_PRESENTATION_FILES = [
     "Shared/ContextPresentation.swift",
     "Shared/GitHubPresentation.swift",
     "Shared/HardwarePresentation.swift",
-    "Shared/LinuxLocalization.swift",
     "Shared/MetricKind.swift",
     "Shared/MetricPresentation.swift",
     "Shared/PreviewContext.swift",

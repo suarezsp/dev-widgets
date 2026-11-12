@@ -29,12 +29,18 @@ public struct ProcessTerminator: Sendable {
     public func terminate(_ process: ProcessIdentity) -> ActionOutcome
     {
         guard process.pid > 1, process.pid != getpid() else {
-            return .refused(reason: "Protected process")
+            return .refused(
+                reason: String(localized: "Protected process")
+            )
         }
         guard let current_Name = name_Lookup(process.pid),
             current_Name == process.name
         else {
-            return .refused(reason: "\(process.name) already quit")
+            return .refused(
+                reason: String(
+                    localized: "\(process.name) already quit"
+                )
+            )
         }
         if app_Quitter(process.pid) { return .done }
         guard kill(process.pid, SIGTERM) != 0 else { return .done }
@@ -48,10 +54,17 @@ public struct ProcessTerminator: Sendable {
         switch error_Number {
         case EPERM:
             .failed(
-                reason: "\(name) is not your process: only your own"
-                    + " processes can be quit"
+                reason: String(
+                    localized: """
+                        \(name) is not your process: only your own \
+                        processes can be quit
+                        """
+                )
             )
-        case ESRCH: .refused(reason: "\(name) already quit")
+        case ESRCH:
+            .refused(
+                reason: String(localized: "\(name) already quit")
+            )
         default:
             .failed(reason: String(cString: strerror(error_Number)))
         }
@@ -89,12 +102,17 @@ public struct ContainerController: Sendable {
         await run("restart", container: container)
     }
 
+    static let NOT_FOUND_TEXT = String(localized: "Docker not found")
+    static let TIMED_OUT_TEXT = String(
+        localized: "Docker did not answer in time"
+    )
+
     func run(
         _ verb: String,
         container: ContainerIdentity
     ) async -> ActionOutcome {
         guard let docker_URL else {
-            return .failed(reason: "Docker not found")
+            return .failed(reason: Self.NOT_FOUND_TEXT)
         }
         var command = Command(
             executable_URL: docker_URL,
@@ -110,7 +128,7 @@ public struct ContainerController: Sendable {
         } catch CommandError.failed(_, let error_Text) {
             return .failed(reason: Self.firstLine(error_Text, verb))
         } catch {
-            return .failed(reason: "Docker did not answer in time")
+            return .failed(reason: Self.TIMED_OUT_TEXT)
         }
     }
 

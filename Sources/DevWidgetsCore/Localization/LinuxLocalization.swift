@@ -1,7 +1,6 @@
-#if !canImport(Darwin)
-import DevWidgetsCore
 import Foundation
 
+#if !canImport(Darwin)
 /// What `String(localized:)` gets on Linux: the key Xcode writes
 /// in the String Catalog ("%@" for text, "%lld" for whole numbers)
 /// and the values, put back after translation.

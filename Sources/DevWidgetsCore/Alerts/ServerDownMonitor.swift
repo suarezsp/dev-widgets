@@ -16,8 +16,12 @@ public struct ServerDownAlert: Equatable, Sendable {
             ServerDownMonitor.TIMING.sustain_Seconds / 60
         )
         return AlertMessage(
-            title: "\(host.alias) stopped responding",
-            body: "\(reason) · no answer for \(minutes) min"
+            title: String(
+                localized: "\(host.alias) stopped responding"
+            ),
+            body: String(
+                localized: "\(reason) · no answer for \(minutes) min"
+            )
         )
     }
 }

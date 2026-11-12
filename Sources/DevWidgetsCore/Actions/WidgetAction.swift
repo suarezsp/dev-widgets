@@ -17,11 +17,12 @@ public enum WidgetAction: Codable, Hashable, Sendable {
     public var title: String {
         switch self {
         case .stop_Container(let container):
-            "Stop \(container.name)"
+            String(localized: "Stop \(container.name)")
         case .restart_Container(let container):
-            "Restart \(container.name)"
-        case .terminate_Process(let process): "Quit \(process.name)"
-        case .open_Project: "Open project"
+            String(localized: "Restart \(container.name)")
+        case .terminate_Process(let process):
+            String(localized: "Quit \(process.name)")
+        case .open_Project: String(localized: "Open project")
         }
     }
 }
@@ -40,7 +41,7 @@ public enum ActionOutcome: Equatable, Sendable {
         case .done: nil
         case .refused(let reason), .failed(let reason):
             AlertMessage(
-                title: "\(action.title) failed",
+                title: String(localized: "\(action.title) failed"),
                 body: reason
             )
         }

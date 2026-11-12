@@ -1,9 +1,10 @@
 import Foundation
 import Testing
 
-/// Every plain `String(localized: "…")` text in `macOS/` and the
-/// Linux app is in the String Catalog; `tools/sync_strings.sh` adds
-/// new macOS ones, Linux ones are added by hand.
+/// Every plain `String(localized: "…")` text in `macOS/`, the core
+/// and the Linux app is in the String Catalog.
+/// `tools/sync_strings.sh` adds new macOS ones; core and Linux ones
+/// are added by hand.
 struct StringCatalogTests {
     static let MACOS_URL = URL(fileURLWithPath: #filePath)
         .deletingLastPathComponent()
@@ -28,6 +29,7 @@ struct StringCatalogTests {
             "App", "Shared", "Widgets",
             "../Sources/devwidgets-linux",
             "../Sources/DevWidgetsLinuxShell",
+            "../Sources/DevWidgetsCore",
         ]
         var texts = Set<String>()
         for folder in source_Folders {

@@ -11,27 +11,37 @@ public struct AlertMessage: Equatable, Sendable {
 
     public init(alert: ThresholdAlert, settings: AlertSettings) {
         let metric = alert.rule.metric
-        title =
-            "\(Self.describeName(metric)) at "
-            + Self.describeValue(alert.value, of: metric)
-        let direction = metric.alerts_Below_Limit ? "Under" : "Over"
+        let name = Self.describeName(metric)
+        let value_Text = Self.describeValue(alert.value, of: metric)
+        title = String(localized: "\(name) at \(value_Text)")
         let limit_Text = Self.describeValue(
             alert.rule.limit,
             of: metric
         )
-        let seconds_Text = Int(settings.sustain_Seconds)
+        let seconds = Int(settings.sustain_Seconds)
         body =
-            "\(direction) your \(limit_Text) limit for at least"
-            + " \(seconds_Text) s."
+            metric.alerts_Below_Limit
+            ? String(
+                localized: """
+                    Under your \(limit_Text) limit for at least \
+                    \(seconds) s.
+                    """
+            )
+            : String(
+                localized: """
+                    Over your \(limit_Text) limit for at least \
+                    \(seconds) s.
+                    """
+            )
     }
 
     public static func describeName(_ metric: AlertMetric) -> String {
         switch metric {
         case .cpu: "CPU"
-        case .memory: "Memory"
-        case .disk_Space: "Disk space"
-        case .temperature: "Temperature"
-        case .battery: "Battery"
+        case .memory: String(localized: "Memory")
+        case .disk_Space: String(localized: "Disk space")
+        case .temperature: String(localized: "Temperature")
+        case .battery: String(localized: "Battery")
         }
     }
 

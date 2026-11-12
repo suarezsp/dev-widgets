@@ -28,7 +28,7 @@ public struct GhCommandTransport: GitHubTransport {
             throw Self.classify(error_Text: error_Text)
         } catch {
             throw GitHubError.unreachable(
-                reason: "gh did not answer"
+                reason: String(localized: "gh did not answer")
             )
         }
     }

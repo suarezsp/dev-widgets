@@ -27,7 +27,9 @@ public struct CIFailureAlert: Equatable, Sendable {
     public var message: AlertMessage {
         let workflow_Names = failed_Runs.map(\.workflow_Name)
         return AlertMessage(
-            title: "CI failed on \(status.branch_Name)",
+            title: String(
+                localized: "CI failed on \(status.branch_Name)"
+            ),
             body: workflow_Names.joined(separator: ", ")
                 + " · \(status.repository.full_Name)"
         )

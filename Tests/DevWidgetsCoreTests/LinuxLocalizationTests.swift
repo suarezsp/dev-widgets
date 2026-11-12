@@ -2,7 +2,7 @@
 import Foundation
 import Testing
 
-@testable import DevWidgetsPresentation
+@testable import DevWidgetsCore
 
 /// The Linux stand-in for `String(localized:)` builds the same
 /// keys Xcode writes, so both platforms share one catalog.

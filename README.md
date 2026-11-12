@@ -230,6 +230,9 @@ tools/check_macos_clt.sh            # typecheck app + widgets without Xcode
 tools/ssh_test_server.sh            # optional local sshd for the live SSH suite
 ```
 
+On Linux the tests expect the English texts: with a Spanish locale,
+run them as `LC_ALL=C swift test`.
+
 | Platform | Tests |
 |----------|-------|
 | Linux (Swift 6.4) | **234 tests in 52 suites** |
@@ -254,7 +257,7 @@ Enforced by `tools/lint.sh` (swift-format, SwiftLint and `tools/check_style.py`)
 - Lines ≤ 70 columns, functions ≤ 25 lines, ≤ 3 parameters, cyclomatic complexity ≤ 10.
 - Names imposed by Apple frameworks are allow-listed in the checker.
 - SOLID and YAGNI where they help; no abstraction without a second real implementation.
-- User-facing text is a SwiftUI literal or `String(localized:)`. On macOS, `tools/sync_strings.sh <DerivedData>` adds new texts to `macOS/Shared/Localizable.xcstrings` after a build; Linux texts are added by hand with `"extractionState" : "manual"`. A test fails while a text is missing or has no Spanish.
+- User-facing text is a SwiftUI literal or `String(localized:)`. On macOS, `tools/sync_strings.sh <DerivedData>` adds new texts to `macOS/Shared/Localizable.xcstrings` after a build; core and Linux texts are added by hand with `"extractionState" : "manual"`. A test fails while a text is missing or has no Spanish.
 
 ---
 

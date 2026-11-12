@@ -78,7 +78,11 @@ public struct SSHReader: Sendable {
         } catch CommandError.failed(_, let error_Text) {
             return .failure(SSHErrorParser.classify(error_Text))
         } catch {
-            return .failure(.unreachable(reason: "No answer in 15 s"))
+            return .failure(
+                .unreachable(
+                    reason: String(localized: "No answer in 15 s")
+                )
+            )
         }
     }
 
