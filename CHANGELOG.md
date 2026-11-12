@@ -19,6 +19,8 @@ in `macOS/project.yml` (`MARKETING_VERSION`).
   (`macOS/Shared/Localizable.xcstrings`) shared by the app and the
   widgets, ready for translation; `tools/sync_strings.sh` adds new
   ones after a build.
+- macOS: Spanish translation of the app, the widgets and their
+  intents, used when Spanish is the preferred language.
 
 ### Changed
 

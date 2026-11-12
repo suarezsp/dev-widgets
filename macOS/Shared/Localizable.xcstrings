@@ -2,13 +2,34 @@
   "sourceLanguage" : "en",
   "strings" : {
     "%@ free" : {
-
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@ libres"
+          }
+        }
+      }
     },
     "%@ is not supported yet" : {
-
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@ aún no es compatible"
+          }
+        }
+      }
     },
     "%@ left" : {
-
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Quedan %@"
+          }
+        }
+      }
     },
     "%@ of %@" : {
       "localizations" : {
@@ -17,11 +38,24 @@
             "state" : "new",
             "value" : "%1$@ of %2$@"
           }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%1$@ de %2$@"
+          }
         }
       }
     },
     "%@, not available" : {
-
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@, no disponible"
+          }
+        }
+      }
     },
     "%@: lowest %@, highest %@" : {
       "localizations" : {
@@ -30,23 +64,64 @@
             "state" : "new",
             "value" : "%1$@: lowest %2$@, highest %3$@"
           }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%1$@: mínimo %2$@, máximo %3$@"
+          }
         }
       }
     },
     "%@?" : {
-
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "¿%@?"
+          }
+        }
+      }
     },
     "%lld conflicted" : {
-
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%lld en conflicto"
+          }
+        }
+      }
     },
     "%lld cores" : {
-
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%lld núcleos"
+          }
+        }
+      }
     },
     "%lld modified" : {
-
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%lld modificados"
+          }
+        }
+      }
     },
     "%lld requests await you" : {
-
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%lld solicitudes te esperan"
+          }
+        }
+      }
     },
     "%lld running of %lld" : {
       "localizations" : {
@@ -55,263 +130,829 @@
             "state" : "new",
             "value" : "%1$lld running of %2$lld"
           }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%1$lld en marcha de %2$lld"
+          }
         }
       }
     },
     "%lld staged" : {
-
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%lld preparados"
+          }
+        }
+      }
     },
     "%lld untracked" : {
-
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%lld sin seguimiento"
+          }
+        }
+      }
     },
     "1 request awaits you" : {
-
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "1 solicitud te espera"
+          }
+        }
+      }
     },
     "Add" : {
-
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Añadir"
+          }
+        }
+      }
     },
     "Add servers in Settings › Servers" : {
-
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Añade servidores en Ajustes › Servidores"
+          }
+        }
+      }
     },
     "Alerts" : {
-
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Alertas"
+          }
+        }
+      }
     },
     "Alias or user@host" : {
-
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Alias o usuario@host"
+          }
+        }
+      }
     },
     "Allow DevWidgets in System Settings › General › Login Items." : {
-
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Permite DevWidgets en Ajustes del Sistema › General › Ítems de inicio."
+          }
+        }
+      }
     },
     "Approved" : {
-
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Aprobada"
+          }
+        }
+      }
     },
     "Asks for a password or 2FA: use a key-only login" : {
-
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pide contraseña o 2FA: usa un inicio de sesión solo con clave"
+          }
+        }
+      }
     },
     "At most once every %lld min" : {
-
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Como mucho una vez cada %lld min"
+          }
+        }
+      }
     },
     "Automatic" : {
-
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Automático"
+          }
+        }
+      }
     },
     "Automatic tries Cursor, Visual Studio Code, Zed and Xcode, then Finder." : {
-
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Automático prueba Cursor, Visual Studio Code, Zed y Xcode, y después el Finder."
+          }
+        }
+      }
     },
     "Avoid noise" : {
-
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Evitar ruido"
+          }
+        }
+      }
     },
     "Awaiting review" : {
-
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pendiente de revisión"
+          }
+        }
+      }
     },
     "Battery" : {
-
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Batería"
+          }
+        }
+      }
     },
     "Busy" : {
-
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ocupada"
+          }
+        }
+      }
     },
     "CI and pull request of the project's branch, and pull requests awaiting your review. DevWidgets uses the token below if you save one, otherwise the gh command (run gh auth login once)." : {
-
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "CI y pull request de la rama del proyecto, y pull requests pendientes de tu revisión. DevWidgets usa el token de abajo si guardas uno; si no, el comando gh (ejecuta gh auth login una vez)."
+          }
+        }
+      }
     },
     "CI cancelled: %@" : {
-
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "CI cancelada: %@"
+          }
+        }
+      }
     },
     "CI failing: %@" : {
-
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "CI fallando: %@"
+          }
+        }
+      }
     },
     "CI passing (%lld)" : {
-
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "CI correcta (%lld)"
+          }
+        }
+      }
     },
     "CI running: %@" : {
-
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "CI en curso: %@"
+          }
+        }
+      }
     },
     "CPU" : {
-
+      "shouldTranslate" : false
     },
     "CPU, memory and disk of your Linux servers." : {
-
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "CPU, memoria y disco de tus servidores Linux."
+          }
+        }
+      }
     },
     "CPU, memory, disk, network, GPU, heat or battery." : {
-
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "CPU, memoria, disco, red, GPU, temperatura o batería."
+          }
+        }
+      }
     },
     "Changes requested" : {
-
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cambios solicitados"
+          }
+        }
+      }
     },
     "Charging" : {
-
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cargando"
+          }
+        }
+      }
     },
     "Checking…" : {
-
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Comprobando…"
+          }
+        }
+      }
     },
     "Choose Metric" : {
-
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Elegir métrica"
+          }
+        }
+      }
     },
     "Choose Project…" : {
-
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Elegir proyecto…"
+          }
+        }
+      }
     },
     "Choose a project first" : {
-
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Elige un proyecto primero"
+          }
+        }
+      }
     },
     "Choose one in the menu bar" : {
-
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Elige uno en la barra de menús"
+          }
+        }
+      }
     },
     "Clean" : {
-
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Limpio"
+          }
+        }
+      }
     },
     "Collecting first sample…" : {
-
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tomando la primera muestra…"
+          }
+        }
+      }
     },
     "Confirm" : {
-
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Confirmar"
+          }
+        }
+      }
     },
     "Connecting…" : {
-
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Conectando…"
+          }
+        }
+      }
     },
     "Container ID" : {
-
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ID del contenedor"
+          }
+        }
+      }
     },
     "DEVWIDGETS" : {
-
+      "shouldTranslate" : false
     },
     "DevWidgets" : {
-
+      "shouldTranslate" : false
     },
     "DevWidgets runs ssh with your own config and keys, never asks for a password and only reads /proc. The host must be Linux." : {
-
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "DevWidgets ejecuta ssh con tu propia configuración y claves, nunca pide contraseña y solo lee /proc. El host debe ser Linux."
+          }
+        }
+      }
     },
     "Developer Context" : {
-
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Contexto de desarrollo"
+          }
+        }
+      }
     },
     "Developer Dashboard" : {
-
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Panel de desarrollo"
+          }
+        }
+      }
     },
     "Disk" : {
-
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Disco"
+          }
+        }
+      }
     },
     "Docker asks it to stop and forces it after 10 seconds." : {
-
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Docker le pide que se detenga y lo fuerza a los 10 segundos."
+          }
+        }
+      }
     },
     "Docker stops it, forcing it after 10 seconds, then starts it again." : {
-
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Docker lo detiene, forzándolo a los 10 segundos, y lo vuelve a iniciar."
+          }
+        }
+      }
     },
     "Down" : {
-
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bajada"
+          }
+        }
+      }
     },
     "Draft" : {
-
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Borrador"
+          }
+        }
+      }
     },
     "Events" : {
-
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Eventos"
+          }
+        }
+      }
     },
     "From ~/.ssh/config" : {
-
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Desde ~/.ssh/config"
+          }
+        }
+      }
     },
     "GPU" : {
-
+      "shouldTranslate" : false
     },
     "General" : {
-
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "General"
+          }
+        }
+      }
     },
     "Git not found" : {
-
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Git no encontrado"
+          }
+        }
+      }
     },
     "Git, GitHub CI and pull request, containers and ports." : {
-
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Git, CI y pull request de GitHub, contenedores y puertos."
+          }
+        }
+      }
     },
     "GitHub" : {
-
+      "shouldTranslate" : false
     },
     "History charts, hardware and top processes to quit." : {
-
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Gráficas de historial, hardware y procesos principales para cerrar."
+          }
+        }
+      }
     },
     "Image" : {
-
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Imagen"
+          }
+        }
+      }
     },
     "Key refused: is it in ssh-agent?" : {
-
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Clave rechazada: ¿está en ssh-agent?"
+          }
+        }
+      }
     },
     "LISTENING PORTS" : {
-
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "PUERTOS A LA ESCUCHA"
+          }
+        }
+      }
     },
     "Memory" : {
-
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Memoria"
+          }
+        }
+      }
     },
     "Metric" : {
-
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Métrica"
+          }
+        }
+      }
     },
     "Monitored" : {
-
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Monitorizados"
+          }
+        }
+      }
     },
     "Name" : {
-
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nombre"
+          }
+        }
+      }
     },
     "Network" : {
-
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Red"
+          }
+        }
+      }
     },
     "No CI runs" : {
-
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sin ejecuciones de CI"
+          }
+        }
+      }
     },
     "No branch remote" : {
-
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "La rama no tiene remoto"
+          }
+        }
+      }
     },
     "No data yet. Open DevWidgets in the menu bar." : {
-
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Aún no hay datos. Abre DevWidgets en la barra de menús."
+          }
+        }
+      }
     },
     "No project" : {
-
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sin proyecto"
+          }
+        }
+      }
     },
     "No pull request" : {
-
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sin pull request"
+          }
+        }
+      }
     },
     "No token" : {
-
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sin token"
+          }
+        }
+      }
     },
     "Nominal" : {
-
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Normal"
+          }
+        }
+      }
     },
     "None" : {
-
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ninguno"
+          }
+        }
+      }
     },
     "Not a Git repository" : {
-
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "No es un repositorio Git"
+          }
+        }
+      }
     },
     "Not available" : {
-
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "No disponible"
+          }
+        }
+      }
     },
     "Not installed" : {
-
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "No instalado"
+          }
+        }
+      }
     },
     "Not running" : {
-
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "No está en marcha"
+          }
+        }
+      }
     },
     "Nothing awaits your review" : {
-
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nada pendiente de tu revisión"
+          }
+        }
+      }
     },
     "Notify me when" : {
-
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Avisarme cuando"
+          }
+        }
+      }
     },
     "Now" : {
-
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ahora"
+          }
+        }
+      }
     },
     "On battery" : {
-
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Con batería"
+          }
+        }
+      }
     },
     "On power adapter" : {
-
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Con adaptador de corriente"
+          }
+        }
+      }
     },
     "Only after %lld s past the limit" : {
-
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Solo tras %lld s por encima del límite"
+          }
+        }
+      }
     },
     "Open Project" : {
-
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Abrir proyecto"
+          }
+        }
+      }
     },
     "Open project" : {
-
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Abrir proyecto"
+          }
+        }
+      }
     },
     "Open projects with" : {
-
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Abrir proyectos con"
+          }
+        }
+      }
     },
     "Opens the project in your editor." : {
-
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Abre el proyecto en tu editor."
+          }
+        }
+      }
     },
     "PR #%@ · %@" : {
       "localizations" : {
@@ -320,167 +961,516 @@
             "state" : "new",
             "value" : "PR #%1$@ · %2$@"
           }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "PR #%1$@ · %2$@"
+          }
         }
       }
     },
     "Personal access token" : {
-
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Token de acceso personal"
+          }
+        }
+      }
     },
     "Pick the metric this widget features." : {
-
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Elige la métrica que muestra este widget."
+          }
+        }
+      }
     },
     "Process %@ is asked to quit and can save its work first." : {
-
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Se pide al proceso %@ que salga; puede guardar su trabajo antes."
+          }
+        }
+      }
     },
     "Process ID" : {
-
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ID del proceso"
+          }
+        }
+      }
     },
     "Project" : {
-
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Proyecto"
+          }
+        }
+      }
     },
     "Quit DevWidgets" : {
-
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Salir de DevWidgets"
+          }
+        }
+      }
     },
     "Quit Process" : {
-
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cerrar proceso"
+          }
+        }
+      }
     },
     "Rate limited until %@" : {
-
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Límite de peticiones hasta las %@"
+          }
+        }
+      }
     },
     "Read-only is enough: a fine-grained token with Actions and Pull requests set to Read. Reviews only list repositories the token can read." : {
-
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Basta con solo lectura: un token detallado con Actions y Pull requests en Read. Las revisiones solo incluyen repositorios que el token puede leer."
+          }
+        }
+      }
     },
     "Reading Git, Docker and ports…" : {
-
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Leyendo Git, Docker y puertos…"
+          }
+        }
+      }
     },
     "Remote not on GitHub" : {
-
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "El remoto no está en GitHub"
+          }
+        }
+      }
     },
     "Remove" : {
-
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Eliminar"
+          }
+        }
+      }
     },
     "Restart" : {
-
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Reiniciar"
+          }
+        }
+      }
     },
     "Reviews" : {
-
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Revisiones"
+          }
+        }
+      }
     },
     "Run gh auth login or add a token" : {
-
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ejecuta gh auth login o añade un token"
+          }
+        }
+      }
     },
     "SERVERS" : {
-
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SERVIDORES"
+          }
+        }
+      }
     },
     "Sample" : {
-
+      "shouldTranslate" : false
     },
     "Save to Keychain" : {
-
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Guardar en el llavero"
+          }
+        }
+      }
     },
     "Series" : {
-
+      "shouldTranslate" : false
     },
     "Servers" : {
-
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Servidores"
+          }
+        }
+      }
     },
     "Settings: alerts, GitHub, servers, editor" : {
-
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ajustes: alertas, GitHub, servidores, editor"
+          }
+        }
+      }
     },
     "Show Git Status" : {
-
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mostrar estado de Git"
+          }
+        }
+      }
     },
     "Start DevWidgets at login" : {
-
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Abrir DevWidgets al iniciar sesión"
+          }
+        }
+      }
     },
     "Stop or Restart" : {
-
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Detener o reiniciar"
+          }
+        }
+      }
     },
     "System Metrics" : {
-
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Métricas del sistema"
+          }
+        }
+      }
     },
     "TOP PROCESSES" : {
-
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "PROCESOS PRINCIPALES"
+          }
+        }
+      }
     },
     "The Keychain refused the token: %@" : {
-
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "El llavero rechazó el token: %@"
+          }
+        }
+      }
     },
     "The widgets only get new data while DevWidgets runs." : {
-
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Los widgets solo reciben datos nuevos mientras DevWidgets está abierto."
+          }
+        }
+      }
     },
     "Thermal" : {
-
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Térmico"
+          }
+        }
+      }
     },
     "Thermal state" : {
-
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Estado térmico"
+          }
+        }
+      }
     },
     "Throttling" : {
-
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Limitando"
+          }
+        }
+      }
     },
     "Token rejected: check Settings" : {
-
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Token rechazado: revisa los Ajustes"
+          }
+        }
+      }
     },
     "Token saved" : {
-
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Token guardado"
+          }
+        }
+      }
     },
     "Unknown host key: connect once in Terminal" : {
-
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Clave de host desconocida: conéctate una vez en Terminal"
+          }
+        }
+      }
     },
     "Up" : {
-
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Subida"
+          }
+        }
+      }
     },
     "Value" : {
-
+      "shouldTranslate" : false
     },
     "Waiting for a second sample" : {
-
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Esperando una segunda muestra"
+          }
+        }
+      }
     },
     "Warm" : {
-
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Caliente"
+          }
+        }
+      }
     },
     "When a server stops responding for 1 min" : {
-
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cuando un servidor deja de responder durante 1 min"
+          }
+        }
+      }
     },
     "When the project's branch CI fails" : {
-
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cuando falla la CI de la rama del proyecto"
+          }
+        }
+      }
     },
     "Widgets can't update: saving to the App Group failed." : {
-
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Los widgets no pueden actualizarse: falló el guardado en el App Group."
+          }
+        }
+      }
     },
     "Widgets can't update: the App Group is missing." : {
-
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Los widgets no pueden actualizarse: falta el App Group."
+          }
+        }
+      }
     },
     "critical" : {
-
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "crítico"
+          }
+        }
+      }
     },
     "detached at %@" : {
-
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "desacoplada en %@"
+          }
+        }
+      }
     },
     "download" : {
-
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "bajada"
+          }
+        }
+      }
     },
     "github_pat_…" : {
-
+      "shouldTranslate" : false
     },
     "high" : {
-
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "alto"
+          }
+        }
+      }
     },
     "later" : {
-
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "más tarde"
+          }
+        }
+      }
     },
     "load %@" : {
-
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "carga %@"
+          }
+        }
+      }
     },
     "other users" : {
-
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "otros usuarios"
+          }
+        }
+      }
     },
     "ssh not found" : {
-
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ssh no encontrado"
+          }
+        }
+      }
     },
     "up %@" : {
-
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "activo %@"
+          }
+        }
+      }
     },
     "upload" : {
-
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "subida"
+          }
+        }
+      }
     }
   },
   "version" : "1.0"
