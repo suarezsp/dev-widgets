@@ -49,6 +49,23 @@ struct SnapshotStoreTests {
 
 struct MetricFormattingTests {
     @Test(arguments: [
+        (1.5, 1, ("es", "1,5")), (1.5, 1, ("en", "1.5")),
+        (1234.5, 2, ("es", "1234,50")),
+    ])
+    func decimalsFollowTheDisplayLanguage(
+        value: Double,
+        digits: Int,
+        expected: (language: String, text: String)
+    ) {
+        let text = DisplayLocale.formatDecimal(
+            value,
+            digits: digits,
+            locale: Locale(identifier: expected.language)
+        )
+        #expect(text == expected.text)
+    }
+
+    @Test(arguments: [
         (0.0, "0 B"), (512.0, "512 B"), (1_536.0, "1.5 KB"),
         (52_428_800.0, "50 MB"), (17_179_869_184.0, "16 GB"),
         (-5.0, "0 B"),

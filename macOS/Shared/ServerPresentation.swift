@@ -88,9 +88,9 @@ public enum ServerPresentation {
     ) -> String {
         var parts = [String(localized: "\(status.core_Count) cores")]
         if let load_Average = status.snapshot.load_Average {
-            let load_Text = String(
-                format: "%.2f",
-                load_Average.one_Minute
+            let load_Text = DisplayLocale.formatDecimal(
+                load_Average.one_Minute,
+                digits: 2
             )
             parts.append(String(localized: "load \(load_Text)"))
         }

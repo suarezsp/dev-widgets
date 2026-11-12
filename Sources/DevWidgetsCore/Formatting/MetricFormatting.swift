@@ -1,8 +1,8 @@
 import Foundation
 
-/// Short, locale-neutral labels for bytes, rates, percentages,
-/// temperatures and durations. Bytes use binary units, like
-/// Activity Monitor.
+/// Short labels for bytes, rates, percentages, temperatures and
+/// durations; decimals use the `DisplayLocale` separator. Bytes
+/// use binary units, like Activity Monitor.
 public enum MetricFormatting {
     public static let UNIT_NAMES = [
         "B", "KB", "MB", "GB", "TB", "PB",
@@ -41,7 +41,7 @@ public enum MetricFormatting {
     /// One decimal below 10 ("9.8"), whole numbers above ("12").
     static func formatScaled(_ value: Double) -> String {
         guard value < 10 else { return String(Int(value.rounded())) }
-        return String(format: "%.1f", value)
+        return DisplayLocale.formatDecimal(value, digits: 1)
     }
 
     /// Process CPU where 1.0 is one core, so 1.52 -> "152%".

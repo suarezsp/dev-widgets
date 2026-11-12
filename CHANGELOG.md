@@ -32,6 +32,8 @@ in `macOS/project.yml` (`MARKETING_VERSION`).
   `flatpak-spawn --host`, so the project status works there.
 - Linux: Spanish, read from the same String Catalog as macOS
   (installed in `share/devwidgets`) when the locale asks for it.
+- Decimals use the separator of the interface language ("2,3 GB"
+  in Spanish).
 
 ### Changed
 
