@@ -34,7 +34,7 @@ public enum ServerPresentation {
         case .not_Loaded:
             return ServerLine(
                 alias: alias,
-                detail_Text: "Connecting…"
+                detail_Text: String(localized: "Connecting…")
             )
         case .failed(let problem):
             return ServerLine(
@@ -72,11 +72,11 @@ public enum ServerPresentation {
         return [
             ServerGauge(title: "CPU", fraction: status.cpu_Fraction),
             ServerGauge(
-                title: "Memory",
+                title: String(localized: "Memory"),
                 fraction: snapshot.memory.physical.used_Fraction
             ),
             ServerGauge(
-                title: "Disk",
+                title: String(localized: "Disk"),
                 fraction: snapshot.disk_Space.used_Fraction
             ),
         ]
@@ -86,16 +86,17 @@ public enum ServerPresentation {
     public static func describeDetail(
         _ status: RemoteHostStatus
     ) -> String {
-        var parts = ["\(status.core_Count) cores"]
+        var parts = [String(localized: "\(status.core_Count) cores")]
         if let load_Average = status.snapshot.load_Average {
             let load_Text = String(
                 format: "%.2f",
                 load_Average.one_Minute
             )
-            parts.append("load \(load_Text)")
+            parts.append(String(localized: "load \(load_Text)"))
         }
         if let uptime_Seconds = status.snapshot.uptime_Seconds {
-            parts.append("up \(describeUptime(uptime_Seconds))")
+            let uptime_Text = describeUptime(uptime_Seconds)
+            parts.append(String(localized: "up \(uptime_Text)"))
         }
         return parts.joined(separator: " · ")
     }
@@ -112,15 +113,22 @@ public enum ServerPresentation {
         _ problem: RemoteProblem
     ) -> String {
         switch problem {
-        case .ssh_Missing: "ssh not found"
+        case .ssh_Missing: String(localized: "ssh not found")
         case .host_Key_Rejected:
-            "Unknown host key: connect once in Terminal"
+            String(
+                localized:
+                    "Unknown host key: connect once in Terminal"
+            )
         case .authentication_Failed:
-            "Key refused: is it in ssh-agent?"
+            String(localized: "Key refused: is it in ssh-agent?")
         case .interactive_Login_Required:
-            "Asks for a password or 2FA: use a key-only login"
+            String(
+                localized:
+                    "Asks for a password or 2FA: use a key-only login"
+            )
         case .unreachable(let reason): reason
-        case .not_Linux(let system): "\(system) is not supported yet"
+        case .not_Linux(let system):
+            String(localized: "\(system) is not supported yet")
         }
     }
 }

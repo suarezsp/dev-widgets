@@ -15,6 +15,10 @@ in `macOS/project.yml` (`MARKETING_VERSION`).
   hide the dashboard, open Preferences and quit.
 - Linux: `tools/package_rpm.sh` builds an `.rpm`, and CI builds
   both packages for `x86_64` and `arm64`.
+- macOS: user-facing texts live in a String Catalog
+  (`macOS/Shared/Localizable.xcstrings`) shared by the app and the
+  widgets, ready for translation; `tools/sync_strings.sh` adds new
+  ones after a build.
 
 ### Changed
 
@@ -38,6 +42,7 @@ in `macOS/project.yml` (`MARKETING_VERSION`).
 - Repository URLs point at `github.com/suarezsp/dev-widgets`.
 - The app and widget bundles report the project version; XcodeGen
   wrote "1.0" in both Info.plist files.
+- "1 request awaits you" in the review line (it said "await").
 
 ## [0.6.0] - 2026-11-10
 

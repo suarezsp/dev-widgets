@@ -1,4 +1,5 @@
 import DevWidgetsCore
+import Foundation
 
 /// The metric families a widget can feature.
 public enum MetricKind: String, CaseIterable, Sendable {
@@ -18,12 +19,12 @@ public enum MetricKind: String, CaseIterable, Sendable {
     public var title: String {
         switch self {
         case .cpu: "CPU"
-        case .memory: "Memory"
-        case .disk: "Disk"
-        case .network: "Network"
+        case .memory: String(localized: "Memory")
+        case .disk: String(localized: "Disk")
+        case .network: String(localized: "Network")
         case .gpu: "GPU"
-        case .thermal: "Thermal"
-        case .battery: "Battery"
+        case .thermal: String(localized: "Thermal")
+        case .battery: String(localized: "Battery")
         }
     }
 

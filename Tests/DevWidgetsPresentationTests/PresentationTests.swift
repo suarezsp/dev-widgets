@@ -176,6 +176,13 @@ struct ReviewQueuePresentationTests {
         #expect(empty_Line.level == .normal)
     }
 
+    @Test func oneRequestReadsInTheSingular() {
+        let line = ReviewQueuePresentation.describe(
+            .available(queue: Self.makeQueue(total_Count: 1))
+        )
+        #expect(line.detail_Text == "1 request awaits you")
+    }
+
     @Test func requestRowNamesRepositoryAndNumber() {
         let queue = Self.makeQueue(total_Count: 1)
         let rows = ReviewQueuePresentation.listRequests(

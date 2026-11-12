@@ -1,4 +1,5 @@
 import DevWidgetsCore
+import Foundation
 
 /// Display-ready texts and values for one metric.
 public struct MetricPresentation: Equatable {
@@ -30,7 +31,7 @@ public struct MetricPresentation: Equatable {
         var unavailable = MetricPresentation(
             kind: kind,
             value_Text: UNAVAILABLE_VALUE_TEXT,
-            detail_Text: "Not available"
+            detail_Text: String(localized: "Not available")
         )
         unavailable.is_Available = false
         return unavailable
@@ -72,7 +73,9 @@ extension MetricKind {
         presentShare(
             .cpu,
             fraction: cpu.total_Fraction,
-            detail_Text: "\(cpu.core_Fractions.count) cores"
+            detail_Text: String(
+                localized: "\(cpu.core_Fractions.count) cores"
+            )
         )
     }
 
@@ -93,7 +96,9 @@ extension MetricKind {
             value_Text: MetricFormatting.describePercent(
                 fraction: physical.used_Fraction
             ),
-            detail_Text: "\(used_Text) of \(total_Text)"
+            detail_Text: String(
+                localized: "\(used_Text) of \(total_Text)"
+            )
         )
         .with(
             level: memory.pressure,
@@ -110,7 +115,7 @@ extension MetricKind {
         return presentShare(
             .disk,
             fraction: disk.space.used_Fraction,
-            detail_Text: "\(free_Text) free"
+            detail_Text: String(localized: "\(free_Text) free")
         )
     }
 

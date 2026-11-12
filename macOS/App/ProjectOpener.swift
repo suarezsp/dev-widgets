@@ -21,7 +21,9 @@ enum ProjectOpener {
 
     static func open(_ project_URL: URL?) -> ActionOutcome {
         guard let project_URL else {
-            return .refused(reason: "Choose a project first")
+            return .refused(
+                reason: String(localized: "Choose a project first")
+            )
         }
         guard let editor_URL = chooseEditor() else {
             NSWorkspace.shared.activateFileViewerSelecting([

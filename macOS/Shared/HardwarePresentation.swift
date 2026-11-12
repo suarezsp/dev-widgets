@@ -1,4 +1,5 @@
 import DevWidgetsCore
+import Foundation
 
 extension MetricKind {
     public static func presentGPU(
@@ -8,7 +9,7 @@ extension MetricKind {
         return presentShare(
             .gpu,
             fraction: gpu_Fraction,
-            detail_Text: "Busy"
+            detail_Text: String(localized: "Busy")
         )
     }
 
@@ -25,7 +26,7 @@ extension MetricKind {
             kind: .thermal,
             value_Text: value_Text,
             detail_Text: thermal.celsius == nil
-                ? "Thermal state" : state_Text
+                ? String(localized: "Thermal state") : state_Text
         )
         .with(level: thermal.level, fraction: nil)
     }
@@ -34,9 +35,9 @@ extension MetricKind {
         _ level: LoadLevel
     ) -> String {
         switch level {
-        case .normal: "Nominal"
-        case .elevated: "Warm"
-        case .critical: "Throttling"
+        case .normal: String(localized: "Nominal")
+        case .elevated: String(localized: "Warm")
+        case .critical: String(localized: "Throttling")
         }
     }
 
@@ -58,13 +59,14 @@ extension MetricKind {
         _ battery: BatteryState
     ) -> String {
         switch battery.power_Source {
-        case .charging: return "Charging"
-        case .plugged: return "On power adapter"
+        case .charging: return String(localized: "Charging")
+        case .plugged: return String(localized: "On power adapter")
         case .battery:
             guard let minutes = battery.minutes_Remaining else {
-                return "On battery"
+                return String(localized: "On battery")
             }
-            return "\(MetricFormatting.describeMinutes(minutes)) left"
+            let time_Text = MetricFormatting.describeMinutes(minutes)
+            return String(localized: "\(time_Text) left")
         }
     }
 }

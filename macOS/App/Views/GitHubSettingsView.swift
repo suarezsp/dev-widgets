@@ -13,11 +13,12 @@ struct GitHubSettingsView: View {
         Form {
             Section {
                 Text(
-                    "CI and pull request of the project's branch,"
-                        + " and pull requests awaiting your review."
-                        + " DevWidgets uses the token below if you"
-                        + " save one, otherwise the gh command"
-                        + " (run gh auth login once)."
+                    """
+                    CI and pull request of the project's branch, and \
+                    pull requests awaiting your review. DevWidgets \
+                    uses the token below if you save one, otherwise \
+                    the gh command (run gh auth login once).
+                    """
                 )
                 .foregroundStyle(.secondary)
             }
@@ -56,10 +57,11 @@ struct GitHubSettingsView: View {
 
     private var token_Hint: some View {
         Text(
-            "Read-only is enough: a fine-grained token with"
-                + " Actions and Pull requests set to Read."
-                + " Reviews only list repositories the token"
-                + " can read."
+            """
+            Read-only is enough: a fine-grained token with Actions \
+            and Pull requests set to Read. Reviews only list \
+            repositories the token can read.
+            """
         )
         .font(.caption)
         .foregroundStyle(.secondary)
@@ -73,7 +75,10 @@ struct GitHubSettingsView: View {
             error_Text = nil
             context_Model.resetGitHub()
         } catch {
-            error_Text = "The Keychain refused the token: \(error)"
+            let reason = String(describing: error)
+            error_Text = String(
+                localized: "The Keychain refused the token: \(reason)"
+            )
         }
     }
 
@@ -102,8 +107,10 @@ struct EditorSettingsView: View {
                 }
             }
             Text(
-                "Automatic tries Cursor, Visual Studio Code, Zed and"
-                    + " Xcode, then Finder."
+                """
+                Automatic tries Cursor, Visual Studio Code, Zed and \
+                Xcode, then Finder.
+                """
             )
             .font(.caption)
             .foregroundStyle(.secondary)

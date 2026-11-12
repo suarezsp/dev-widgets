@@ -115,11 +115,22 @@ extension MetricHistory {
         switch kind {
         case .cpu: [ChartSeries(name: "CPU", values: cpu_Fractions)]
         case .memory:
-            [ChartSeries(name: "Memory", values: memory_Fractions)]
+            [
+                ChartSeries(
+                    name: String(localized: "Memory"),
+                    values: memory_Fractions
+                )
+            ]
         case .network:
             [
-                ChartSeries(name: "Down", values: download_Rates),
-                ChartSeries(name: "Up", values: upload_Rates),
+                ChartSeries(
+                    name: String(localized: "Down"),
+                    values: download_Rates
+                ),
+                ChartSeries(
+                    name: String(localized: "Up"),
+                    values: upload_Rates
+                ),
             ]
         default: []
         }

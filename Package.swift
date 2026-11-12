@@ -13,6 +13,7 @@ let PORTABLE_PRESENTATION_FILES = [
     "Shared/ContextPresentation.swift",
     "Shared/GitHubPresentation.swift",
     "Shared/HardwarePresentation.swift",
+    "Shared/LinuxLocalization.swift",
     "Shared/MetricKind.swift",
     "Shared/MetricPresentation.swift",
     "Shared/PreviewContext.swift",
@@ -30,6 +31,7 @@ let PORTABLE_PRESENTATION_FILES = [
 // folders are listed, so new files there need no manifest change.
 let XCODE_ONLY_PATHS = [
     "App/Views", "App/Assets.xcassets", "Widgets", "Render",
+    "Shared/Localizable.xcstrings",
     "project.yml",
 ]
 let PRESENTATION_EXCLUDED =

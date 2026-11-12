@@ -9,10 +9,13 @@ import WidgetKit
 /// kept in `problem_Text` for the menu bar panel, not only logged.
 struct WidgetPublisher {
     static let PUBLISH_INTERVAL_SECONDS: TimeInterval = 60
-    static let MISSING_GROUP_TEXT =
-        "Widgets can't update: the App Group is missing."
-    static let SAVE_FAILED_TEXT =
-        "Widgets can't update: saving to the App Group failed."
+    static let MISSING_GROUP_TEXT = String(
+        localized: "Widgets can't update: the App Group is missing."
+    )
+    static let SAVE_FAILED_TEXT = String(
+        localized:
+            "Widgets can't update: saving to the App Group failed."
+    )
     static let LOGGER = Logger(
         subsystem: "com.morsetechnologies.devwidgets",
         category: "WidgetPublisher"

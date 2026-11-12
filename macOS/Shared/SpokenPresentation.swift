@@ -1,4 +1,5 @@
 import DevWidgetsCore
+import Foundation
 
 /// What VoiceOver reads for the rings, bars and charts, which carry
 /// their values as shapes and their level as color.
@@ -7,8 +8,8 @@ extension LoadLevel {
     public var spoken_Text: String? {
         switch self {
         case .normal: nil
-        case .elevated: "high"
-        case .critical: "critical"
+        case .elevated: String(localized: "high")
+        case .critical: String(localized: "critical")
         }
     }
 }
@@ -16,14 +17,22 @@ extension LoadLevel {
 extension MetricPresentation {
     /// "CPU, 42%, 8 cores", plus "high" or "critical" when needed.
     public var spoken_Text: String {
-        guard is_Available else { return "\(title), not available" }
+        guard is_Available else {
+            return String(localized: "\(title), not available")
+        }
         let parts = [
             title, value_Text, detail_Text, level.spoken_Text,
         ]
         return parts.compactMap { $0 }
             .joined(separator: ", ")
-            .replacingOccurrences(of: "↓ ", with: "download ")
-            .replacingOccurrences(of: "↑ ", with: "upload ")
+            .replacingOccurrences(
+                of: "↓ ",
+                with: String(localized: "download") + " "
+            )
+            .replacingOccurrences(
+                of: "↑ ",
+                with: String(localized: "upload") + " "
+            )
     }
 }
 
@@ -57,8 +66,12 @@ public enum HistorySummary {
         else { return nil }
         let lowest_Text = describeValue(lowest, is_Share: is_Share)
         let highest_Text = describeValue(highest, is_Share: is_Share)
-        return
-            "\(name): lowest \(lowest_Text), highest \(highest_Text)"
+        return String(
+            localized: """
+                \(name): lowest \(lowest_Text), \
+                highest \(highest_Text)
+                """
+        )
     }
 
     static func describeValue(

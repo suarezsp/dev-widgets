@@ -27,10 +27,17 @@ struct GeneralSettingsView: View {
 
     private var note_Text: String {
         if LoginItem.needs_Approval {
-            return "Allow DevWidgets in System Settings › General ›"
-                + " Login Items."
+            return String(
+                localized: """
+                    Allow DevWidgets in System Settings › General › \
+                    Login Items.
+                    """
+            )
         }
-        return "The widgets only get new data while DevWidgets runs."
+        return String(
+            localized:
+                "The widgets only get new data while DevWidgets runs."
+        )
     }
 
     /// Skips values that already match, such as the reset after a

@@ -12,7 +12,9 @@ public enum GitHubPresentation {
         case .unauthorized:
             ContextLine(
                 title: "GitHub",
-                detail_Text: "Token rejected: check Settings",
+                detail_Text: String(
+                    localized: "Token rejected: check Settings"
+                ),
                 level: .elevated
             )
         default:
@@ -28,10 +30,11 @@ public enum GitHubPresentation {
         _ github: GitHubState
     ) -> String {
         switch github {
-        case .not_GitHub: "Remote not on GitHub"
-        case .no_Credentials: "Run gh auth login or add a token"
+        case .not_GitHub: String(localized: "Remote not on GitHub")
+        case .no_Credentials:
+            String(localized: "Run gh auth login or add a token")
         case .unavailable(let reason): reason
-        default: "No branch remote"
+        default: String(localized: "No branch remote")
         }
     }
 
@@ -40,10 +43,12 @@ public enum GitHubPresentation {
     ) -> ContextLine {
         let time_Text =
             reset_At?.formatted(date: .omitted, time: .shortened)
-            ?? "later"
+            ?? String(localized: "later")
         return ContextLine(
             title: "GitHub",
-            detail_Text: "Rate limited until \(time_Text)",
+            detail_Text: String(
+                localized: "Rate limited until \(time_Text)"
+            ),
             level: .elevated
         )
     }
@@ -70,20 +75,25 @@ public enum GitHubPresentation {
     public static func describePullRequest(
         _ pull_Request: PullRequestSummary?
     ) -> String {
-        guard let pull_Request else { return "No pull request" }
+        guard let pull_Request else {
+            return String(localized: "No pull request")
+        }
         let state_Text =
             pull_Request.is_Draft
-            ? "Draft" : describeReview(pull_Request.review)
-        return "PR #\(pull_Request.number) · \(state_Text)"
+            ? String(localized: "Draft")
+            : describeReview(pull_Request.review)
+        let number_Text = String(pull_Request.number)
+        return String(localized: "PR #\(number_Text) · \(state_Text)")
     }
 
     public static func describeReview(
         _ review: ReviewDecision
     ) -> String {
         switch review {
-        case .approved: "Approved"
-        case .changes_Requested: "Changes requested"
-        case .none: "Awaiting review"
+        case .approved: String(localized: "Approved")
+        case .changes_Requested:
+            String(localized: "Changes requested")
+        case .none: String(localized: "Awaiting review")
         }
     }
 
@@ -95,20 +105,24 @@ public enum GitHubPresentation {
         if let failed_Run = runs.first(where: {
             $0.outcome == .failure
         }) {
-            return "CI failing: \(failed_Run.workflow_Name)"
+            let name = failed_Run.workflow_Name
+            return String(localized: "CI failing: \(name)")
         }
         if let running_Run = runs.first(where: {
             $0.outcome == .pending
         }) {
-            return "CI running: \(running_Run.workflow_Name)"
+            let name = running_Run.workflow_Name
+            return String(localized: "CI running: \(name)")
         }
         if let cancelled_Run = runs.first(where: {
             $0.outcome == .cancelled
         }) {
-            return "CI cancelled: \(cancelled_Run.workflow_Name)"
+            let name = cancelled_Run.workflow_Name
+            return String(localized: "CI cancelled: \(name)")
         }
         return runs.isEmpty
-            ? "No CI runs" : "CI passing (\(runs.count))"
+            ? String(localized: "No CI runs")
+            : String(localized: "CI passing (\(runs.count))")
     }
 
     /// Where a tap on the row goes: the failing run, else the PR.

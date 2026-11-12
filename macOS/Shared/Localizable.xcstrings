@@ -1,0 +1,487 @@
+{
+  "sourceLanguage" : "en",
+  "strings" : {
+    "%@ free" : {
+
+    },
+    "%@ is not supported yet" : {
+
+    },
+    "%@ left" : {
+
+    },
+    "%@ of %@" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "%1$@ of %2$@"
+          }
+        }
+      }
+    },
+    "%@, not available" : {
+
+    },
+    "%@: lowest %@, highest %@" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "%1$@: lowest %2$@, highest %3$@"
+          }
+        }
+      }
+    },
+    "%@?" : {
+
+    },
+    "%lld conflicted" : {
+
+    },
+    "%lld cores" : {
+
+    },
+    "%lld modified" : {
+
+    },
+    "%lld requests await you" : {
+
+    },
+    "%lld running of %lld" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "%1$lld running of %2$lld"
+          }
+        }
+      }
+    },
+    "%lld staged" : {
+
+    },
+    "%lld untracked" : {
+
+    },
+    "1 request awaits you" : {
+
+    },
+    "Add" : {
+
+    },
+    "Add servers in Settings › Servers" : {
+
+    },
+    "Alerts" : {
+
+    },
+    "Alias or user@host" : {
+
+    },
+    "Allow DevWidgets in System Settings › General › Login Items." : {
+
+    },
+    "Approved" : {
+
+    },
+    "Asks for a password or 2FA: use a key-only login" : {
+
+    },
+    "At most once every %lld min" : {
+
+    },
+    "Automatic" : {
+
+    },
+    "Automatic tries Cursor, Visual Studio Code, Zed and Xcode, then Finder." : {
+
+    },
+    "Avoid noise" : {
+
+    },
+    "Awaiting review" : {
+
+    },
+    "Battery" : {
+
+    },
+    "Busy" : {
+
+    },
+    "CI and pull request of the project's branch, and pull requests awaiting your review. DevWidgets uses the token below if you save one, otherwise the gh command (run gh auth login once)." : {
+
+    },
+    "CI cancelled: %@" : {
+
+    },
+    "CI failing: %@" : {
+
+    },
+    "CI passing (%lld)" : {
+
+    },
+    "CI running: %@" : {
+
+    },
+    "CPU" : {
+
+    },
+    "CPU, memory and disk of your Linux servers." : {
+
+    },
+    "CPU, memory, disk, network, GPU, heat or battery." : {
+
+    },
+    "Changes requested" : {
+
+    },
+    "Charging" : {
+
+    },
+    "Checking…" : {
+
+    },
+    "Choose Metric" : {
+
+    },
+    "Choose Project…" : {
+
+    },
+    "Choose a project first" : {
+
+    },
+    "Choose one in the menu bar" : {
+
+    },
+    "Clean" : {
+
+    },
+    "Collecting first sample…" : {
+
+    },
+    "Confirm" : {
+
+    },
+    "Connecting…" : {
+
+    },
+    "Container ID" : {
+
+    },
+    "DEVWIDGETS" : {
+
+    },
+    "DevWidgets" : {
+
+    },
+    "DevWidgets runs ssh with your own config and keys, never asks for a password and only reads /proc. The host must be Linux." : {
+
+    },
+    "Developer Context" : {
+
+    },
+    "Developer Dashboard" : {
+
+    },
+    "Disk" : {
+
+    },
+    "Docker asks it to stop and forces it after 10 seconds." : {
+
+    },
+    "Docker stops it, forcing it after 10 seconds, then starts it again." : {
+
+    },
+    "Down" : {
+
+    },
+    "Draft" : {
+
+    },
+    "Events" : {
+
+    },
+    "From ~/.ssh/config" : {
+
+    },
+    "GPU" : {
+
+    },
+    "General" : {
+
+    },
+    "Git not found" : {
+
+    },
+    "Git, GitHub CI and pull request, containers and ports." : {
+
+    },
+    "GitHub" : {
+
+    },
+    "History charts, hardware and top processes to quit." : {
+
+    },
+    "Image" : {
+
+    },
+    "Key refused: is it in ssh-agent?" : {
+
+    },
+    "LISTENING PORTS" : {
+
+    },
+    "Memory" : {
+
+    },
+    "Metric" : {
+
+    },
+    "Monitored" : {
+
+    },
+    "Name" : {
+
+    },
+    "Network" : {
+
+    },
+    "No CI runs" : {
+
+    },
+    "No branch remote" : {
+
+    },
+    "No data yet. Open DevWidgets in the menu bar." : {
+
+    },
+    "No project" : {
+
+    },
+    "No pull request" : {
+
+    },
+    "No token" : {
+
+    },
+    "Nominal" : {
+
+    },
+    "None" : {
+
+    },
+    "Not a Git repository" : {
+
+    },
+    "Not available" : {
+
+    },
+    "Not installed" : {
+
+    },
+    "Not running" : {
+
+    },
+    "Nothing awaits your review" : {
+
+    },
+    "Notify me when" : {
+
+    },
+    "Now" : {
+
+    },
+    "On battery" : {
+
+    },
+    "On power adapter" : {
+
+    },
+    "Only after %lld s past the limit" : {
+
+    },
+    "Open Project" : {
+
+    },
+    "Open project" : {
+
+    },
+    "Open projects with" : {
+
+    },
+    "Opens the project in your editor." : {
+
+    },
+    "PR #%@ · %@" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "PR #%1$@ · %2$@"
+          }
+        }
+      }
+    },
+    "Personal access token" : {
+
+    },
+    "Pick the metric this widget features." : {
+
+    },
+    "Process %@ is asked to quit and can save its work first." : {
+
+    },
+    "Process ID" : {
+
+    },
+    "Project" : {
+
+    },
+    "Quit DevWidgets" : {
+
+    },
+    "Quit Process" : {
+
+    },
+    "Rate limited until %@" : {
+
+    },
+    "Read-only is enough: a fine-grained token with Actions and Pull requests set to Read. Reviews only list repositories the token can read." : {
+
+    },
+    "Reading Git, Docker and ports…" : {
+
+    },
+    "Remote not on GitHub" : {
+
+    },
+    "Remove" : {
+
+    },
+    "Restart" : {
+
+    },
+    "Reviews" : {
+
+    },
+    "Run gh auth login or add a token" : {
+
+    },
+    "SERVERS" : {
+
+    },
+    "Sample" : {
+
+    },
+    "Save to Keychain" : {
+
+    },
+    "Series" : {
+
+    },
+    "Servers" : {
+
+    },
+    "Settings: alerts, GitHub, servers, editor" : {
+
+    },
+    "Show Git Status" : {
+
+    },
+    "Start DevWidgets at login" : {
+
+    },
+    "Stop or Restart" : {
+
+    },
+    "System Metrics" : {
+
+    },
+    "TOP PROCESSES" : {
+
+    },
+    "The Keychain refused the token: %@" : {
+
+    },
+    "The widgets only get new data while DevWidgets runs." : {
+
+    },
+    "Thermal" : {
+
+    },
+    "Thermal state" : {
+
+    },
+    "Throttling" : {
+
+    },
+    "Token rejected: check Settings" : {
+
+    },
+    "Token saved" : {
+
+    },
+    "Unknown host key: connect once in Terminal" : {
+
+    },
+    "Up" : {
+
+    },
+    "Value" : {
+
+    },
+    "Waiting for a second sample" : {
+
+    },
+    "Warm" : {
+
+    },
+    "When a server stops responding for 1 min" : {
+
+    },
+    "When the project's branch CI fails" : {
+
+    },
+    "Widgets can't update: saving to the App Group failed." : {
+
+    },
+    "Widgets can't update: the App Group is missing." : {
+
+    },
+    "critical" : {
+
+    },
+    "detached at %@" : {
+
+    },
+    "download" : {
+
+    },
+    "github_pat_…" : {
+
+    },
+    "high" : {
+
+    },
+    "later" : {
+
+    },
+    "load %@" : {
+
+    },
+    "other users" : {
+
+    },
+    "ssh not found" : {
+
+    },
+    "up %@" : {
+
+    },
+    "upload" : {
+
+    }
+  },
+  "version" : "1.0"
+}

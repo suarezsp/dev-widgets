@@ -93,7 +93,7 @@ final class DeveloperContextModel {
         let open_Panel = NSOpenPanel()
         open_Panel.canChooseDirectories = true
         open_Panel.canChooseFiles = false
-        open_Panel.prompt = "Show Git Status"
+        open_Panel.prompt = String(localized: "Show Git Status")
         NSApplication.shared.activate()
         guard open_Panel.runModal() == .OK,
             let folder_URL = open_Panel.url

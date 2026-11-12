@@ -4,6 +4,7 @@
 name: DevWidgets
 options:
   bundleIdPrefix: com.morsetechnologies
+  developmentLanguage: en
   deploymentTarget:
     macOS: "26.0"
 settings:
@@ -25,6 +26,10 @@ settings:
     # it, and tests check the Linux packaging files match it.
     MARKETING_VERSION: "0.6.0"
     CURRENT_PROJECT_VERSION: "1"
+    # User-facing text lives in Shared/Localizable.xcstrings; the
+    # compiler lists the strings in use for tools/sync_strings.sh.
+    LOCALIZATION_PREFERS_STRING_CATALOGS: YES
+    SWIFT_EMIT_LOC_STRINGS: YES
 packages:
   DevWidgets:
     path: ..

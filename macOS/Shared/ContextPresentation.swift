@@ -1,8 +1,9 @@
 import DevWidgetsCore
+import Foundation
 
 /// One headline and one detail line, tinted by how much attention
 /// it needs: the developer-context counterpart of a metric row.
-public struct ContextLine: Equatable {
+public struct ContextLine: Equatable, Sendable {
     public let title: String
     public let detail_Text: String
     public var level = LoadLevel.normal
@@ -19,19 +20,25 @@ public struct ContextLine: Equatable {
 }
 
 public enum ContextPresentation {
+    static let NO_PROJECT_LINE = ContextLine(
+        title: String(localized: "No project"),
+        detail_Text: String(localized: "Choose one in the menu bar")
+    )
+
     public static func describeGit(_ git: GitState) -> ContextLine {
         switch git {
-        case .not_Configured:
-            ContextLine(
-                title: "No project",
-                detail_Text: "Choose one in the menu bar"
-            )
+        case .not_Configured: NO_PROJECT_LINE
         case .not_Installed:
-            ContextLine(title: "Git", detail_Text: "Git not found")
+            ContextLine(
+                title: "Git",
+                detail_Text: String(localized: "Git not found")
+            )
         case .not_A_Repository(let project_Name):
             ContextLine(
                 title: project_Name,
-                detail_Text: "Not a Git repository",
+                detail_Text: String(
+                    localized: "Not a Git repository"
+                ),
                 level: .elevated
             )
         case .available(let status):
@@ -46,7 +53,10 @@ public enum ContextPresentation {
         let branch = status.branch
         let branch_Name =
             branch.name
-            ?? "detached at \(branch.short_Commit_ID ?? "?")"
+            ?? String(
+                localized:
+                    "detached at \(branch.short_Commit_ID ?? "?")"
+            )
         let level: LoadLevel =
             status.changes.conflicted > 0
             ? .critical
@@ -72,17 +82,31 @@ public enum ContextPresentation {
         ]
         .filter { $0.total > 0 }
         .map { "\($0.arrow)\($0.total)" }
-        let change_Parts = [
-            (total: changes.conflicted, word: "conflicted"),
-            (total: changes.staged, word: "staged"),
-            (total: changes.modified, word: "modified"),
-            (total: changes.untracked, word: "untracked"),
-        ]
-        .filter { $0.total > 0 }
-        .map { "\($0.total) \($0.word)" }
-        let parts = arrow_Parts + change_Parts
+        let parts = arrow_Parts + describeChangeParts(changes)
         return parts.isEmpty
-            ? "Clean" : parts.joined(separator: " · ")
+            ? String(localized: "Clean")
+            : parts.joined(separator: " · ")
+    }
+
+    /// "3 modified": each count and its state are one text, so a
+    /// translation can order them as its language needs.
+    static func describeChangeParts(
+        _ changes: ChangeCounts
+    ) -> [String] {
+        let conflicted = changes.conflicted
+        let staged = changes.staged
+        let modified = changes.modified
+        let untracked = changes.untracked
+        return [
+            conflicted > 0
+                ? String(localized: "\(conflicted) conflicted") : nil,
+            staged > 0 ? String(localized: "\(staged) staged") : nil,
+            modified > 0
+                ? String(localized: "\(modified) modified") : nil,
+            untracked > 0
+                ? String(localized: "\(untracked) untracked") : nil,
+        ]
+        .compactMap { $0 }
     }
 
     public static func describeDocker(
@@ -90,20 +114,39 @@ public enum ContextPresentation {
     ) -> ContextLine {
         switch docker {
         case .not_Installed:
-            ContextLine(title: "Docker", detail_Text: "Not installed")
-        case .not_Running:
-            ContextLine(title: "Docker", detail_Text: "Not running")
-        case .available(let containers):
             ContextLine(
                 title: "Docker",
-                detail_Text:
-                    "\(docker.running_Containers.count) running"
-                    + " of \(containers.count)"
+                detail_Text: String(localized: "Not installed")
+            )
+        case .not_Running:
+            ContextLine(
+                title: "Docker",
+                detail_Text: String(localized: "Not running")
+            )
+        case .available(let containers):
+            describeContainers(
+                running: docker.running_Containers.count,
+                total: containers.count
             )
         }
     }
 
-    public static let OTHER_OWNER_NAME = "other users"
+    /// "Docker · 2 running of 3".
+    static func describeContainers(
+        running: Int,
+        total: Int
+    ) -> ContextLine {
+        ContextLine(
+            title: "Docker",
+            detail_Text: String(
+                localized: "\(running) running of \(total)"
+            )
+        )
+    }
+
+    public static let OTHER_OWNER_NAME = String(
+        localized: "other users"
+    )
 
     /// One row per program: a dev server often opens several ports.
     /// Groups keep the order of their lowest port.

@@ -13,9 +13,11 @@ struct ServersSettingsView: View {
         Form {
             Section {
                 Text(
-                    "DevWidgets runs ssh with your own config and"
-                        + " keys, never asks for a password and only"
-                        + " reads /proc. The host must be Linux."
+                    """
+                    DevWidgets runs ssh with your own config and \
+                    keys, never asks for a password and only reads \
+                    /proc. The host must be Linux.
+                    """
                 )
                 .foregroundStyle(.secondary)
             }

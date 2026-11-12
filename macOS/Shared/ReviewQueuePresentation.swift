@@ -3,14 +3,21 @@ import Foundation
 
 /// The "awaiting your review" line and its rows.
 public enum ReviewQueuePresentation {
+    static let REVIEWS_TITLE = String(localized: "Reviews")
+
     public static func describe(
         _ state: ReviewQueueState
     ) -> ContextLine {
         switch state {
         case .not_Loaded:
-            ContextLine(title: "Reviews", detail_Text: "Checking…")
+            ContextLine(
+                title: REVIEWS_TITLE,
+                detail_Text: String(localized: "Checking…")
+            )
         case .failed(let problem):
-            GitHubPresentation.describe(problem).renamed("Reviews")
+            GitHubPresentation.describe(problem).renamed(
+                REVIEWS_TITLE
+            )
         case .available(let queue):
             describeQueue(queue)
         }
@@ -22,14 +29,18 @@ public enum ReviewQueuePresentation {
     ) -> ContextLine {
         guard queue.total_Count > 0 else {
             return ContextLine(
-                title: "Reviews",
-                detail_Text: "Nothing awaits your review"
+                title: REVIEWS_TITLE,
+                detail_Text: String(
+                    localized: "Nothing awaits your review"
+                )
             )
         }
-        let noun = queue.total_Count == 1 ? "request" : "requests"
+        let total = queue.total_Count
         return ContextLine(
-            title: "Reviews",
-            detail_Text: "\(queue.total_Count) \(noun) await you",
+            title: REVIEWS_TITLE,
+            detail_Text: total == 1
+                ? String(localized: "1 request awaits you")
+                : String(localized: "\(total) requests await you"),
             level: .elevated
         )
     }
