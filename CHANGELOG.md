@@ -25,6 +25,9 @@ in `macOS/project.yml` (`MARKETING_VERSION`).
   the driver has no busy file in `/sys`.
 - GitHub Enterprise Server: a host in Settings › GitHub (macOS) or
   `GH_HOST` (Linux) points the REST API and `gh` at it.
+- Linux: the Flatpak manifest builds and runs (no network during
+  the build) and passes `ssh-agent`; `packaging/flatpak/README.md`
+  lists what works inside the sandbox.
 
 ### Changed
 

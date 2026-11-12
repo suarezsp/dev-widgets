@@ -215,7 +215,7 @@ macOS, outside the App Store, as a signed and notarized DMG:
 
 Developer ID certificates and notarization need the **paid Apple Developer Program**; a free account only signs for your own Mac. Users just open the DMG, drag the app to Applications, open it once and add the widgets. They never touch folders or settings.
 
-Linux: `tools/package_deb.sh` builds the `.deb` and `tools/package_rpm.sh` the `.rpm` (it needs `rpmbuild`), each for the architecture it runs on; both stage the same files with `tools/stage_linux.sh`. The `.rpm` is built on Ubuntu and has not been installed on Fedora yet. `packaging/flatpak` holds an experimental manifest that has not been built yet.
+Linux: `tools/package_deb.sh` builds the `.deb` and `tools/package_rpm.sh` the `.rpm` (it needs `rpmbuild`), each for the architecture it runs on; both stage the same files with `tools/stage_linux.sh`. The `.rpm` is built on Ubuntu and has not been installed on Fedora yet. `packaging/flatpak` holds an experimental manifest that builds and runs; its README lists what works inside the sandbox (Git, Docker and the process list do not yet).
 
 ---
 
@@ -263,7 +263,7 @@ Enforced by `tools/lint.sh` (swift-format, SwiftLint and `tools/check_style.py`)
 - **Desktop captures.** The macOS images are renders of the real views on a neutral platter, not desktop screenshots.
 - **Checked on one Mac.** GPU under load, the exact set of processes visible without privileges and thermal states under heat are not verified yet.
 - **Temperature on macOS** is the thermal state the system reports (Nominal, Warm or Throttling), not degrees: macOS has no public API for sensor temperatures, and reading the SMC would be private and fragile. Linux shows degrees from `/sys/class/thermal`. This will change if Apple adds a public API.
-- **Linux** was tested on a virtual XFCE desktop (Xvfb, no GPU); GNOME, KDE and Wayland, the tray menu in a real panel (its D-Bus replies were checked with `gdbus`) and NVIDIA GPUs (read through `nvidia-smi`, checked only against hand-written output) are still to check. The Flatpak is unbuilt.
+- **Linux** was tested on a virtual XFCE desktop (Xvfb, no GPU); GNOME, KDE and Wayland, the tray menu in a real panel (its D-Bus replies were checked with `gdbus`) and NVIDIA GPUs (read through `nvidia-smi`, checked only against hand-written output) are still to check. The Flatpak builds and runs, with Git, Docker and the process list limited by the sandbox.
 - **GitHub and Docker** were tested against recorded or hand-written responses; a signed-in run is pending.
 - **CI** has not run yet; it first runs when the repository is pushed.
 - What is still missing for v1.0 is tracked in the [issues](https://github.com/suarezsp/dev-widgets/issues).

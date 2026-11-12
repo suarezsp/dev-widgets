@@ -1,11 +1,7 @@
-# EXPERIMENTAL, NOT BUILT YET: flatpak-builder was not available
-# where this was written. Build with
-#   flatpak-builder --user --install build-dir \
-#     packaging/flatpak/com.morsetechnologies.DevWidgets.yml
-# Known gap: the sandbox has its own process namespace, so the
-# process list, port owners and `docker`/`git`/`ssh` see only the
-# sandbox unless commands go through `flatpak-spawn --host` (not
-# implemented; see the report's limitations).
+# EXPERIMENTAL. Builds and runs; see README.md here for what works
+# inside the sandbox. Build and install with
+#   flatpak-builder --user --install --install-deps-from=flathub \
+#     build-dir packaging/flatpak/com.morsetechnologies.DevWidgets.yml
 id: com.morsetechnologies.DevWidgets
 runtime: org.gnome.Platform
 runtime-version: '49'
@@ -22,6 +18,8 @@ finish-args:
   # Tray icon and host commands.
   - --talk-name=org.kde.StatusNotifierWatcher
   - --talk-name=org.freedesktop.Flatpak
+  # Keys held by ssh-agent, for the servers widget.
+  - --socket=ssh-auth
   # Project folders and the SSH configuration, read only.
   - --filesystem=home:ro
   - --filesystem=~/.ssh:ro
@@ -31,9 +29,6 @@ build-options:
 modules:
   - name: devwidgets
     buildsystem: simple
-    build-options:
-      build-args:
-        - --share=network
     build-commands:
       - swift build -c release --product devwidgets-linux
           --static-swift-stdlib
@@ -51,3 +46,6 @@ modules:
     sources:
       - type: dir
         path: ../..
+        skip:
+          - .build
+          - .git
