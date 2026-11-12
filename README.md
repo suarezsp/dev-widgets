@@ -235,8 +235,8 @@ run them as `LC_ALL=C swift test`.
 
 | Platform | Tests |
 |----------|-------|
-| Linux (Swift 6.4) | **234 tests in 52 suites** |
-| macOS 27 (Apple silicon) | **236 tests in 53 suites**, including the `DarwinReaderTests` that read the real Mac |
+| Linux (Swift 6.4) | **283 tests in 64 suites** |
+| macOS 27 (Apple silicon) | **282 tests in 64 suites**, including the `DarwinReaderTests` that read the real Mac |
 
 | Suite | What it checks |
 |-------|----------------|
